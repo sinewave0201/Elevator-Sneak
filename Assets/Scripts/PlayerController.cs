@@ -12,10 +12,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField]private InputActionReference moveAction;
 
     private float horizontalInput;
-    private void Awake()
-    {
-
-    }
+    private void Awake(){}
 
     private void Update()
     {
