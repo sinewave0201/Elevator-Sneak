@@ -11,11 +11,14 @@ public class PlayerController : MonoBehaviour
     [SerializeField]private SpriteRenderer spriteRenderer;
     [SerializeField]private InputActionReference moveAction;
     [SerializeField]private InputActionReference interactAction;
-
-    private Collider2D interactable;
-
+    
+    private InteractionManager interactionManager;
     private float horizontalInput;
-    private void Awake(){}
+    private void Awake(){
+        interactionManager = GetComponent<InteractionManager>();
+
+        Debug.Log("InteractionManager: " + interactionManager);
+    }
 
     private void Update()
     {
@@ -27,42 +30,12 @@ public class PlayerController : MonoBehaviour
             spriteRenderer.flipX = horizontalInput < 0f;
         }
 
-        if (interactAction.action.WasPerformedThisFrame() && interactable != null)//if e is pressed
+        if (interactAction.action.WasPerformedThisFrame())//if e is pressed
         {
             Debug.Log("e is pressed");
-            if (interactable.CompareTag("Elevator"))
-            {
-                ElevatorManager em = interactable.GetComponent<ElevatorManager>();
-                em.interact();
-            }
-            
-            else if (interactable.CompareTag("Stair"))
-            {
-                StairManager sm = interactable.GetComponent<StairManager>();
-                sm.interact();
-            }
-
-            else if (interactable.CompareTag("Interactables"))
-            {
-                
-            }
+            interactionManager.Interact(); 
         }
     }
-
-    //interaction logic
-    void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.CompareTag("Elevator") || other.CompareTag("Stair") || 
-            other.CompareTag("interactable"))
-            interactable = other;
-    }
-
-    void OnTriggerExit2D(Collider2D other)
-    {
-        if (interactable == other)
-            interactable = null;
-    }
-
 
     private void FixedUpdate()
     {
