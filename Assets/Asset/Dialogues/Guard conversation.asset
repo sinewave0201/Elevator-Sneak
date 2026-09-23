@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dff2d470d2bdbbd4ea3db1789368bf1a, type: 3}
+  m_Name: Guard conversation
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueConversation
+  startNodeId: start
+  nodes:
+  - id: start
+    speakerName: Guard
+    dialogueLines:
+    - text: Stop!
+    - text: This area is restricted.
+    - text: What are you doing here?
+    options:
+    - text: Who are you?
+      nextNodeId: identity
+      endsConversation: 0
+    - text: Let me pass.
+      nextNodeId: permission
+      endsConversation: 0
+    - text: Goodbye.
+      nextNodeId:
+      endsConversation: 1
+  - id: identity
+    speakerName: Guard
+    dialogueLines:
+    - text: I am the elevator guard.
+    - text: I keep unauthorized people out of this area.
+    options: []
+  - id: permission
+    speakerName: Guard
+    dialogueLines:
+    - text: You do not have permission to enter.
+    - text: Please step away from the door.
+    options: []

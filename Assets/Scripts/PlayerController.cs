@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private InputActionReference moveAction;
     [SerializeField] private InputActionReference interactAction;
 
+    private InteractionManager interactionManager;
     private Collider2D interactable;
     private InputAction dialogueAction;
 
@@ -19,7 +20,10 @@ public class PlayerController : MonoBehaviour
 
     private void Awake()
     {
+        interactionManager = GetComponent<InteractionManager>();
         dialogueAction = interactAction.asset.FindAction("PC-Default/Dialogue", true);
+
+        Debug.Log("InteractionManager: " + interactionManager);
     }
 
     private void OnEnable()
@@ -63,29 +67,19 @@ public class PlayerController : MonoBehaviour
                 dialogueTrigger.Interact();
         }
 
-        // E keeps the project's original environment interaction behavior.
-        if (interactAction.action.WasPerformedThisFrame() && interactable != null)
+        if (interactAction.action.WasPerformedThisFrame())//if e is pressed
         {
-            if (interactable.CompareTag("Elevator"))
-            {
-                ElevatorManager em = interactable.GetComponent<ElevatorManager>();
-                em.interact();
-            }
-            
-            else if (interactable.CompareTag("Stair"))
-            {
-                StairManager sm = interactable.GetComponent<StairManager>();
-                sm.interact();
-            }
+            Debug.Log("e is pressed");
+
+            if (interactionManager != null)
+                interactionManager.Interact();
         }
     }
 
     //interaction logic
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.GetComponent<DialogueTrigger>() != null ||
-            other.CompareTag("Elevator") ||
-            other.CompareTag("Stair"))
+        if (other.GetComponent<DialogueTrigger>() != null)
             interactable = other;
     }
 
@@ -99,7 +93,6 @@ public class PlayerController : MonoBehaviour
                 DialogueManager.Instance.CloseDialogue();
         }
     }
-
 
     private void FixedUpdate()
     {

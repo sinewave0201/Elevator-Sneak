@@ -3,6 +3,9 @@ using UnityEngine;
 [RequireComponent(typeof(Collider2D))]
 public class DialogueTrigger : MonoBehaviour
 {
+    [Header("Dialogue Asset")]
+    [SerializeField] private DialogueConversation conversation;
+
     [Header("Character")]
     [SerializeField] private string speakerName = "Stranger";
 
@@ -20,6 +23,30 @@ public class DialogueTrigger : MonoBehaviour
     public string OptionTwo => optionTwo;
     public string ResponseToOptionTwo => responseToOptionTwo;
 
+    private DialogueConversation legacyConversation;
+
+    public DialogueConversation Conversation
+    {
+        get
+        {
+            if (conversation != null)
+                return conversation;
+
+            if (legacyConversation == null)
+            {
+                legacyConversation = DialogueConversation.CreateLegacy(
+                    speakerName,
+                    openingLine,
+                    optionOne,
+                    responseToOptionOne,
+                    optionTwo,
+                    responseToOptionTwo);
+            }
+
+            return legacyConversation;
+        }
+    }
+
     private void Reset()
     {
         GetComponent<Collider2D>().isTrigger = true;
@@ -34,5 +61,11 @@ public class DialogueTrigger : MonoBehaviour
         }
 
         DialogueManager.Instance.StartDialogue(this);
+    }
+
+    private void OnDestroy()
+    {
+        if (legacyConversation != null)
+            Destroy(legacyConversation);
     }
 }

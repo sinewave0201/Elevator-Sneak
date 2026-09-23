@@ -206,7 +206,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -734,10 +734,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 389540066}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 994571f6edd495742b1d9de38c006935, type: 3}
+  m_Script: {fileID: 11500000, guid: df8667a9baafe43fa8d042b26b18fbb2, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DoorManager
-  elevatorIDX: 1
+  m_EditorClassIdentifier: Assembly-CSharp::SceneChangeInteraction
+  interactionPrompt: Enter Elevator
+  requirement: {fileID: 0}
+  sceneIndex: 1
 --- !u!1 &440005231
 GameObject:
   m_ObjectHideFlags: 0
@@ -825,7 +827,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -1193,12 +1195,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c55a3423d1267e84bb1ecd3c86b6f3ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DialogueTrigger
+  conversation: {fileID: 11400000, guid: d331543b5b9021b47a3609fd1e129879, type: 2}
   speakerName: Stranger
-  openingLine: What do you want?
+  openingLine: This is test object
   optionOne: Who are you?
-  responseToOptionOne: That is not important right now.
+  responseToOptionOne: You can assign conversation asset(Assets/asset/DIalogues)
+    to the object
   optionTwo: Goodbye.
-  responseToOptionTwo: Stay out of trouble.
+  responseToOptionTwo: and test if dialogue system is working
 --- !u!58 &967100232
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1264,6 +1268,7 @@ GameObject:
   - component: {fileID: 1062996733}
   - component: {fileID: 1062996732}
   - component: {fileID: 1062996731}
+  - component: {fileID: 1062996735}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1456,6 +1461,19 @@ MonoBehaviour:
   spriteRenderer: {fileID: 1062996729}
   moveAction: {fileID: 4624633793261962896, guid: 2a06f48caba6faf47930cfa74a171b30, type: 3}
   interactAction: {fileID: 6885399080441036536, guid: 2a06f48caba6faf47930cfa74a171b30, type: 3}
+--- !u!114 &1062996735
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1062996728}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c00eb57512064bb3b2df222f82ae64d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InteractionManager
+  interactionUI: {fileID: 0}
 --- !u!1 &1083911124
 GameObject:
   m_ObjectHideFlags: 0
@@ -1516,7 +1534,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -1838,10 +1856,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1323997598}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b98a4c2a94c6fee4cbd5d103cce46d75, type: 3}
+  m_Script: {fileID: 11500000, guid: df8667a9baafe43fa8d042b26b18fbb2, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::StairManager
-  stairIDX: 2
+  m_EditorClassIdentifier: Assembly-CSharp::SceneChangeInteraction
+  interactionPrompt: Enter Staircase
+  requirement: {fileID: 0}
+  sceneIndex: 2
 --- !u!1 &1336512988
 GameObject:
   m_ObjectHideFlags: 0
@@ -3597,7 +3617,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
