@@ -12,6 +12,10 @@
 /[Uu]ser[Ss]ettings/
 *.log
 
+# Unity scene recovery files are local editor backups.
+/[Aa]ssets/_Recovery/
+/[Aa]ssets/_Recovery.meta
+
 # MemoryCaptures can get excessive in size.
 # They also could contain extremely sensitive data
 /[Mm]emoryCaptures/
