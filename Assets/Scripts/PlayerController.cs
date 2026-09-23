@@ -8,18 +8,45 @@ public class PlayerController : MonoBehaviour
 
     [Header("Requirement")]
     [SerializeField] private Rigidbody2D body;
-    [SerializeField]private SpriteRenderer spriteRenderer;
-    [SerializeField]private InputActionReference moveAction;
-    [SerializeField]private InputActionReference interactAction;
+    [SerializeField] private SpriteRenderer spriteRenderer;
+    [SerializeField] private InputActionReference moveAction;
+    [SerializeField] private InputActionReference interactAction;
 
     private Collider2D interactable;
+    private InputAction dialogueAction;
 
     private float horizontalInput;
-    private void Awake(){}
+
+    private void Awake()
+    {
+        dialogueAction = interactAction.asset.FindAction("PC-Default/Dialogue", true);
+    }
+
+    private void OnEnable()
+    {
+        dialogueAction?.Enable();
+    }
+
+    private void OnDisable()
+    {
+        dialogueAction?.Disable();
+    }
 
     private void Update()
     {
-        //moving logic
+        bool dialoguePressed = dialogueAction.WasPerformedThisFrame();
+
+        // F advances or closes dialogue and blocks movement/other interactions while it is open.
+        if (DialogueManager.Instance != null && DialogueManager.Instance.IsOpen)
+        {
+            horizontalInput = 0f;
+
+            if (dialoguePressed)
+                DialogueManager.Instance.AdvanceOrClose();
+
+            return;
+        }
+
         horizontalInput = moveAction.action.ReadValue<Vector2>().x;
 
         if (horizontalInput != 0f)
@@ -27,9 +54,18 @@ public class PlayerController : MonoBehaviour
             spriteRenderer.flipX = horizontalInput < 0f;
         }
 
-        if (interactAction.action.WasPerformedThisFrame() && interactable != null)//if e is pressed
+        // F is reserved for speaking.
+        if (dialoguePressed && interactable != null)
         {
-            Debug.Log("e is pressed");
+            DialogueTrigger dialogueTrigger = interactable.GetComponent<DialogueTrigger>();
+
+            if (dialogueTrigger != null)
+                dialogueTrigger.Interact();
+        }
+
+        // E keeps the project's original environment interaction behavior.
+        if (interactAction.action.WasPerformedThisFrame() && interactable != null)
+        {
             if (interactable.CompareTag("Elevator"))
             {
                 ElevatorManager em = interactable.GetComponent<ElevatorManager>();
@@ -41,26 +77,27 @@ public class PlayerController : MonoBehaviour
                 StairManager sm = interactable.GetComponent<StairManager>();
                 sm.interact();
             }
-
-            else if (interactable.CompareTag("Interactables"))
-            {
-                
-            }
         }
     }
 
     //interaction logic
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Elevator") || other.CompareTag("Stair") || 
-            other.CompareTag("interactable"))
+        if (other.GetComponent<DialogueTrigger>() != null ||
+            other.CompareTag("Elevator") ||
+            other.CompareTag("Stair"))
             interactable = other;
     }
 
     void OnTriggerExit2D(Collider2D other)
     {
         if (interactable == other)
+        {
             interactable = null;
+
+            if (DialogueManager.Instance != null && DialogueManager.Instance.IsOpen)
+                DialogueManager.Instance.CloseDialogue();
+        }
     }
 
 
