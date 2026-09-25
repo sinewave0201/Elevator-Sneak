@@ -8,13 +8,16 @@ public class PlayerController : MonoBehaviour
 
     [Header("Requirement")]
     [SerializeField] private Rigidbody2D body;
-    [SerializeField] private SpriteRenderer spriteRenderer;
+    [SerializeField] private Transform characterVisual;
     [SerializeField] private InputActionReference moveAction;
     [SerializeField] private InputActionReference interactAction;
+    [SerializeField] private Animator mcAnimator;
 
     private InteractionManager interactionManager;
     private Collider2D interactable;
     private InputAction dialogueAction;
+
+    private Vector3 characterVisualScale;
 
     private float horizontalInput;
 
@@ -22,6 +25,9 @@ public class PlayerController : MonoBehaviour
     {
         interactionManager = GetComponent<InteractionManager>();
         dialogueAction = interactAction.asset.FindAction("PC-Default/Dialogue", true);
+        mcAnimator.SetBool("isWalking", false);
+        //in charge of fliping
+        characterVisualScale = characterVisual.localScale;
 
         Debug.Log("InteractionManager: " + interactionManager);
     }
@@ -53,9 +59,20 @@ public class PlayerController : MonoBehaviour
 
         horizontalInput = moveAction.action.ReadValue<Vector2>().x;
 
+        if (horizontalInput == 0f)
+        {
+            //not moving: update animation
+            mcAnimator.SetBool("isWalking", false);
+        }
         if (horizontalInput != 0f)
         {
-            spriteRenderer.flipX = horizontalInput < 0f;
+            //moving: update animation
+            mcAnimator.SetBool("isWalking", true);
+            Vector3 scale = characterVisualScale;
+            scale.x = Mathf.Abs(characterVisualScale.x)
+                    * (horizontalInput < 0f ? 1f : -1f);
+
+            characterVisual.localScale = scale;
         }
 
         // F is reserved for speaking.
