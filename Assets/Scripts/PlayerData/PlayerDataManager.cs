@@ -12,6 +12,7 @@ public class PlayerDataManager : MonoBehaviour
     public PlayerInventory Inventory => data.Inventory;
     public PlayerProgress Progress => data.Progress;
     public PlayerDisguise Disguise => data.Disguise;
+    public PlayerTaskTimer TaskTimer => data.TaskTimer;
 
     [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
     private static void ResetStaticState()
@@ -36,6 +37,11 @@ public class PlayerDataManager : MonoBehaviour
     {
         if (Instance == this)
             Instance = null;
+    }
+
+    private void Update()
+    {
+        data.TaskTimer.Tick(Time.deltaTime);
     }
 
     public void StartNewGame()
