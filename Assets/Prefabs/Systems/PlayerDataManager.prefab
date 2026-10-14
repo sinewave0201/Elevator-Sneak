@@ -71,5 +71,6 @@ MonoBehaviour:
       startingDisguise: 0
       currentDisguise: 0
     taskTimer:
+      Task: {fileID: 11400000, guid: 89d96f5d5cf4ef441b00e873e99b201a, type: 2}
       elevatorTimeMultiplier: 1
       stairsTimeMultiplier: 2
