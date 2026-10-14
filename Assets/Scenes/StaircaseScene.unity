@@ -648,7 +648,6 @@ GameObject:
   m_Component:
   - component: {fileID: 725809181}
   - component: {fileID: 725809180}
-  - component: {fileID: 725809179}
   - component: {fileID: 725809178}
   - component: {fileID: 725809182}
   m_Layer: 0
@@ -704,21 +703,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 4.4, y: 8.43}
   m_EdgeRadius: 0
---- !u!114 &725809179
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 725809177}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df8667a9baafe43fa8d042b26b18fbb2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SceneChangeInteraction
-  interactionPrompt: Interact
-  requirement: {fileID: 0}
-  sceneIndex: 0
 --- !u!212 &725809180
 SpriteRenderer:
   serializedVersion: 2
@@ -807,7 +791,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SceneChangeInteraction
   interactionPrompt: Interact
   requirement: {fileID: 0}
-  sceneIndex: 0
+  sceneIndex: 9
 --- !u!1 &792627501
 GameObject:
   m_ObjectHideFlags: 0
@@ -1137,7 +1121,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1282624361}
   - component: {fileID: 1282624360}
-  - component: {fileID: 1282624359}
   - component: {fileID: 1282624358}
   - component: {fileID: 1282624362}
   m_Layer: 0
@@ -1193,21 +1176,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 4.4, y: 8.43}
   m_EdgeRadius: 0
---- !u!114 &1282624359
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1282624357}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df8667a9baafe43fa8d042b26b18fbb2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SceneChangeInteraction
-  interactionPrompt: Interact
-  requirement: {fileID: 0}
-  sceneIndex: 0
 --- !u!212 &1282624360
 SpriteRenderer:
   serializedVersion: 2
@@ -1296,7 +1264,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SceneChangeInteraction
   interactionPrompt: Interact
   requirement: {fileID: 0}
-  sceneIndex: 0
+  sceneIndex: 10
 --- !u!1 &1550994073
 GameObject:
   m_ObjectHideFlags: 0
