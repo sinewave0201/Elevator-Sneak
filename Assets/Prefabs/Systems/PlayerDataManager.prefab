@@ -48,21 +48,16 @@ MonoBehaviour:
     stats:
       values:
       - type: 0
-        startingValue: 5
-        minimumValue: 0
-        maximumValue: 20
-        currentValue: 5
-      - type: 1
         startingValue: 0
         minimumValue: 0
         maximumValue: 100
         currentValue: 0
-      - type: 2
+      - type: 1
         startingValue: 1
         minimumValue: 0
         maximumValue: 10
         currentValue: 1
-      - type: 3
+      - type: 2
         startingValue: 0
         minimumValue: 0
         maximumValue: 100
@@ -75,3 +70,6 @@ MonoBehaviour:
     disguise:
       startingDisguise: 0
       currentDisguise: 0
+    taskTimer:
+      elevatorTimeMultiplier: 1
+      stairsTimeMultiplier: 2
