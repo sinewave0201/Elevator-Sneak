@@ -204,8 +204,8 @@ Transform:
   m_GameObject: {fileID: 33836077}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 10.66237, y: -4.4, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 11.5434, y: -4.8205, z: 0}
+  m_LocalScale: {x: 1.3324, y: 1.2249, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1518886739}
@@ -1415,8 +1415,8 @@ Transform:
   m_GameObject: {fileID: 748018873}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -18.707628, y: -4.3199997, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -19.2192, y: -4.6455, z: 0}
+  m_LocalScale: {x: 1.1817, y: 1.1713109, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1518886739}
@@ -2213,7 +2213,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SceneChangeInteraction
   interactionPrompt: Enter Staircase
   requirement: {fileID: 0}
-  sceneIndex: 8
+  sceneIndex: 2
 --- !u!1 &1408314199
 GameObject:
   m_ObjectHideFlags: 0
