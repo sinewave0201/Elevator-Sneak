@@ -264,6 +264,7 @@ The Task Timer manages one timed task at a time. It stores the active task, coun
 | `CurrentTask` | `TimedTaskDefinition` | The task the player is currently trying to finish; `null` means no timed task is active |
 | `RemainingSeconds` | `float` | The number of seconds the player has left |
 | `IsRunning` | `bool` | `true` while the timer is counting down; otherwise `false` |
+| `CurrentTimeMultiplier` | `float` | The current countdown speed: normally `1`, or `2` in the staircase scene by default |
 | `TravelMethod.Elevator` | `TravelMethod` | Use the elevator travel multiplier; currently `1x` |
 | `TravelMethod.Stairs` | `TravelMethod` | Use the stairs travel multiplier; currently `2x` |
 | `TimeChanged` | Event | Tells the UI that the displayed time should be updated |
@@ -305,6 +306,7 @@ timer.StartTask(getUniformTask);
 TimedTaskDefinition CurrentTask { get; }
 float RemainingSeconds { get; }
 bool IsRunning { get; }
+float CurrentTimeMultiplier { get; }
 ```
 
 ```csharp
@@ -312,8 +314,10 @@ PlayerTaskTimer timer = PlayerDataManager.Instance.TaskTimer;
 TimedTaskDefinition activeTask = timer.CurrentTask;
 float secondsLeft = timer.RemainingSeconds;
 bool timerIsRunning = timer.IsRunning;
+float countdownSpeed = timer.CurrentTimeMultiplier;
 // activeTask is the current objective, secondsLeft is its remaining time,
-// and timerIsRunning tells whether the countdown is active.
+// timerIsRunning tells whether the countdown is active, and countdownSpeed
+// shows the multiplier selected from the current scene.
 ```
 
 ### Complete the current task
@@ -339,23 +343,19 @@ void Update()
 }
 ```
 
-`Time.deltaTime` is the scaled game time that passed since the previous frame. `Tick` removes that small amount every frame, so the remaining time continuously counts down. At about 60 frames per second, approximately `0.0167` seconds is removed each frame, adding up to about one second per second while the game is not paused.
+`Time.deltaTime` is the scaled game time that passed since the previous frame. `Tick` multiplies it by `CurrentTimeMultiplier` and removes that amount every frame. At `1x`, one real-time second removes about one timer second. At `2x`, one real-time second removes about two timer seconds.
 
-### Spend travel time
+### Automatic scene multiplier
 
-```csharp
-void SpendTravelTime(float baseSeconds, TravelMethod method)
+`PlayerDataManager` listens for scene changes and selects the timer multiplier automatically:
+
+```text
+StaircaseScene -> Stairs multiplier, currently 2x
+ElevatorScene  -> Elevator multiplier, currently 1x
+Any other scene -> Normal 1x multiplier
 ```
 
-```csharp
-PlayerTaskTimer timer = PlayerDataManager.Instance.TaskTimer;
-timer.SpendTravelTime(10f, TravelMethod.Elevator); // Removes 10 seconds at the default 1x multiplier.
-timer.SpendTravelTime(10f, TravelMethod.Stairs);   // Removes 20 seconds at the default 2x multiplier.
-```
-
-This is a one-time additional travel cost, separate from the normal continuous countdown. Call it once when an interaction represents an instant trip between scenes: the Interaction System chooses Stairs or Elevator, and the Task Timer deducts the calculated travel time before the scene changes.
-
-If stairs are later represented by real-time walking instead of an instant scene transition, the normal clock already counts that walking time and this extra deduction may not be needed.
+The Interaction System only needs to load the correct scene. It should not call `SpendTravelTime`, because the Time System now handles the scene multiplier itself.
 
 ### Spend a fixed amount of time
 
@@ -391,7 +391,7 @@ void HandleTimeExpired()
 
 ### Complete timed task flow
 
-This example uses one shared `manager` field and one shared `timer` field. Dialogue, Interaction, and reward code call different methods on the same integration component at different moments, but every method works with the same `PlayerDataManager.Instance` and the same running timer.
+This example uses one shared `manager` field and one shared `timer` field. Dialogue and reward code call different methods on the same integration component. Scene changes do not need timer code because `PlayerDataManager` applies the travel multiplier automatically.
 
 ```csharp
 public class TimedUniformTaskIntegration : MonoBehaviour
@@ -413,12 +413,6 @@ public class TimedUniformTaskIntegration : MonoBehaviour
     {
         // Dialogue calls this when the NPC gives the player the objective.
         timer.StartTask(getUniformTask);
-    }
-
-    public void OnStairsUsed()
-    {
-        // The stair interaction calls this once before changing scenes.
-        timer.SpendTravelTime(10f, TravelMethod.Stairs);
     }
 
     public void OnUniformReceived()
@@ -447,7 +441,7 @@ public class TimedUniformTaskIntegration : MonoBehaviour
 }
 ```
 
-The methods are connected through the shared fields: `Awake` gets the one Singleton manager once, `OnUniformTaskAccepted` starts its timer, `OnStairsUsed` deducts time from that same timer, and `OnUniformReceived` completes that same timer. `OnDestroy` unsubscribes the event when this integration component is removed.
+The methods are connected through the shared fields: `Awake` gets the one Singleton manager once, `OnUniformTaskAccepted` starts its timer, and `OnUniformReceived` completes that same timer. If the player enters `StaircaseScene` between those actions, the Time System automatically changes the countdown to the stairs multiplier. `OnDestroy` unsubscribes the event when this integration component is removed.
 
 ### Give a uniform after dialogue
 
