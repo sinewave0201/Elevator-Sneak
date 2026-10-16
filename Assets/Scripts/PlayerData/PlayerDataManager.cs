@@ -1,9 +1,14 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 [DefaultExecutionOrder(-1000)]
 public class PlayerDataManager : MonoBehaviour
 {
     public static PlayerDataManager Instance { get; private set; }
+
+    [Header("Task Timer Scenes")]
+    [SerializeField] private string staircaseSceneName = "StaircaseScene";
+    [SerializeField] private string elevatorSceneName = "ElevatorScene";
 
     [SerializeField] private PlayerData data = new PlayerData();
 
@@ -31,12 +36,17 @@ public class PlayerDataManager : MonoBehaviour
         Instance = this;
         DontDestroyOnLoad(gameObject);
         data.Initialize();
+        SceneManager.sceneLoaded += HandleSceneLoaded;
+        ApplySceneTimeMultiplier(SceneManager.GetActiveScene());
     }
 
     private void OnDestroy()
     {
-        if (Instance == this)
-            Instance = null;
+        if (Instance != this)
+            return;
+
+        SceneManager.sceneLoaded -= HandleSceneLoaded;
+        Instance = null;
     }
 
     private void Update()
@@ -47,5 +57,28 @@ public class PlayerDataManager : MonoBehaviour
     public void StartNewGame()
     {
         data.Reset();
+        ApplySceneTimeMultiplier(SceneManager.GetActiveScene());
+    }
+
+    private void HandleSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        ApplySceneTimeMultiplier(scene);
+    }
+
+    private void ApplySceneTimeMultiplier(Scene scene)
+    {
+        if (scene.name == staircaseSceneName)
+        {
+            data.TaskTimer.SetTimeMultiplier(TravelMethod.Stairs);
+            return;
+        }
+
+        if (scene.name == elevatorSceneName)
+        {
+            data.TaskTimer.SetTimeMultiplier(TravelMethod.Elevator);
+            return;
+        }
+
+        data.TaskTimer.ResetTimeMultiplier();
     }
 }
