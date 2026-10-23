@@ -1,0 +1,84 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dff2d470d2bdbbd4ea3db1789368bf1a, type: 3}
+  m_Name: Receptionist
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueConversation
+  defaultCharacter: {fileID: 0}
+  startNodeId: start
+  nodes:
+  - id: start
+    speakerName: MC
+    characterProfile: {fileID: 0}
+    dialogueLines:
+    - text: "\u2026ughhhh."
+    - text: Just five more minutes please. Hehe.
+    - text: "\u2026why is it so bright outside\u2026\r\n"
+    - text: "\u2026wait. What time is it?"
+    - text: 'Oh no. '
+    - text: 'Oh no. '
+    - text: "\u2026why isn\u2019t my damn ID working??? Do I not know how to use
+        an elevator??? "
+    options:
+    - text: continue
+      nextNodeId: 1
+      endsConversation: 0
+  - id: 1
+    speakerName: Receptionist
+    characterProfile: {fileID: 0}
+    dialogueLines:
+    - text: "\u2026Hey new kid. You know you don\u2019t have access, right? "
+    options:
+    - text: continue
+      nextNodeId: 2
+      endsConversation: 0
+  - id: 2
+    speakerName: MC
+    characterProfile: {fileID: 0}
+    dialogueLines:
+    - text: "What? But I\u2019m a rightful employee-\r "
+    options:
+    - text: continue
+      nextNodeId: 3
+      endsConversation: 0
+  - id: 3
+    speakerName: Receptionist
+    characterProfile: {fileID: 0}
+    dialogueLines:
+    - text: " Did you not go to new hire orientation? The elevators are restricted
+        access. You\u2019ll have to take the stairs.\r "
+    options:
+    - text: continue
+      nextNodeId: 4
+      endsConversation: 0
+  - id: 4
+    speakerName: MC
+    characterProfile: {fileID: 0}
+    dialogueLines:
+    - text: "\u2026I\u2019m going to get fired. How do I even get up to the 20th
+        floor in\u202610 MINUTES? WHAT THE ACTUAL-\r "
+    - text: "Miss, can I really not use the elevator? It\u2019s an emergency.\r "
+    options:
+    - text: continue
+      nextNodeId: 5
+      endsConversation: 0
+  - id: 5
+    speakerName: Receptionist
+    characterProfile: {fileID: 0}
+    dialogueLines:
+    - text: "Kid, I can\u2019t open the damn elevator for you. You can only use it
+        if you have the right clearance.\r"
+    - text: "*sigh* I really don\u2019t get paid enough to deal with dumbass new
+        hires like you\u2026\r"
+    options:
+    - text: go away
+      nextNodeId: 
+      endsConversation: 1
