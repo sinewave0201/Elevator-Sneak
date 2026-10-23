@@ -1071,6 +1071,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SceneChangeInteraction
   interactionPrompt: Enter Elevator
   requirement: {fileID: 11400000, guid: 8211e33feeb3cf248b95f1d2936d8638, type: 2}
+  interactionKey: 19
   sceneIndex: 1
 --- !u!1 &590705680
 GameObject:
@@ -2193,6 +2194,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SceneChangeInteraction
   interactionPrompt: Enter Staircase
   requirement: {fileID: 0}
+  interactionKey: 19
   sceneIndex: 3
 --- !u!1 &1375518321
 GameObject:
@@ -10347,8 +10349,8 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -848436961
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
@@ -10470,6 +10472,7 @@ GameObject:
   - component: {fileID: 8011902235996731960}
   - component: {fileID: 8306634275218658875}
   - component: {fileID: 4297701322599140644}
+  - component: {fileID: 8306634275218658876}
   m_Layer: 0
   m_Name: Npc-Receptionist
   m_TagString: Untagged
@@ -10549,6 +10552,22 @@ MonoBehaviour:
     to the object
   optionTwo: Goodbye.
   responseToOptionTwo: and test if dialogue system is working
+--- !u!114 &8306634275218658876
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5652712222569546972}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c3601aece4244b519beb770fabe3087, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueInteraction
+  interactionPrompt: Interact
+  requirement: {fileID: 0}
+  interactionKey: 20
+  dialogueTrigger: {fileID: 8306634275218658875}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
