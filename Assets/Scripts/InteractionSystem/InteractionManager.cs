@@ -1,11 +1,11 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class InteractionManager : MonoBehaviour
 {
     [SerializeField] private InteractionUI interactionUI;
 
     private Interaction currentInteraction;
-    private bool hasInteracted;
     private PlayerController player; // probably should change this to some data holding class instead of the controller itself later?
 
     private void Awake() {
@@ -16,9 +16,9 @@ public class InteractionManager : MonoBehaviour
         Interaction interaction = c.GetComponent<Interaction>();
         if (interaction != null && interaction.CanInteract(player)) {
             currentInteraction = interaction;
-            hasInteracted = false;
             if (interactionUI != null) {
-                interactionUI.Show(interaction);
+                string keyLabel = currentInteraction.InteractionKey.ToString();
+                interactionUI.Show(currentInteraction, keyLabel);
             }
         }
     }
@@ -27,18 +27,37 @@ public class InteractionManager : MonoBehaviour
         Interaction interaction = c.GetComponent<Interaction>();
         if (currentInteraction == interaction) {
             currentInteraction = null;
-            hasInteracted = false;
             if (interactionUI != null) {
                 interactionUI.Hide();
             }
         }
     }
 
-    public void Interact() {
-        if (currentInteraction == null || hasInteracted) {
+    private void Update()
+    {
+        if (DialogueManager.Instance != null && DialogueManager.Instance.IsOpen)
+        {
+            if (interactionUI != null)
+                interactionUI.Hide();
+
             return;
         }
-        hasInteracted = true;
+        if (currentInteraction == null)
+            return;
+
+        Keyboard keyboard = Keyboard.current;
+
+        if (keyboard != null &&
+            keyboard[currentInteraction.InteractionKey].wasPressedThisFrame)
+        {
+            Interact();
+        }
+    }
+
+    public void Interact() {
+        if (currentInteraction == null) {
+            return;
+        }
         currentInteraction.Interact(player);
     }
 }
