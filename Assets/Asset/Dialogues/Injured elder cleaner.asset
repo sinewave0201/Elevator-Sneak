@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dff2d470d2bdbbd4ea3db1789368bf1a, type: 3}
+  m_Name: Injured elder cleaner
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueConversation
+  defaultCharacter: {fileID: 0}
+  startNodeId: start
+  nodes:
+  - id: start
+    speakerName: 
+    characterProfile: {fileID: 0}
+    dialogueLines:
+    - text: "\u2026I want\u2026donuts\u2026"
+    options:
+    - text: what?
+      nextNodeId: give broken broomstick
+      endsConversation: 0
+  - id: give broken broomstick
+    speakerName: 
+    characterProfile: {fileID: 0}
+    dialogueLines:
+    - text: ....zzzzz......
+    options:
+    - text: get broken broomstick
+      nextNodeId: 
+      endsConversation: 1

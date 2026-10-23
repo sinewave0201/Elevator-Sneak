@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dff2d470d2bdbbd4ea3db1789368bf1a, type: 3}
+  m_Name: Terrified junior cleaner
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueConversation
+  defaultCharacter: {fileID: 0}
+  startNodeId: start
+  nodes:
+  - id: start
+    speakerName: Terrfied junior cleaner
+    characterProfile: {fileID: 0}
+    dialogueLines:
+    - text: Ughh...
+    - text: I don't want to go to work anymore...
+    - text: It's terrifiying...
+    options:
+    - text: Who are you?
+      nextNodeId: identity
+      endsConversation: 0
+    - text: What's going on?
+      nextNodeId: event
+      endsConversation: 0
+    - text: Goodbye.
+      nextNodeId: 
+      endsConversation: 1
+  - id: identity
+    speakerName: Terrfied junior cleaner
+    characterProfile: {fileID: 0}
+    dialogueLines:
+    - text: 'I am a junior cleaner. I clean this level. '
+    - text: You must be new, I never seen you here...
+    options:
+    - text: what's going on?
+      nextNodeId: event
+      endsConversation: 0
+    - text: Good bye.
+      nextNodeId: 
+      endsConversation: 1
+  - id: event
+    speakerName: Terrfied junior cleaner
+    characterProfile: {fileID: 0}
+    dialogueLines:
+    - text: Someone just take my... ugh, I can't tell you that.
+    - text: 'Report the cleaner in level 4, ok? They are doing some..bad things there. '
+    options:
+    - text: Who are you?
+      nextNodeId: identity
+      endsConversation: 0
+    - text: Goodbye.
+      nextNodeId: 
+      endsConversation: 1
