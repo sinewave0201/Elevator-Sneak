@@ -96,7 +96,7 @@ public class DialogueManager : MonoBehaviour
     void ShowLine()
     {
         HideChoices();
-        nodeLabel.text = $"[DIALOGUE NODE] {node.SpeakerName.ToUpperInvariant()}.";
+        nodeLabel.text = node.SpeakerName.ToUpperInvariant();
         dialogueText.text = node.DialogueLines.Count == 0 ? string.Empty : node.DialogueLines[lineIndex].Text;
         dialogueText.maxVisibleCharacters = 0;
         dialogueText.ForceMeshUpdate();
