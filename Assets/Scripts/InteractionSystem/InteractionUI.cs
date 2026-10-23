@@ -5,8 +5,8 @@ public class InteractionUI : MonoBehaviour
 {
     [SerializeField] private TMP_Text promptText;
 
-    public void Show(Interaction interaction) {
-        promptText.text = "[E] " + interaction.InteractionPrompt;
+    public void Show(Interaction interaction, string keyLabel) {
+        promptText.text = promptText.text = $"[{keyLabel}] {interaction.InteractionPrompt}";
         gameObject.SetActive(true);
     }
 

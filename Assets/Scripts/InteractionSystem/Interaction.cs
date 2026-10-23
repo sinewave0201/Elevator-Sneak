@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 // base class for all interactions
 // probably should not be passing playerController and instead some
@@ -7,7 +8,9 @@ public abstract class Interaction : MonoBehaviour
 {
     [SerializeField] private string interactionPrompt = "Interact";
     [SerializeField] private InteractionRequirement requirement;
-
+    [SerializeField] private Key interactionKey = Key.E;
+    
+    public Key InteractionKey => interactionKey;
     public string InteractionPrompt => interactionPrompt;
 
     public virtual bool CanInteract(PlayerController player)

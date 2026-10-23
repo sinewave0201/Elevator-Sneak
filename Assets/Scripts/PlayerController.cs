@@ -10,12 +10,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Rigidbody2D body;
     [SerializeField] private Transform characterVisual;
     [SerializeField] private InputActionReference moveAction;
-    [SerializeField] private InputActionReference interactAction;
     [SerializeField] private Animator mcAnimator;
-
-    private InteractionManager interactionManager;
-    private Collider2D interactable;
-    private InputAction dialogueAction;
+    [SerializeField] private InputActionReference dialogueAdvanceAction;
 
     private Vector3 characterVisualScale;
 
@@ -23,28 +19,25 @@ public class PlayerController : MonoBehaviour
 
     private void Awake()
     {
-        interactionManager = GetComponent<InteractionManager>();
-        dialogueAction = interactAction.asset.FindAction("PC-Default/Dialogue", true);
         mcAnimator.SetBool("isWalking", false);
         //in charge of fliping
         characterVisualScale = characterVisual.localScale;
-
-        Debug.Log("InteractionManager: " + interactionManager);
     }
 
     private void OnEnable()
     {
-        dialogueAction?.Enable();
+        dialogueAdvanceAction?.action.Enable();
     }
 
     private void OnDisable()
     {
-        dialogueAction?.Disable();
+        dialogueAdvanceAction?.action.Disable();
     }
 
     private void Update()
     {
-        bool dialoguePressed = dialogueAction.WasPerformedThisFrame();
+        bool dialoguePressed = dialogueAdvanceAction != null && dialogueAdvanceAction.action.WasPerformedThisFrame();
+
 
         // F advances or closes dialogue and blocks movement/other interactions while it is open.
         if (DialogueManager.Instance != null && DialogueManager.Instance.IsOpen)
@@ -74,43 +67,7 @@ public class PlayerController : MonoBehaviour
 
             characterVisual.localScale = scale;
         }
-
-        // F is reserved for speaking.
-        if (dialoguePressed && interactable != null)
-        {
-            DialogueTrigger dialogueTrigger = interactable.GetComponent<DialogueTrigger>();
-
-            if (dialogueTrigger != null)
-                dialogueTrigger.Interact();
-        }
-
-        if (interactAction.action.WasPerformedThisFrame())//if e is pressed
-        {
-            Debug.Log("e is pressed");
-
-            if (interactionManager != null)
-                interactionManager.Interact();
-        }
     }
-
-    //interaction logic
-    void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.GetComponent<DialogueTrigger>() != null)
-            interactable = other;
-    }
-
-    void OnTriggerExit2D(Collider2D other)
-    {
-        if (interactable == other)
-        {
-            interactable = null;
-
-            if (DialogueManager.Instance != null && DialogueManager.Instance.IsOpen)
-                DialogueManager.Instance.CloseDialogue();
-        }
-    }
-
     private void FixedUpdate()
     {
         body.linearVelocity = new Vector2(horizontalInput * moveSpeed, body.linearVelocityY);
