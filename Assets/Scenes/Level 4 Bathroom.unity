@@ -889,6 +889,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SceneChangeInteraction
   interactionPrompt: Interact
   requirement: {fileID: 0}
+  interactionKey: 19
   sceneIndex: 9
 --- !u!1 &792627501
 GameObject:
@@ -10846,6 +10847,7 @@ GameObject:
   - component: {fileID: 693980789813979532}
   - component: {fileID: 1569903212269307279}
   - component: {fileID: 6713457396050501264}
+  - component: {fileID: 6713457396050501265}
   m_Layer: 0
   m_Name: Npc  - cleaner bullies
   m_TagString: Untagged
@@ -10978,6 +10980,22 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!114 &6713457396050501265
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2953247183823230824}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c3601aece4244b519beb770fabe3087, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueInteraction
+  interactionPrompt: Interact
+  requirement: {fileID: 0}
+  interactionKey: 20
+  dialogueTrigger: {fileID: 1569903212269307279}
 --- !u!1 &8561228458993738947
 GameObject:
   m_ObjectHideFlags: 0

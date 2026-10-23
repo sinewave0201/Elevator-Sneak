@@ -9927,6 +9927,7 @@ GameObject:
   - component: {fileID: 1899208058}
   - component: {fileID: 1899208057}
   - component: {fileID: 1899208059}
+  - component: {fileID: 1899208060}
   m_Layer: 0
   m_Name: Bathroom door_0
   m_TagString: Untagged
@@ -10064,6 +10065,22 @@ MonoBehaviour:
   responseToOptionOne: That is not important right now.
   optionTwo: Goodbye.
   responseToOptionTwo: Stay out of trouble.
+--- !u!114 &1899208060
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1899208054}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c3601aece4244b519beb770fabe3087, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueInteraction
+  interactionPrompt: Interact
+  requirement: {fileID: 0}
+  interactionKey: 20
+  dialogueTrigger: {fileID: 1899208059}
 --- !u!1 &1980330768
 GameObject:
   m_ObjectHideFlags: 0
@@ -10299,6 +10316,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.w
       value: 0.0061469446
       objectReference: {fileID: 0}
+    - target: {fileID: 8721728517572984723, guid: 02fc9b03fc52fdb4b8646b8b531be95e, type: 3}
+      propertyPath: dialogueAdvanceAction
+      value: 
+      objectReference: {fileID: -2851690719809656597, guid: 2a06f48caba6faf47930cfa74a171b30, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
