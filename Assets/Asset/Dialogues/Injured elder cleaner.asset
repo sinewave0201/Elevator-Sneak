@@ -16,7 +16,7 @@ MonoBehaviour:
   startNodeId: start
   nodes:
   - id: start
-    speakerName: 
+    speakerName: Injured elder cleaner
     characterProfile: {fileID: 0}
     dialogueLines:
     - text: "\u2026I want\u2026donuts\u2026"
@@ -25,7 +25,7 @@ MonoBehaviour:
       nextNodeId: give broken broomstick
       endsConversation: 0
   - id: give broken broomstick
-    speakerName: 
+    speakerName: Injured elder cleaner
     characterProfile: {fileID: 0}
     dialogueLines:
     - text: ....zzzzz......

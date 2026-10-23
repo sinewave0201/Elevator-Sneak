@@ -879,7 +879,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SceneChangeInteraction
   interactionPrompt: Interact
   requirement: {fileID: 0}
-  sceneIndex: 9
+  sceneIndex: 10
 --- !u!1 &792627501
 GameObject:
   m_ObjectHideFlags: 0
@@ -6193,7 +6193,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SceneChangeInteraction
   interactionPrompt: Interact
   requirement: {fileID: 0}
-  sceneIndex: 10
+  sceneIndex: 11
 --- !u!1 &1550994073
 GameObject:
   m_ObjectHideFlags: 0

@@ -2324,7 +2324,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SceneChangeInteraction
   interactionPrompt: Enter Staircase
   requirement: {fileID: 0}
-  sceneIndex: 2
+  sceneIndex: 3
 --- !u!1 &1375518321
 GameObject:
   m_ObjectHideFlags: 0

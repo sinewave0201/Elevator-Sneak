@@ -2324,7 +2324,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SceneChangeInteraction
   interactionPrompt: Enter Staircase
   requirement: {fileID: 0}
-  sceneIndex: 2
+  sceneIndex: 3
 --- !u!1 &1375518321
 GameObject:
   m_ObjectHideFlags: 0
@@ -10182,17 +10182,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1899208054}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c55a3423d1267e84bb1ecd3c86b6f3ce, type: 3}
+  m_Script: {fileID: 11500000, guid: df8667a9baafe43fa8d042b26b18fbb2, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DialogueTrigger
-  conversation: {fileID: 11400000, guid: 752fa0a24e0576e47813dadef02662a3, type: 2}
-  characterProfile: {fileID: 0}
-  speakerName: Stranger
-  openingLine: What do you want?
-  optionOne: Who are you?
-  responseToOptionOne: That is not important right now.
-  optionTwo: Goodbye.
-  responseToOptionTwo: Stay out of trouble.
+  m_EditorClassIdentifier: Assembly-CSharp::SceneChangeInteraction
+  interactionPrompt: Interact
+  requirement: {fileID: 0}
+  sceneIndex: 2
 --- !u!1 &1980330768
 GameObject:
   m_ObjectHideFlags: 0
