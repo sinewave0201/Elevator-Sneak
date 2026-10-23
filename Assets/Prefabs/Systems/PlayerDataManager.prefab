@@ -44,6 +44,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f75afd47ef6d4419823d034266386c7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerDataManager
+  staircaseSceneName: StaircaseScene
+  elevatorSceneName: ElevatorScene
   data:
     stats:
       values:
