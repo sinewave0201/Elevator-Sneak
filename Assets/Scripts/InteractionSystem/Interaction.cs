@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using System.Collections.Generic;
 
 // base class for all interactions
 // probably should not be passing playerController and instead some
@@ -19,4 +20,6 @@ public abstract class Interaction : MonoBehaviour
     }
 
     public abstract void Interact(PlayerController player);
+
+    public virtual void OnCompletion(List<ProgressFlag> flags = null) {}
 }
