@@ -10079,7 +10079,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DialogueInteraction
   interactionPrompt: Interact
   requirement: {fileID: 0}
-  interactionKey: 20
+  interactionKey: 19
   dialogueTrigger: {fileID: 1899208059}
 --- !u!1 &1980330768
 GameObject:
@@ -10317,6 +10317,10 @@ PrefabInstance:
       value: 0.0061469446
       objectReference: {fileID: 0}
     - target: {fileID: 8721728517572984723, guid: 02fc9b03fc52fdb4b8646b8b531be95e, type: 3}
+      propertyPath: interactAction
+      value: 
+      objectReference: {fileID: 6885399080441036536, guid: 2a06f48caba6faf47930cfa74a171b30, type: 3}
+    - target: {fileID: 8721728517572984723, guid: 02fc9b03fc52fdb4b8646b8b531be95e, type: 3}
       propertyPath: dialogueAdvanceAction
       value: 
       objectReference: {fileID: -2851690719809656597, guid: 2a06f48caba6faf47930cfa74a171b30, type: 3}
@@ -10395,6 +10399,10 @@ PrefabInstance:
     - target: {fileID: 1882642499268510115, guid: 0a9e5278d5b531645b797e781fa47367, type: 3}
       propertyPath: m_Name
       value: Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 1882642499268510115, guid: 0a9e5278d5b531645b797e781fa47367, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3095374094352094609, guid: 0a9e5278d5b531645b797e781fa47367, type: 3}
       propertyPath: m_Pivot.x

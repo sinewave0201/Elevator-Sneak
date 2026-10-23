@@ -890,7 +890,7 @@ MonoBehaviour:
   interactionPrompt: Interact
   requirement: {fileID: 0}
   interactionKey: 19
-  sceneIndex: 9
+  sceneIndex: 10
 --- !u!1 &792627501
 GameObject:
   m_ObjectHideFlags: 0
