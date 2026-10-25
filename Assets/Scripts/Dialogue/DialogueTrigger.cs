@@ -1,6 +1,5 @@
 using UnityEngine;
 
-[RequireComponent(typeof(Collider2D))]
 public class DialogueTrigger : MonoBehaviour
 {
     [SerializeField] private DialogueConversation conversation;
@@ -16,7 +15,5 @@ public class DialogueTrigger : MonoBehaviour
     public DialogueCharacterProfile CharacterProfile => characterProfile;
     private DialogueConversation legacyConversation;
     public DialogueConversation Conversation => conversation != null ? conversation : legacyConversation ??= DialogueConversation.CreateLegacy(speakerName, openingLine, optionOne, responseToOptionOne, optionTwo, responseToOptionTwo);
-    void Reset() => GetComponent<Collider2D>().isTrigger = true;
-    public void Interact() { if (DialogueManager.Instance == null) { Debug.LogError("No DialogueManager exists in the current scene.", this); return; } DialogueManager.Instance.StartDialogue(this); }
     void OnDestroy() { if (legacyConversation != null) Destroy(legacyConversation); }
 }

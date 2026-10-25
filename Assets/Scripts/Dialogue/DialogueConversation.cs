@@ -47,7 +47,9 @@ public class DialogueConversation : ScriptableObject
     [SerializeField] private DialogueCharacterProfile characterProfile;
     [SerializeField] private List<DialogueLine> dialogueLines = new();
     [SerializeField] private List<DialogueOption> options = new();
+    [SerializeField] private List<ProgressFlag> flagsToSet = new(); // flags to set once this node is reached.
     public string Id => id; public string SpeakerName => speakerName; public DialogueCharacterProfile CharacterProfile => characterProfile;
+    public List<ProgressFlag> FlagsToSet => flagsToSet;
     public IReadOnlyList<DialogueLine> DialogueLines => dialogueLines; public IReadOnlyList<DialogueOption> Options => options;
     public DialogueNode(string id, string speaker, IEnumerable<string> lines, IEnumerable<DialogueOption> options) { this.id = id; speakerName = speaker; dialogueLines = new(); foreach (string line in lines) dialogueLines.Add(new DialogueLine(line)); this.options = new(options); }
 }

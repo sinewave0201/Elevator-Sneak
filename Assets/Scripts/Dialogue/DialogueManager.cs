@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using System;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -39,6 +40,9 @@ public class DialogueManager : MonoBehaviour
     Coroutine typingRoutine;
     Coroutine cursorRoutine;
 
+    private Action<List<ProgressFlag>> dialogueCompletionCallback;
+    private List<ProgressFlag> pendingFlags;
+
     void Awake()
     {
         if (Instance != null && Instance != this) { Destroy(gameObject); return; }
@@ -46,14 +50,13 @@ public class DialogueManager : MonoBehaviour
         if (dialoguePanel != null) dialoguePanel.SetActive(false);
     }
 
-    public void StartDialogue(DialogueTrigger dialogue)
+    public void StartDialogue(DialogueTrigger dialogue, Action<List<ProgressFlag>> callback = null)
     {
         if (dialogue == null || dialogue.Conversation == null) return;
         if (!dialogue.Conversation.Validate(out string error)) { Debug.LogError(error, dialogue); return; }
         trigger = dialogue;
         conversation = dialogue.Conversation;
         pendingFlags = new List<ProgressFlag>();
-
         dialogueCompletionCallback = callback;
         dialoguePanel.SetActive(true);
         ShowNode(conversation.GetStartNode());
@@ -73,7 +76,11 @@ public class DialogueManager : MonoBehaviour
         StopEffects();
         HideChoices();
         if (dialoguePanel != null) dialoguePanel.SetActive(false);
+
+        Action<List<ProgressFlag>> callback = dialogueCompletionCallback;
+        dialogueCompletionCallback = null;
         conversation = null; trigger = null; node = null; lineIndex = 0;
+        callback?.Invoke(pendingFlags);
     }
 
     void ShowNode(DialogueNode next)
@@ -82,13 +89,14 @@ public class DialogueManager : MonoBehaviour
         node = next; lineIndex = 0;
         DialogueCharacterProfile profile = next.CharacterProfile ?? conversation.DefaultCharacter ?? trigger.CharacterProfile;
         ApplyProfile(profile, next.SpeakerName);
+        ApplyNodeFlags(next);
         ShowLine();
     }
 
     void ShowLine()
     {
         HideChoices();
-        nodeLabel.text = $"[DIALOGUE NODE] {node.SpeakerName.ToUpperInvariant()}.";
+        nodeLabel.text = node.SpeakerName.ToUpperInvariant();
         dialogueText.text = node.DialogueLines.Count == 0 ? string.Empty : node.DialogueLines[lineIndex].Text;
         dialogueText.maxVisibleCharacters = 0;
         dialogueText.ForceMeshUpdate();
