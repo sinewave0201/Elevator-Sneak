@@ -10079,7 +10079,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DialogueInteraction
   interactionPrompt: Interact
   requirement: {fileID: 0}
-  interactionKey: 19
+  interactionKey: 20
   dialogueTrigger: {fileID: 1899208059}
 --- !u!1 &1980330768
 GameObject:

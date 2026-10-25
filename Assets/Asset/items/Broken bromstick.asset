@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c93b5132e50c45ce8e0c5683c08d6e8e, type: 3}
-  m_Name: stolen researcher ID
+  m_Name: Broken bromstick
   m_EditorClassIdentifier: Assembly-CSharp::ItemDefinition
-  itemId: Stolen Researcher ID
-  displayName: 
+  itemId: 2
+  displayName: Broken bromstick
   description: 
   icon: {fileID: 0}
   stackable: 0

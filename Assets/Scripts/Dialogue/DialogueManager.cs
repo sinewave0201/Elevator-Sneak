@@ -76,7 +76,7 @@ public class DialogueManager : MonoBehaviour
         StopEffects();
         HideChoices();
         if (dialoguePanel != null) dialoguePanel.SetActive(false);
-        
+
         Action<List<ProgressFlag>> callback = dialogueCompletionCallback;
         dialogueCompletionCallback = null;
         conversation = null; trigger = null; node = null; lineIndex = 0;
@@ -157,6 +157,7 @@ public class DialogueManager : MonoBehaviour
     {
         if (index < 0 || index >= node.Options.Count) return;
         DialogueOption option = node.Options[index];
+        GiveOptionItems(option);
         if (option.EndsConversation || string.IsNullOrWhiteSpace(option.NextNodeId)) { CloseDialogue(); return; }
         DialogueNode next = conversation.FindNode(option.NextNodeId);
         if (next == null) { Debug.LogError($"Dialogue node '{option.NextNodeId}' was not found.", conversation); CloseDialogue(); return; }
@@ -203,6 +204,24 @@ public class DialogueManager : MonoBehaviour
     private void ApplyNodeFlags(DialogueNode n) {
         foreach (ProgressFlag p in n.FlagsToSet) {
             pendingFlags.Add(p);
+        }
+    }
+
+    private void GiveOptionItems(DialogueOption option)
+    {
+        PlayerDataManager manager = PlayerDataManager.Instance;
+        if (manager == null || manager.Inventory == null)
+        {
+            Debug.LogError("Player inventory is unavailable.", this);
+            return;
+        }
+
+        foreach (ItemDefinition item in option.ObjectsToGive)
+        {
+            if (item != null && !manager.Inventory.AddItem(item))
+            {
+                Debug.LogWarning($"Could not add item '{item.name}' to the player inventory.", this);
+            }
         }
     }
 }
