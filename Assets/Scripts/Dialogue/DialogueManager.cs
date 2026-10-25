@@ -52,6 +52,9 @@ public class DialogueManager : MonoBehaviour
         if (!dialogue.Conversation.Validate(out string error)) { Debug.LogError(error, dialogue); return; }
         trigger = dialogue;
         conversation = dialogue.Conversation;
+        pendingFlags = new List<ProgressFlag>();
+
+        dialogueCompletionCallback = callback;
         dialoguePanel.SetActive(true);
         ShowNode(conversation.GetStartNode());
     }
@@ -146,6 +149,7 @@ public class DialogueManager : MonoBehaviour
     {
         if (index < 0 || index >= node.Options.Count) return;
         DialogueOption option = node.Options[index];
+        GiveOptionItems(option);
         if (option.EndsConversation || string.IsNullOrWhiteSpace(option.NextNodeId)) { CloseDialogue(); return; }
         DialogueNode next = conversation.FindNode(option.NextNodeId);
         if (next == null) { Debug.LogError($"Dialogue node '{option.NextNodeId}' was not found.", conversation); CloseDialogue(); return; }
@@ -187,5 +191,29 @@ public class DialogueManager : MonoBehaviour
         if (cursorRoutine != null) StopCoroutine(cursorRoutine);
         typingRoutine = null; cursorRoutine = null;
         if (terminalCursor != null) terminalCursor.gameObject.SetActive(false);
+    }
+
+    private void ApplyNodeFlags(DialogueNode n) {
+        foreach (ProgressFlag p in n.FlagsToSet) {
+            pendingFlags.Add(p);
+        }
+    }
+
+    private void GiveOptionItems(DialogueOption option)
+    {
+        PlayerDataManager manager = PlayerDataManager.Instance;
+        if (manager == null || manager.Inventory == null)
+        {
+            Debug.LogError("Player inventory is unavailable.", this);
+            return;
+        }
+
+        foreach (ItemDefinition item in option.ObjectsToGive)
+        {
+            if (item != null && !manager.Inventory.AddItem(item))
+            {
+                Debug.LogWarning($"Could not add item '{item.name}' to the player inventory.", this);
+            }
+        }
     }
 }

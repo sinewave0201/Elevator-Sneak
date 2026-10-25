@@ -52,4 +52,19 @@ public class DialogueConversation : ScriptableObject
     public DialogueNode(string id, string speaker, IEnumerable<string> lines, IEnumerable<DialogueOption> options) { this.id = id; speakerName = speaker; dialogueLines = new(); foreach (string line in lines) dialogueLines.Add(new DialogueLine(line)); this.options = new(options); }
 }
 [Serializable] public class DialogueLine { [SerializeField, TextArea(2, 5)] private string text; public string Text => text; public DialogueLine(string text) => this.text = text; }
-[Serializable] public class DialogueOption { [SerializeField] private string text = "Continue"; [SerializeField] private string nextNodeId; [SerializeField] private bool endsConversation; public string Text => text; public string NextNodeId => nextNodeId; public bool EndsConversation => endsConversation; public DialogueOption(string text, string next, bool ends) { this.text = text; nextNodeId = next; endsConversation = ends; } }
+[Serializable] public class DialogueOption { 
+    [SerializeField] private string text = "Continue"; 
+    [SerializeField] private List<ItemDefinition> objectsToGive = new();
+    [SerializeField] private string nextNodeId; 
+    [SerializeField] private bool endsConversation; 
+
+    public string Text => text; 
+    public IReadOnlyList<ItemDefinition> ObjectsToGive => objectsToGive;
+    public string NextNodeId => nextNodeId; 
+    public bool EndsConversation => endsConversation;
+    public DialogueOption(string text, string next, bool ends) { 
+        this.text = text;
+        nextNodeId = next;
+        endsConversation = ends;
+    }
+}

@@ -22,8 +22,10 @@ MonoBehaviour:
     - text: "\u2026I want\u2026donuts\u2026"
     options:
     - text: what?
+      objectsToGive: []
       nextNodeId: give broken broomstick
       endsConversation: 0
+    flagsToSet: 
   - id: give broken broomstick
     speakerName: Injured elder cleaner
     characterProfile: {fileID: 0}
@@ -31,5 +33,8 @@ MonoBehaviour:
     - text: ....zzzzz......
     options:
     - text: get broken broomstick
+      objectsToGive:
+      - {fileID: 11400000, guid: ee88543d961ee0647ba33898a41a92fd, type: 2}
       nextNodeId: 
       endsConversation: 1
+    flagsToSet: 
