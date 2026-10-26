@@ -339,6 +339,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4467419676764627631, guid: 237a519c5c92ab342bb0a5510fd29387, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4467419676764627631, guid: 237a519c5c92ab342bb0a5510fd29387, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.9972725
       objectReference: {fileID: 0}
@@ -356,11 +360,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4467419676764627631, guid: 237a519c5c92ab342bb0a5510fd29387, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 126
+      value: 38
       objectReference: {fileID: 0}
     - target: {fileID: 4535074318376049699, guid: 237a519c5c92ab342bb0a5510fd29387, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4915008886037003962, guid: 237a519c5c92ab342bb0a5510fd29387, type: 3}
+      propertyPath: m_ChildAlignment
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4915008886037003962, guid: 237a519c5c92ab342bb0a5510fd29387, type: 3}
+      propertyPath: m_ChildControlHeight
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4915008886037003962, guid: 237a519c5c92ab342bb0a5510fd29387, type: 3}
+      propertyPath: m_ReverseArrangement
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4915008886037003962, guid: 237a519c5c92ab342bb0a5510fd29387, type: 3}
+      propertyPath: m_ChildForceExpandHeight
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5148414297417843174, guid: 237a519c5c92ab342bb0a5510fd29387, type: 3}
       propertyPath: m_fontAsset
@@ -10315,6 +10335,10 @@ PrefabInstance:
     - target: {fileID: 8054701150768623054, guid: 02fc9b03fc52fdb4b8646b8b531be95e, type: 3}
       propertyPath: m_LocalRotation.w
       value: 0.0061469446
+      objectReference: {fileID: 0}
+    - target: {fileID: 8721728517572984723, guid: 02fc9b03fc52fdb4b8646b8b531be95e, type: 3}
+      propertyPath: moveSpeed
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8721728517572984723, guid: 02fc9b03fc52fdb4b8646b8b531be95e, type: 3}
       propertyPath: interactAction

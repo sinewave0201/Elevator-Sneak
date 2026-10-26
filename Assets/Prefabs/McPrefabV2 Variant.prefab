@@ -252,7 +252,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3d5d085905d1d74b92d770d6336b25a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
-  moveSpeed: 5
+  moveSpeed: 8
   body: {fileID: 6021285810752795151}
   characterVisual: {fileID: 5511732027570038961}
   moveAction: {fileID: 4624633793261962896, guid: 2a06f48caba6faf47930cfa74a171b30, type: 3}
