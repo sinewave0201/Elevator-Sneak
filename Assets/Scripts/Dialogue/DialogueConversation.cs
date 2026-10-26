@@ -53,7 +53,47 @@ public class DialogueConversation : ScriptableObject
     public IReadOnlyList<DialogueLine> DialogueLines => dialogueLines; public IReadOnlyList<DialogueOption> Options => options;
     public DialogueNode(string id, string speaker, IEnumerable<string> lines, IEnumerable<DialogueOption> options) { this.id = id; speakerName = speaker; dialogueLines = new(); foreach (string line in lines) dialogueLines.Add(new DialogueLine(line)); this.options = new(options); }
 }
-[Serializable] public class DialogueLine { [SerializeField, TextArea(2, 5)] private string text; public string Text => text; public DialogueLine(string text) => this.text = text; }
+[Serializable]
+public class DialogueLine
+{
+    [SerializeField, TextArea(2, 5)] private string text;
+    [SerializeField] private bool voice;
+    [SerializeField] private string selectedVoice = "af_nicole";
+    [SerializeField] private AudioClip wav;
+    [SerializeField, HideInInspector] private string generatedFingerprint;
+    [SerializeField, HideInInspector] private string generatedWavPath;
+
+    public string Text => text;
+    public bool VoiceEnabled => voice;
+    public string SelectedVoice => selectedVoice;
+    public AudioClip Wav => wav;
+
+    public DialogueLine(string text) => this.text = text;
+
+#if UNITY_EDITOR
+    public string GeneratedFingerprint => generatedFingerprint;
+    public string GeneratedWavPath => generatedWavPath;
+
+    public void SetDefaultVoice(string voiceName)
+    {
+        if (string.IsNullOrWhiteSpace(selectedVoice)) selectedVoice = voiceName;
+    }
+
+    public void SetGeneratedWav(AudioClip clip, string fingerprint, string assetPath)
+    {
+        wav = clip;
+        generatedFingerprint = fingerprint;
+        generatedWavPath = assetPath;
+    }
+
+    public void ClearGeneratedWav()
+    {
+        wav = null;
+        generatedFingerprint = string.Empty;
+        generatedWavPath = string.Empty;
+    }
+#endif
+}
 [Serializable] public class DialogueOption { 
     [SerializeField] private string text = "Continue"; 
     [SerializeField] private List<ItemDefinition> objectsToGive = new();

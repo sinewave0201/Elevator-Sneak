@@ -27,6 +27,8 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private RectTransform choicesRoot;
     [SerializeField] private Button choicePrefab;
     [SerializeField, Min(0f)] private float secondsPerCharacter = .018f;
+    [Header("Dialogue voice")]
+    [SerializeField] private AudioSource voiceAudioSource;
 
     public bool IsOpen => dialoguePanel != null && dialoguePanel.activeSelf;
     public bool IsTyping => typingRoutine != null;
@@ -47,6 +49,7 @@ public class DialogueManager : MonoBehaviour
     {
         if (Instance != null && Instance != this) { Destroy(gameObject); return; }
         Instance = this;
+        if (voiceAudioSource == null) voiceAudioSource = GetComponent<AudioSource>();
         if (dialoguePanel != null) dialoguePanel.SetActive(false);
     }
 
@@ -95,12 +98,14 @@ public class DialogueManager : MonoBehaviour
 
     void ShowLine()
     {
+        StopEffects();
         HideChoices();
         nodeLabel.text = node.SpeakerName.ToUpperInvariant();
-        dialogueText.text = node.DialogueLines.Count == 0 ? string.Empty : node.DialogueLines[lineIndex].Text;
+        DialogueLine currentLine = node.DialogueLines.Count == 0 ? null : node.DialogueLines[lineIndex];
+        dialogueText.text = currentLine?.Text ?? string.Empty;
         dialogueText.maxVisibleCharacters = 0;
         dialogueText.ForceMeshUpdate();
-        StopEffects();
+        PlayVoice(currentLine);
         terminalCursor.gameObject.SetActive(true);
         typingRoutine = StartCoroutine(TypeLine());
         cursorRoutine = StartCoroutine(BlinkCursor());
@@ -213,6 +218,25 @@ public class DialogueManager : MonoBehaviour
         if (cursorRoutine != null) StopCoroutine(cursorRoutine);
         typingRoutine = null; cursorRoutine = null;
         if (terminalCursor != null) terminalCursor.gameObject.SetActive(false);
+        if (voiceAudioSource != null) voiceAudioSource.Stop();
+    }
+
+    void PlayVoice(DialogueLine line)
+    {
+        if (line == null || !line.VoiceEnabled) return;
+        if (voiceAudioSource == null)
+        {
+            Debug.LogWarning("Dialogue voice is enabled, but the DialogueManager has no AudioSource.", this);
+            return;
+        }
+        if (line.Wav == null)
+        {
+            Debug.LogWarning($"Dialogue line has voice enabled but no generated WAV: '{line.Text}'", conversation);
+            return;
+        }
+
+        voiceAudioSource.clip = line.Wav;
+        voiceAudioSource.Play();
     }
 
     private void ApplyNodeFlags(DialogueNode n) {
