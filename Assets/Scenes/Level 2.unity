@@ -356,7 +356,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4467419676764627631, guid: 237a519c5c92ab342bb0a5510fd29387, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 126
+      value: 38
       objectReference: {fileID: 0}
     - target: {fileID: 4535074318376049699, guid: 237a519c5c92ab342bb0a5510fd29387, type: 3}
       propertyPath: m_IsActive
@@ -10115,8 +10115,8 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.04726462, y: 0.18906604}
-  m_Radius: 5.136698
+  m_Offset: {x: -0.026112804, y: 0.16791673}
+  m_Radius: 4.925184
 --- !u!212 &1899208058
 SpriteRenderer:
   serializedVersion: 2
@@ -10540,7 +10540,7 @@ Transform:
   m_GameObject: {fileID: 5652712222569546972}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -18.57, y: -0.5905, z: 0}
+  m_LocalPosition: {x: -17.54, y: -0.5905, z: 0}
   m_LocalScale: {x: 6.9054, y: 6.9054, z: 6.9054}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10580,8 +10580,8 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.004699129, y: -0.023496145}
-  m_Radius: 0.21617293
+  m_Offset: {x: 0.047650192, y: -0.023496145}
+  m_Radius: 0.17322187
 --- !u!114 &8306634275218658875
 MonoBehaviour:
   m_ObjectHideFlags: 0

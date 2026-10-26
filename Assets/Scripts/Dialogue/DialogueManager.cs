@@ -141,6 +141,7 @@ public class DialogueManager : MonoBehaviour
     void ShowChoices()
     {
         EnsureChoiceCount(node.Options.Count);
+        PositionChoices(node.Options.Count);
         for (int i = 0; i < node.Options.Count; i++)
         {
             int captured = i;
@@ -151,6 +152,19 @@ public class DialogueManager : MonoBehaviour
             choices[i].gameObject.SetActive(true);
         }
         choicesShowing = true;
+    }
+
+    void PositionChoices(int optionCount)
+    {
+        if (choicesRoot == null) return;
+
+        float verticalOffset = optionCount * 40f;
+        Vector2 offsetMin = choicesRoot.offsetMin;
+        Vector2 offsetMax = choicesRoot.offsetMax;
+        offsetMin.y = verticalOffset;
+        offsetMax.y = verticalOffset;
+        choicesRoot.offsetMin = offsetMin;
+        choicesRoot.offsetMax = offsetMax;
     }
 
     void SelectChoice(int index)
