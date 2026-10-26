@@ -20,9 +20,26 @@ MonoBehaviour:
     characterProfile: {fileID: 0}
     dialogueLines:
     - text: This bathroom is occupied.
+      voice: 1
+      selectedVoice: af_nicole
+      wav: {fileID: 8300000, guid: 1660d3f633e533f41a3cbee3d073e343, type: 3}
+      generatedFingerprint: 42797cd3d42376b3a25d7b7709e861bd
+      generatedWavPath: Assets/GeneratedAudio/Dialogues/Bathroom-Occupied_752fa0a2/00_start_00_af_nicole.wav
     - text: You can hear someone inside grunting.
+      voice: 1
+      selectedVoice: af_nicole
+      wav: {fileID: 8300000, guid: 8434c9266d333ec4a8db61edbabba103, type: 3}
+      generatedFingerprint: 7d7e1fe3329db7a580b224127b65e01d
+      generatedWavPath: Assets/GeneratedAudio/Dialogues/Bathroom-Occupied_752fa0a2/00_start_01_af_nicole.wav
     - text: A puff of smoke sneak through the gap under the door.
+      voice: 1
+      selectedVoice: af_nicole
+      wav: {fileID: 8300000, guid: 05a5b31ca4eefc640bebdaec509e8f99, type: 3}
+      generatedFingerprint: 11ea9a0f1d7de31f8ba0470d5c6e26a7
+      generatedWavPath: Assets/GeneratedAudio/Dialogues/Bathroom-Occupied_752fa0a2/00_start_02_af_nicole.wav
     options:
     - text: Go away.
+      objectsToGive: []
       nextNodeId: 
       endsConversation: 1
+    flagsToSet:
