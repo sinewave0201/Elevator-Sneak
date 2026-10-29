@@ -675,6 +675,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9168000745073719878, guid: 237a519c5c92ab342bb0a5510fd29387, type: 3}
+      propertyPath: m_overflowMode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 9168000745073719878, guid: 237a519c5c92ab342bb0a5510fd29387, type: 3}
       propertyPath: m_fontColor32.rgba
       value: 4293456107
       objectReference: {fileID: 0}
@@ -1092,6 +1096,7 @@ MonoBehaviour:
   interactionPrompt: Enter Elevator
   requirement: {fileID: 11400000, guid: 8211e33feeb3cf248b95f1d2936d8638, type: 2}
   interactionKey: 19
+  interactionSFX: {fileID: 8300000, guid: 41000dab97b6e374986e817a22b8ffaa, type: 3}
   sceneIndex: 1
 --- !u!1 &590705680
 GameObject:
@@ -2215,6 +2220,7 @@ MonoBehaviour:
   interactionPrompt: Enter Staircase
   requirement: {fileID: 0}
   interactionKey: 19
+  interactionSFX: {fileID: 8300000, guid: 0377175798349fd42b5d3ab542b31362, type: 3}
   sceneIndex: 3
 --- !u!1 &1375518321
 GameObject:
@@ -10100,6 +10106,7 @@ MonoBehaviour:
   interactionPrompt: Interact
   requirement: {fileID: 0}
   interactionKey: 20
+  interactionSFX: {fileID: 8300000, guid: 9e47b140a6c64bd4ab5434aa7ffceffa, type: 3}
   dialogueTrigger: {fileID: 1899208059}
 --- !u!1 &1980330768
 GameObject:
@@ -10620,6 +10627,7 @@ MonoBehaviour:
   interactionPrompt: Interact
   requirement: {fileID: 0}
   interactionKey: 20
+  interactionSFX: {fileID: 0}
   dialogueTrigger: {fileID: 8306634275218658875}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
