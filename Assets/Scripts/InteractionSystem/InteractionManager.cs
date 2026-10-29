@@ -4,9 +4,12 @@ using UnityEngine.InputSystem;
 public class InteractionManager : MonoBehaviour
 {
     [SerializeField] private InteractionUI interactionUI;
+    [SerializeField] private AudioSource SFXplayer;
 
     private Interaction currentInteraction;
     private PlayerController player; // probably should change this to some data holding class instead of the controller itself later?
+
+    private AudioClip currentSFX;
 
     private void Awake() {
         player = GetComponent<PlayerController>();
@@ -59,5 +62,12 @@ public class InteractionManager : MonoBehaviour
             return;
         }
         currentInteraction.Interact(player);
+
+        currentSFX = currentInteraction.interactionSFX;
+        if (currentSFX != null)
+        {
+            SFXplayer.clip = currentSFX;
+            SFXplayer.Play();
+        }
     }
 }

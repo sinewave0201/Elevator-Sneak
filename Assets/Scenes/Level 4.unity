@@ -1071,6 +1071,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SceneChangeInteraction
   interactionPrompt: Enter Elevator
   requirement: {fileID: 11400000, guid: 8211e33feeb3cf248b95f1d2936d8638, type: 2}
+  interactionKey: 19
+  interactionSFX: {fileID: 8300000, guid: 41000dab97b6e374986e817a22b8ffaa, type: 3}
   sceneIndex: 1
 --- !u!1 &467612659
 GameObject:
@@ -1121,6 +1123,7 @@ MonoBehaviour:
   choicesRoot: {fileID: 0}
   choicePrefab: {fileID: 0}
   secondsPerCharacter: 0.018
+  voiceAudioSource: {fileID: 0}
 --- !u!114 &467612661
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2324,6 +2327,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SceneChangeInteraction
   interactionPrompt: Enter Staircase
   requirement: {fileID: 0}
+  interactionKey: 19
+  interactionSFX: {fileID: 8300000, guid: 0377175798349fd42b5d3ab542b31362, type: 3}
   sceneIndex: 3
 --- !u!1 &1375518321
 GameObject:
@@ -10187,6 +10192,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SceneChangeInteraction
   interactionPrompt: Interact
   requirement: {fileID: 0}
+  interactionKey: 19
+  interactionSFX: {fileID: 8300000, guid: 0377175798349fd42b5d3ab542b31362, type: 3}
   sceneIndex: 2
 --- !u!1 &1980330768
 GameObject:
