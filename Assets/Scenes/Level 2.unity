@@ -10191,7 +10191,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c55a3423d1267e84bb1ecd3c86b6f3ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DialogueTrigger
-  conversation: {fileID: 11400000, guid: 752fa0a24e0576e47813dadef02662a3, type: 2}
+  conversation: {fileID: 11400000, guid: df57b6c7a53b511448631023e15c41a7, type: 2}
   characterProfile: {fileID: 0}
   speakerName: Stranger
   openingLine: What do you want?

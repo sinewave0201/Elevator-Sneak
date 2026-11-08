@@ -21,25 +21,25 @@ MonoBehaviour:
     dialogueLines:
     - text: This bathroom is occupied.
       voice: 1
-      selectedVoice: af_nicole
-      wav: {fileID: 8300000, guid: 1660d3f633e533f41a3cbee3d073e343, type: 3}
-      generatedFingerprint: 42797cd3d42376b3a25d7b7709e861bd
-      generatedWavPath: Assets/GeneratedAudio/Dialogues/Bathroom-Occupied_752fa0a2/00_start_00_af_nicole.wav
+      selectedVoice: af_alloy
+      wav: {fileID: 8300000, guid: 43f99f333e5423c43808613da8b320f0, type: 3}
+      generatedFingerprint: 2807bd2ab70ea1fa509bb7887b53d2c4
+      generatedWavPath: Assets/GeneratedAudio/Dialogues/Bathroom-Occupied_752fa0a2/00_start_00_af_alloy.wav
     - text: You can hear someone inside grunting.
       voice: 1
-      selectedVoice: af_nicole
-      wav: {fileID: 8300000, guid: 8434c9266d333ec4a8db61edbabba103, type: 3}
-      generatedFingerprint: 7d7e1fe3329db7a580b224127b65e01d
-      generatedWavPath: Assets/GeneratedAudio/Dialogues/Bathroom-Occupied_752fa0a2/00_start_01_af_nicole.wav
+      selectedVoice: af_alloy
+      wav: {fileID: 8300000, guid: 73f6c842861f9064dbda6471b5eb7016, type: 3}
+      generatedFingerprint: 56bd7ff6ba83ee4c350c38e45081054a
+      generatedWavPath: Assets/GeneratedAudio/Dialogues/Bathroom-Occupied_752fa0a2/00_start_01_af_alloy.wav
     - text: A puff of smoke sneak through the gap under the door.
       voice: 1
-      selectedVoice: af_nicole
-      wav: {fileID: 8300000, guid: 05a5b31ca4eefc640bebdaec509e8f99, type: 3}
-      generatedFingerprint: 11ea9a0f1d7de31f8ba0470d5c6e26a7
-      generatedWavPath: Assets/GeneratedAudio/Dialogues/Bathroom-Occupied_752fa0a2/00_start_02_af_nicole.wav
+      selectedVoice: af_alloy
+      wav: {fileID: 8300000, guid: 723c4d7a61a5d7b42a75128aee209a45, type: 3}
+      generatedFingerprint: 798411b546310c03a151a359e6251cdb
+      generatedWavPath: Assets/GeneratedAudio/Dialogues/Bathroom-Occupied_752fa0a2/00_start_02_af_alloy.wav
     options:
     - text: Go away.
       objectsToGive: []
       nextNodeId: 
       endsConversation: 1
-    flagsToSet:
+    flagsToSet: 
