@@ -24,7 +24,7 @@ public class DialogueConversation : ScriptableObject
         }
         if (FindNode(startNodeId) == null) { error = $"Start node '{startNodeId}' does not exist."; return false; }
         foreach (DialogueNode current in nodes) foreach (DialogueOption option in current.Options)
-            if (!option.EndsConversation && FindNode(option.NextNodeId) == null) { error = $"Option '{option.Text}' points to missing node '{option.NextNodeId}'."; return false; }
+            if (!option.EndsConversation && !option.JumpsToScene && FindNode(option.NextNodeId) == null) { error = $"Option '{option.Text}' points to missing node '{option.NextNodeId}'."; return false; }
         error = null; return true;
     }
     public static DialogueConversation CreateLegacy(string speaker, string opening, string first, string firstResponse, string second, string secondResponse)
@@ -43,6 +43,7 @@ public class DialogueConversation : ScriptableObject
 [Serializable] public class DialogueNode
 {
     [SerializeField] private string id = "node";
+    [SerializeField] private DialogueNameSource speakerNameSource = DialogueNameSource.Custom;
     [SerializeField] private string speakerName = "Stranger";
     [SerializeField] private DialogueCharacterProfile characterProfile;
     [SerializeField] private List<DialogueLine> dialogueLines = new();
@@ -52,6 +53,7 @@ public class DialogueConversation : ScriptableObject
     public List<ProgressFlag> FlagsToSet => flagsToSet;
     public IReadOnlyList<DialogueLine> DialogueLines => dialogueLines; public IReadOnlyList<DialogueOption> Options => options;
     public DialogueNode(string id, string speaker, IEnumerable<string> lines, IEnumerable<DialogueOption> options) { this.id = id; speakerName = speaker; dialogueLines = new(); foreach (string line in lines) dialogueLines.Add(new DialogueLine(line)); this.options = new(options); }
+    public string GetSpeakerName(string playerName) => speakerNameSource == DialogueNameSource.PlayerName ? playerName : speakerName;
 }
 [Serializable]
 public class DialogueLine
@@ -99,11 +101,24 @@ public class DialogueLine
     [SerializeField] private List<ItemDefinition> objectsToGive = new();
     [SerializeField] private string nextNodeId; 
     [SerializeField] private bool endsConversation; 
+    [SerializeField] private bool jumpToScene;
+    [SerializeField] private string sceneIndex;
 
     public string Text => text; 
     public IReadOnlyList<ItemDefinition> ObjectsToGive => objectsToGive;
     public string NextNodeId => nextNodeId; 
     public bool EndsConversation => endsConversation;
+    public bool JumpsToScene => jumpToScene;
+    public bool TryGetSceneIndex(out int index)
+    {
+        if (!jumpToScene)
+        {
+            index = default;
+            return false;
+        }
+
+        return int.TryParse(sceneIndex, out index);
+    }
     public DialogueOption(string text, string next, bool ends) { 
         this.text = text;
         nextNodeId = next;

@@ -5,6 +5,7 @@ using UnityEngine;
 [Serializable]
 public class PlayerStats
 {
+    [SerializeField] private string playerName = "MC";
     [SerializeField] private List<PlayerStatValue> values = new List<PlayerStatValue>();
 
     [NonSerialized] private Dictionary<PlayerStatType, PlayerStatValue> valuesByType;
@@ -17,6 +18,13 @@ public class PlayerStats
 
     [field: NonSerialized]
     public event Action PlayerExposed;
+
+    public string PlayerName => playerName;
+
+    public void SetPlayerName(string name)
+    {
+        playerName = name;
+    }
 
     public void Initialize()
     {

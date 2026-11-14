@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using System;
 
@@ -27,6 +28,7 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private RectTransform choicesRoot;
     [SerializeField] private Button choicePrefab;
     [SerializeField, Min(0f)] private float secondsPerCharacter = .018f;
+    
     [Header("Dialogue voice")]
     [SerializeField] private AudioSource voiceAudioSource;
 
@@ -37,6 +39,7 @@ public class DialogueManager : MonoBehaviour
     DialogueConversation conversation;
     DialogueTrigger trigger;
     DialogueNode node;
+    string currentSpeakerName;
     int lineIndex;
     bool choicesShowing;
     Coroutine typingRoutine;
@@ -90,8 +93,9 @@ public class DialogueManager : MonoBehaviour
     {
         if (next == null) { CloseDialogue(); return; }
         node = next; lineIndex = 0;
+        currentSpeakerName = next.GetSpeakerName(PlayerDataManager.Instance.Stats.PlayerName);
         DialogueCharacterProfile profile = next.CharacterProfile ?? conversation.DefaultCharacter ?? trigger.CharacterProfile;
-        ApplyProfile(profile, next.SpeakerName);
+        ApplyProfile(profile, currentSpeakerName);
         ApplyNodeFlags(next);
         ShowLine();
     }
@@ -100,7 +104,7 @@ public class DialogueManager : MonoBehaviour
     {
         StopEffects();
         HideChoices();
-        nodeLabel.text = node.SpeakerName.ToUpperInvariant();
+        nodeLabel.text = currentSpeakerName.ToUpperInvariant();
         DialogueLine currentLine = node.DialogueLines.Count == 0 ? null : node.DialogueLines[lineIndex];
         dialogueText.text = currentLine?.Text ?? string.Empty;
         dialogueText.maxVisibleCharacters = 0;
@@ -177,6 +181,12 @@ public class DialogueManager : MonoBehaviour
         if (index < 0 || index >= node.Options.Count) return;
         DialogueOption option = node.Options[index];
         GiveOptionItems(option);
+        if (option.TryGetSceneIndex(out int sceneIndex))
+        {
+            CloseDialogue();
+            SceneManager.LoadScene(sceneIndex);
+            return;
+        }
         if (option.EndsConversation || string.IsNullOrWhiteSpace(option.NextNodeId)) { CloseDialogue(); return; }
         DialogueNode next = conversation.FindNode(option.NextNodeId);
         if (next == null) { Debug.LogError($"Dialogue node '{option.NextNodeId}' was not found.", conversation); CloseDialogue(); return; }
@@ -201,7 +211,9 @@ public class DialogueManager : MonoBehaviour
         portraitImage.gameObject.SetActive(portraitSet);
         portraitPlaceholder.SetActive(!portraitSet);
         if (portraitSet) portraitImage.sprite = profile.Portrait;
-        profileNameText.text = profile != null ? profile.DisplayName : speaker;
+        profileNameText.text = profile != null
+            ? profile.GetDisplayName(PlayerDataManager.Instance.Stats.PlayerName)
+            : speaker;
         caseText.text = profile != null ? profile.CaseNumber : "CASE # UNLISTED / REVIEW PENDING";
         idText.text = profile != null ? profile.EmployeeId : "UNLISTED";
         departmentText.text = profile != null ? profile.Department : "UNKNOWN";
