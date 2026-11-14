@@ -24,7 +24,18 @@ public class DialogueConversation : ScriptableObject
         }
         if (FindNode(startNodeId) == null) { error = $"Start node '{startNodeId}' does not exist."; return false; }
         foreach (DialogueNode current in nodes) foreach (DialogueOption option in current.Options)
-            if (!option.EndsConversation && !option.JumpsToScene && FindNode(option.NextNodeId) == null) { error = $"Option '{option.Text}' points to missing node '{option.NextNodeId}'."; return false; }
+        {
+            if (option.TakesInRequirement)
+            {
+                if (FindNode(option.TrueNextNodeId) == null) { error = $"Option '{option.Text}' points to missing true node '{option.TrueNextNodeId}'."; return false; }
+                if (FindNode(option.FalseNextNodeId) == null) { error = $"Option '{option.Text}' points to missing false node '{option.FalseNextNodeId}'."; return false; }
+            }
+            else if (!option.EndsConversation && !option.JumpsToScene && FindNode(option.NextNodeId) == null)
+            {
+                error = $"Option '{option.Text}' points to missing node '{option.NextNodeId}'.";
+                return false;
+            }
+        }
         error = null; return true;
     }
     public static DialogueConversation CreateLegacy(string speaker, string opening, string first, string firstResponse, string second, string secondResponse)
@@ -99,6 +110,10 @@ public class DialogueLine
 [Serializable] public class DialogueOption { 
     [SerializeField] private string text = "Continue"; 
     [SerializeField] private List<ItemDefinition> objectsToGive = new();
+    [SerializeField] private bool takeInRequirement;
+    [SerializeField] private InteractionRequirement requirement;
+    [SerializeField] private string trueNextNodeId;
+    [SerializeField] private string falseNextNodeId;
     [SerializeField] private string nextNodeId; 
     [SerializeField] private bool endsConversation; 
     [SerializeField] private bool jumpToScene;
@@ -106,6 +121,10 @@ public class DialogueLine
 
     public string Text => text; 
     public IReadOnlyList<ItemDefinition> ObjectsToGive => objectsToGive;
+    public bool TakesInRequirement => takeInRequirement;
+    public InteractionRequirement Requirement => requirement;
+    public string TrueNextNodeId => trueNextNodeId;
+    public string FalseNextNodeId => falseNextNodeId;
     public string NextNodeId => nextNodeId; 
     public bool EndsConversation => endsConversation;
     public bool JumpsToScene => jumpToScene;

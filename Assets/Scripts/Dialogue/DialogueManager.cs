@@ -167,7 +167,9 @@ public class DialogueManager : MonoBehaviour
     {
         if (choicesRoot == null) return;
 
-        float verticalOffset = optionCount * 40f;
+        // float verticalOffset = optionCount * 40f;
+        
+        float verticalOffset =  60f;
         Vector2 offsetMin = choicesRoot.offsetMin;
         Vector2 offsetMax = choicesRoot.offsetMax;
         offsetMin.y = verticalOffset;
@@ -181,6 +183,13 @@ public class DialogueManager : MonoBehaviour
         if (index < 0 || index >= node.Options.Count) return;
         DialogueOption option = node.Options[index];
         GiveOptionItems(option);
+        if (option.TakesInRequirement)
+        {
+            bool requirementMet = option.Requirement == null || option.Requirement.IsMet(null);
+            string nextNodeId = requirementMet ? option.TrueNextNodeId : option.FalseNextNodeId;
+            ShowNextNode(nextNodeId);
+            return;
+        }
         if (option.TryGetSceneIndex(out int sceneIndex))
         {
             CloseDialogue();
@@ -188,8 +197,13 @@ public class DialogueManager : MonoBehaviour
             return;
         }
         if (option.EndsConversation || string.IsNullOrWhiteSpace(option.NextNodeId)) { CloseDialogue(); return; }
-        DialogueNode next = conversation.FindNode(option.NextNodeId);
-        if (next == null) { Debug.LogError($"Dialogue node '{option.NextNodeId}' was not found.", conversation); CloseDialogue(); return; }
+        ShowNextNode(option.NextNodeId);
+    }
+
+    void ShowNextNode(string nextNodeId)
+    {
+        DialogueNode next = conversation.FindNode(nextNodeId);
+        if (next == null) { Debug.LogError($"Dialogue node '{nextNodeId}' was not found.", conversation); CloseDialogue(); return; }
         ShowNode(next);
     }
 
