@@ -963,6 +963,7 @@ GameObject:
   - component: {fileID: 389540069}
   - component: {fileID: 389540068}
   - component: {fileID: 389540067}
+  - component: {fileID: 389540071}
   - component: {fileID: 389540070}
   m_Layer: 0
   m_Name: ElevatorDoor
@@ -1005,8 +1006,8 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.030918395, y: 0.21642382}
-  m_Radius: 5.7004747
+  m_Offset: {x: 0.045107964, y: -4.1618185}
+  m_Radius: 3.607201
 --- !u!212 &389540068
 SpriteRenderer:
   serializedVersion: 2
@@ -1090,14 +1091,34 @@ MonoBehaviour:
   m_GameObject: {fileID: 389540066}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df8667a9baafe43fa8d042b26b18fbb2, type: 3}
+  m_Script: {fileID: 11500000, guid: c55a3423d1267e84bb1ecd3c86b6f3ce, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SceneChangeInteraction
-  interactionPrompt: Enter Elevator
-  requirement: {fileID: 11400000, guid: 8211e33feeb3cf248b95f1d2936d8638, type: 2}
-  interactionKey: 19
-  interactionSFX: {fileID: 8300000, guid: 41000dab97b6e374986e817a22b8ffaa, type: 3}
-  sceneIndex: 1
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueTrigger
+  conversation: {fileID: 11400000, guid: 66c9d5833b53c6143ab94aea6dd4a2c3, type: 2}
+  characterProfile: {fileID: 0}
+  speakerName: Stranger
+  openingLine: What do you want?
+  optionOne: Who are you?
+  responseToOptionOne: That is not important right now.
+  optionTwo: Goodbye.
+  responseToOptionTwo: Stay out of trouble.
+--- !u!114 &389540071
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 389540066}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c3601aece4244b519beb770fabe3087, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueInteraction
+  interactionPrompt: Interact
+  requirement: {fileID: 0}
+  interactionKey: 20
+  interactionSFX: {fileID: 0}
+  dialogueTrigger: {fileID: 389540070}
 --- !u!1 &467084820
 GameObject:
   m_ObjectHideFlags: 0
@@ -1259,12 +1280,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 467084820}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10.3728, y: 0.9509, z: 0}
-  m_LocalScale: {x: 0.17848326, y: 0.17848326, z: 0.17848326}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -9.4738, y: 1.0754, z: 0}
+  m_LocalScale: {x: 0.18216363, y: 0.18216363, z: 0.18216363}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1518886739}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &590705680
 GameObject:
@@ -2693,6 +2714,7 @@ Transform:
   - {fileID: 748018875}
   - {fileID: 33836079}
   - {fileID: 1899208055}
+  - {fileID: 467084825}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1550994073
@@ -10717,7 +10739,7 @@ Transform:
   m_GameObject: {fileID: 5652712222569546972}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.84, y: -0.5905, z: 0}
+  m_LocalPosition: {x: -1.29, y: -0.5905, z: 0}
   m_LocalScale: {x: 6.9054, y: 6.9054, z: 6.9054}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10809,7 +10831,6 @@ SceneRoots:
   - {fileID: 832575519}
   - {fileID: 4492733833086580172}
   - {fileID: 7337771071177653332}
-  - {fileID: 467084825}
   - {fileID: 1514964482}
   - {fileID: 220070977103537804}
   - {fileID: 1897531091}
