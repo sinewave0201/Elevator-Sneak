@@ -1,0 +1,122 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dff2d470d2bdbbd4ea3db1789368bf1a, type: 3}
+  m_Name: Slacking intern
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueConversation
+  defaultCharacter: {fileID: 0}
+  startNodeId: start
+  nodes:
+  - id: start
+    speakerName: Slacking intern
+    characterProfile: {fileID: 0}
+    dialogueLines:
+    - text: urgh!
+      voice: 1
+      selectedVoice: am_michael
+      wav: {fileID: 8300000, guid: 578263cbf7986104d84d29722e8e6e6f, type: 3}
+      generatedFingerprint: 3c56a42fcf67987587b27b66529475df
+      generatedWavPath: Assets/GeneratedAudio/Dialogues/Slacking_intern_3167e74f/00_start_00_am_michael.wav
+    - text: Oh, I thought you were my team lead...
+      voice: 1
+      selectedVoice: am_michael
+      wav: {fileID: 8300000, guid: 2e5869921cd90d8438e7702a943c9a5b, type: 3}
+      generatedFingerprint: 865ae5b24be90bafb5838685bdf4c04f
+      generatedWavPath: Assets/GeneratedAudio/Dialogues/Slacking_intern_3167e74f/00_start_01_am_michael.wav
+    options:
+    - text: Who are you?
+      objectsToGive: []
+      nextNodeId: identity
+      endsConversation: 0
+    - text: Why are you scared?
+      objectsToGive: []
+      nextNodeId: Scared
+      endsConversation: 0
+    - text: Bye.
+      objectsToGive: []
+      nextNodeId: 
+      endsConversation: 1
+    flagsToSet: 
+  - id: identity
+    speakerName: Slacking intern
+    characterProfile: {fileID: 0}
+    dialogueLines:
+    - text: I'm an intern in the ai security department.
+      voice: 1
+      selectedVoice: am_michael
+      wav: {fileID: 8300000, guid: 43a7156dbbd323a46b941c258b6ccddc, type: 3}
+      generatedFingerprint: 4056c87b5bb506f3b82def6b948bc325
+      generatedWavPath: Assets/GeneratedAudio/Dialogues/Slacking_intern_3167e74f/01_identity_00_am_michael.wav
+    - text: This is my third month here...
+      voice: 1
+      selectedVoice: am_michael
+      wav: {fileID: 8300000, guid: 917ee679aa852f04db1e6722f353dc80, type: 3}
+      generatedFingerprint: b9c904c5dbdf980aa161a4ba02a1f56c
+      generatedWavPath: Assets/GeneratedAudio/Dialogues/Slacking_intern_3167e74f/01_identity_01_am_michael.wav
+    options:
+    - text: Why are you scared?
+      objectsToGive: []
+      nextNodeId: Scared
+      endsConversation: 0
+    - text: Bye.
+      objectsToGive: []
+      nextNodeId: 
+      endsConversation: 1
+    flagsToSet: 
+  - id: Scared
+    speakerName: Slacking intern
+    characterProfile: {fileID: 0}
+    dialogueLines:
+    - text: You are not gonna tell my team lead, right?
+      voice: 1
+      selectedVoice: am_michael
+      wav: {fileID: 8300000, guid: 3b5fffe7f7fb94e4bb3aa1f0b2dc364c, type: 3}
+      generatedFingerprint: cb54f99874c90e78520bed83edeef347
+      generatedWavPath: Assets/GeneratedAudio/Dialogues/Slacking_intern_3167e74f/02_Scared_00_am_michael.wav
+    - text: I am using the company AI to do some work in security...So its basically
+        it securing itself.
+      voice: 1
+      selectedVoice: am_michael
+      wav: {fileID: 8300000, guid: 89a12e50af133234f976df981b80e58b, type: 3}
+      generatedFingerprint: 83044fedc3f98a76e02a545f2cc78994
+      generatedWavPath: Assets/GeneratedAudio/Dialogues/Slacking_intern_3167e74f/02_Scared_01_am_michael.wav
+    - text: I don't want to do that either! But I can not figure it out...
+      voice: 1
+      selectedVoice: am_michael
+      wav: {fileID: 8300000, guid: 0451c64a01f05f44eaba1ad030d1e456, type: 3}
+      generatedFingerprint: 101e26bb4ac843c0629e8bc09e547ca9
+      generatedWavPath: Assets/GeneratedAudio/Dialogues/Slacking_intern_3167e74f/02_Scared_02_am_michael.wav
+    options:
+    - text: Bye.
+      objectsToGive: []
+      nextNodeId: 
+      endsConversation: 1
+    - text: How did you get here???
+      objectsToGive: []
+      nextNodeId: dad
+      endsConversation: 0
+    flagsToSet: 
+  - id: dad
+    speakerName: Slacking intern
+    characterProfile: {fileID: 0}
+    dialogueLines:
+    - text: Oh, you know, my dad...
+      voice: 1
+      selectedVoice: am_michael
+      wav: {fileID: 8300000, guid: 8439c6c8163738a499bc53e7fffeb87d, type: 3}
+      generatedFingerprint: 5602e44e990c54b74ab46b02c7afab04
+      generatedWavPath: Assets/GeneratedAudio/Dialogues/Slacking_intern_3167e74f/03_dad_00_am_michael.wav
+    options:
+    - text: Bye.
+      objectsToGive: []
+      nextNodeId: 
+      endsConversation: 1
+    flagsToSet: 

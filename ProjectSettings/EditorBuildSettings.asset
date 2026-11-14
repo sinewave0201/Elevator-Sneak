@@ -13,10 +13,13 @@ EditorBuildSettings:
     guid: 6bcbc1e2378f0da4687307c2c3c955c9
   - enabled: 1
     path: Assets/Scenes/Level 4 Bathroom.unity
-    guid: 506fb979eb6437e40bc02b33eb480ebc
+    guid: 46a08c849f32a624bab62c2c1682724d
   - enabled: 1
     path: Assets/Scenes/Staircase.unity
     guid: f32d4bd9844d79246a3307786e3d6322
+  - enabled: 1
+    path: Assets/Scenes/beginning.unity
+    guid: 14ff3761372947f4eb25db1666ff9687
   - enabled: 1
     path: Assets/Scenes/Level 1.unity
     guid: 762dddfde765c8047979fd1d62b74932
