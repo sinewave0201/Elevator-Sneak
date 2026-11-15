@@ -939,6 +939,7 @@ GameObject:
   - component: {fileID: 389540069}
   - component: {fileID: 389540068}
   - component: {fileID: 389540067}
+  - component: {fileID: 389540071}
   - component: {fileID: 389540070}
   m_Layer: 0
   m_Name: ElevatorDoor
@@ -1066,14 +1067,34 @@ MonoBehaviour:
   m_GameObject: {fileID: 389540066}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df8667a9baafe43fa8d042b26b18fbb2, type: 3}
+  m_Script: {fileID: 11500000, guid: c55a3423d1267e84bb1ecd3c86b6f3ce, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SceneChangeInteraction
-  interactionPrompt: Enter Elevator
-  requirement: {fileID: 11400000, guid: 8211e33feeb3cf248b95f1d2936d8638, type: 2}
-  interactionKey: 19
-  interactionSFX: {fileID: 8300000, guid: 41000dab97b6e374986e817a22b8ffaa, type: 3}
-  sceneIndex: 1
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueTrigger
+  conversation: {fileID: 11400000, guid: 66c9d5833b53c6143ab94aea6dd4a2c3, type: 2}
+  characterProfile: {fileID: 0}
+  speakerName: Stranger
+  openingLine: What do you want?
+  optionOne: Who are you?
+  responseToOptionOne: That is not important right now.
+  optionTwo: Goodbye.
+  responseToOptionTwo: Stay out of trouble.
+--- !u!114 &389540071
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 389540066}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c3601aece4244b519beb770fabe3087, type: 3}
+  m_Name:
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueInteraction
+  interactionPrompt: Interact
+  requirement: {fileID: 0}
+  interactionKey: 20
+  interactionSFX: {fileID: 0}
+  dialogueTrigger: {fileID: 389540070}
 --- !u!1 &467612659
 GameObject:
   m_ObjectHideFlags: 0
