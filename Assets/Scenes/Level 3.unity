@@ -356,7 +356,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4467419676764627631, guid: 237a519c5c92ab342bb0a5510fd29387, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 126
+      value: 38
       objectReference: {fileID: 0}
     - target: {fileID: 4535074318376049699, guid: 237a519c5c92ab342bb0a5510fd29387, type: 3}
       propertyPath: m_IsActive
@@ -939,6 +939,7 @@ GameObject:
   - component: {fileID: 389540069}
   - component: {fileID: 389540068}
   - component: {fileID: 389540067}
+  - component: {fileID: 389540071}
   - component: {fileID: 389540070}
   m_Layer: 0
   m_Name: ElevatorDoor
@@ -1066,12 +1067,34 @@ MonoBehaviour:
   m_GameObject: {fileID: 389540066}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df8667a9baafe43fa8d042b26b18fbb2, type: 3}
+  m_Script: {fileID: 11500000, guid: c55a3423d1267e84bb1ecd3c86b6f3ce, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SceneChangeInteraction
-  interactionPrompt: Enter Elevator
-  requirement: {fileID: 11400000, guid: 8211e33feeb3cf248b95f1d2936d8638, type: 2}
-  sceneIndex: 1
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueTrigger
+  conversation: {fileID: 11400000, guid: 66c9d5833b53c6143ab94aea6dd4a2c3, type: 2}
+  characterProfile: {fileID: 0}
+  speakerName: Stranger
+  openingLine: What do you want?
+  optionOne: Who are you?
+  responseToOptionOne: That is not important right now.
+  optionTwo: Goodbye.
+  responseToOptionTwo: Stay out of trouble.
+--- !u!114 &389540071
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 389540066}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c3601aece4244b519beb770fabe3087, type: 3}
+  m_Name:
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueInteraction
+  interactionPrompt: Interact
+  requirement: {fileID: 0}
+  interactionKey: 20
+  interactionSFX: {fileID: 0}
+  dialogueTrigger: {fileID: 389540070}
 --- !u!1 &467612659
 GameObject:
   m_ObjectHideFlags: 0
@@ -1121,6 +1144,7 @@ MonoBehaviour:
   choicesRoot: {fileID: 0}
   choicePrefab: {fileID: 0}
   secondsPerCharacter: 0.018
+  voiceAudioSource: {fileID: 0}
 --- !u!114 &467612661
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2324,6 +2348,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SceneChangeInteraction
   interactionPrompt: Enter Staircase
   requirement: {fileID: 0}
+  interactionKey: 19
+  interactionSFX: {fileID: 8300000, guid: 0377175798349fd42b5d3ab542b31362, type: 3}
   sceneIndex: 3
 --- !u!1 &1375518321
 GameObject:
@@ -10187,6 +10213,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SceneChangeInteraction
   interactionPrompt: Interact
   requirement: {fileID: 0}
+  interactionKey: 19
+  interactionSFX: {fileID: 8300000, guid: 0377175798349fd42b5d3ab542b31362, type: 3}
   sceneIndex: 1
 --- !u!1 &1980330768
 GameObject:
@@ -10499,13 +10527,14 @@ GameObject:
   - component: {fileID: 8011902235996731960}
   - component: {fileID: 8306634275218658875}
   - component: {fileID: 4297701322599140644}
+  - component: {fileID: 8306634275218658876}
   m_Layer: 0
-  m_Name: Npc-Receptionist
+  m_Name: Npc-slacking employee
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &7337771071177653332
 Transform:
   m_ObjectHideFlags: 0
@@ -10515,7 +10544,7 @@ Transform:
   m_GameObject: {fileID: 5652712222569546972}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -18.57, y: -0.5905, z: 0}
+  m_LocalPosition: {x: -9.34, y: -0.5905, z: 0}
   m_LocalScale: {x: 6.9054, y: 6.9054, z: 6.9054}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10569,7 +10598,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c55a3423d1267e84bb1ecd3c86b6f3ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DialogueTrigger
-  conversation: {fileID: 11400000, guid: d331543b5b9021b47a3609fd1e129879, type: 2}
+  conversation: {fileID: 11400000, guid: 3167e74fbc9f778418bded0356639f95, type: 2}
   characterProfile: {fileID: 0}
   speakerName: Receptionist
   openingLine: This is test object
@@ -10578,6 +10607,23 @@ MonoBehaviour:
     to the object
   optionTwo: Goodbye.
   responseToOptionTwo: and test if dialogue system is working
+--- !u!114 &8306634275218658876
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5652712222569546972}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c3601aece4244b519beb770fabe3087, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueInteraction
+  interactionPrompt: Interact
+  requirement: {fileID: 0}
+  interactionKey: 20
+  interactionSFX: {fileID: 0}
+  dialogueTrigger: {fileID: 8306634275218658875}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

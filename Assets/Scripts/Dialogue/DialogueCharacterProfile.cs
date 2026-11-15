@@ -3,6 +3,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Employee Profile", menuName = "Dialogue/Employee Profile")]
 public class DialogueCharacterProfile : ScriptableObject
 {
+    [SerializeField] private DialogueNameSource displayNameSource = DialogueNameSource.Custom;
     [SerializeField] private string displayName = "UNKNOWN";
     [SerializeField] private string caseNumber = "CASE # HR-00-0000 / REVIEW PENDING";
     [SerializeField] private string employeeId = "UNLISTED";
@@ -20,4 +21,9 @@ public class DialogueCharacterProfile : ScriptableObject
     public string Status => status;
     public int Suspicion => suspicion;
     public Sprite Portrait => portrait;
+
+    public string GetDisplayName(string playerName)
+    {
+        return displayNameSource == DialogueNameSource.PlayerName ? playerName : displayName;
+    }
 }

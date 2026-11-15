@@ -24,7 +24,18 @@ public class DialogueConversation : ScriptableObject
         }
         if (FindNode(startNodeId) == null) { error = $"Start node '{startNodeId}' does not exist."; return false; }
         foreach (DialogueNode current in nodes) foreach (DialogueOption option in current.Options)
-            if (!option.EndsConversation && FindNode(option.NextNodeId) == null) { error = $"Option '{option.Text}' points to missing node '{option.NextNodeId}'."; return false; }
+        {
+            if (option.TakesInRequirement)
+            {
+                if (FindNode(option.TrueNextNodeId) == null) { error = $"Option '{option.Text}' points to missing true node '{option.TrueNextNodeId}'."; return false; }
+                if (FindNode(option.FalseNextNodeId) == null) { error = $"Option '{option.Text}' points to missing false node '{option.FalseNextNodeId}'."; return false; }
+            }
+            else if (!option.EndsConversation && !option.JumpsToScene && FindNode(option.NextNodeId) == null)
+            {
+                error = $"Option '{option.Text}' points to missing node '{option.NextNodeId}'.";
+                return false;
+            }
+        }
         error = null; return true;
     }
     public static DialogueConversation CreateLegacy(string speaker, string opening, string first, string firstResponse, string second, string secondResponse)
@@ -43,6 +54,7 @@ public class DialogueConversation : ScriptableObject
 [Serializable] public class DialogueNode
 {
     [SerializeField] private string id = "node";
+    [SerializeField] private DialogueNameSource speakerNameSource = DialogueNameSource.Custom;
     [SerializeField] private string speakerName = "Stranger";
     [SerializeField] private DialogueCharacterProfile characterProfile;
     [SerializeField] private List<DialogueLine> dialogueLines = new();
@@ -52,6 +64,83 @@ public class DialogueConversation : ScriptableObject
     public List<ProgressFlag> FlagsToSet => flagsToSet;
     public IReadOnlyList<DialogueLine> DialogueLines => dialogueLines; public IReadOnlyList<DialogueOption> Options => options;
     public DialogueNode(string id, string speaker, IEnumerable<string> lines, IEnumerable<DialogueOption> options) { this.id = id; speakerName = speaker; dialogueLines = new(); foreach (string line in lines) dialogueLines.Add(new DialogueLine(line)); this.options = new(options); }
+    public string GetSpeakerName(string playerName) => speakerNameSource == DialogueNameSource.PlayerName ? playerName : speakerName;
 }
-[Serializable] public class DialogueLine { [SerializeField, TextArea(2, 5)] private string text; public string Text => text; public DialogueLine(string text) => this.text = text; }
-[Serializable] public class DialogueOption { [SerializeField] private string text = "Continue"; [SerializeField] private string nextNodeId; [SerializeField] private bool endsConversation; public string Text => text; public string NextNodeId => nextNodeId; public bool EndsConversation => endsConversation; public DialogueOption(string text, string next, bool ends) { this.text = text; nextNodeId = next; endsConversation = ends; } }
+[Serializable]
+public class DialogueLine
+{
+    [SerializeField, TextArea(2, 5)] private string text;
+    [SerializeField] private bool voice;
+    [SerializeField] private string selectedVoice = "af_nicole";
+    [SerializeField] private AudioClip wav;
+    [SerializeField, HideInInspector] private string generatedFingerprint;
+    [SerializeField, HideInInspector] private string generatedWavPath;
+
+    public string Text => text;
+    public bool VoiceEnabled => voice;
+    public string SelectedVoice => selectedVoice;
+    public AudioClip Wav => wav;
+
+    public DialogueLine(string text) => this.text = text;
+
+#if UNITY_EDITOR
+    public string GeneratedFingerprint => generatedFingerprint;
+    public string GeneratedWavPath => generatedWavPath;
+
+    public void SetDefaultVoice(string voiceName)
+    {
+        if (string.IsNullOrWhiteSpace(selectedVoice)) selectedVoice = voiceName;
+    }
+
+    public void SetGeneratedWav(AudioClip clip, string fingerprint, string assetPath)
+    {
+        wav = clip;
+        generatedFingerprint = fingerprint;
+        generatedWavPath = assetPath;
+    }
+
+    public void ClearGeneratedWav()
+    {
+        wav = null;
+        generatedFingerprint = string.Empty;
+        generatedWavPath = string.Empty;
+    }
+#endif
+}
+[Serializable] public class DialogueOption { 
+    [SerializeField] private string text = "Continue"; 
+    [SerializeField] private List<ItemDefinition> objectsToGive = new();
+    [SerializeField] private bool takeInRequirement;
+    [SerializeField] private InteractionRequirement requirement;
+    [SerializeField] private string trueNextNodeId;
+    [SerializeField] private string falseNextNodeId;
+    [SerializeField] private string nextNodeId; 
+    [SerializeField] private bool endsConversation; 
+    [SerializeField] private bool jumpToScene;
+    [SerializeField] private string sceneIndex;
+
+    public string Text => text; 
+    public IReadOnlyList<ItemDefinition> ObjectsToGive => objectsToGive;
+    public bool TakesInRequirement => takeInRequirement;
+    public InteractionRequirement Requirement => requirement;
+    public string TrueNextNodeId => trueNextNodeId;
+    public string FalseNextNodeId => falseNextNodeId;
+    public string NextNodeId => nextNodeId; 
+    public bool EndsConversation => endsConversation;
+    public bool JumpsToScene => jumpToScene;
+    public bool TryGetSceneIndex(out int index)
+    {
+        if (!jumpToScene)
+        {
+            index = default;
+            return false;
+        }
+
+        return int.TryParse(sceneIndex, out index);
+    }
+    public DialogueOption(string text, string next, bool ends) { 
+        this.text = text;
+        nextNodeId = next;
+        endsConversation = ends;
+    }
+}

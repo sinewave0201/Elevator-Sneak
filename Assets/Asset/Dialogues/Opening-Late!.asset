@@ -16,13 +16,51 @@ MonoBehaviour:
   startNodeId: start
   nodes:
   - id: start
+    speakerNameSource: 1
     speakerName: MC
     characterProfile: {fileID: 0}
     dialogueLines:
     - text: "\u2026ughhhh."
+      voice: 0
+      selectedVoice: 
+      wav: {fileID: 0}
+      generatedFingerprint: 
+      generatedWavPath: 
     - text: Just five more minutes please. Hehe.
+      voice: 0
+      selectedVoice: 
+      wav: {fileID: 0}
+      generatedFingerprint: 
+      generatedWavPath: 
     - text: "\u2026why is it so bright outside\u2026"
+      voice: 0
+      selectedVoice: 
+      wav: {fileID: 0}
+      generatedFingerprint: 
+      generatedWavPath: 
     - text: "\u2026wait. What time is it?"
+      voice: 0
+      selectedVoice: 
+      wav: {fileID: 0}
+      generatedFingerprint: 
+      generatedWavPath: 
     - text: Oh no.
-    options: []
+      voice: 0
+      selectedVoice: 
+      wav: {fileID: 0}
+      generatedFingerprint: 
+      generatedWavPath: 
+    - text: Oh no!!!!!!!!!!!!!!!!!!!!!!!!!
+      voice: 0
+      selectedVoice: 
+      wav: {fileID: 0}
+      generatedFingerprint: 
+      generatedWavPath: 
+    options:
+    - text: Run to your company!!!!!
+      objectsToGive: []
+      nextNodeId: 
+      endsConversation: 0
+      jumpToScene: 1
+      sceneIndex: 5
     flagsToSet: 

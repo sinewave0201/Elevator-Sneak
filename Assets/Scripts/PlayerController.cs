@@ -13,6 +13,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Animator mcAnimator;
     [SerializeField] private InputActionReference dialogueAdvanceAction;
 
+    [Header("Sound")]
+    [SerializeField] private AudioSource footstepPlayer;
+
     private Vector3 characterVisualScale;
 
     private float horizontalInput;
@@ -47,6 +50,9 @@ public class PlayerController : MonoBehaviour
             if (dialoguePressed)
                 DialogueManager.Instance.AdvanceOrClose();
 
+            //stop the footstep
+            footstepPlayer.Stop();
+
             return;
         }
 
@@ -56,6 +62,9 @@ public class PlayerController : MonoBehaviour
         {
             //not moving: update animation
             mcAnimator.SetBool("isWalking", false);
+
+            //stop the footstep
+            footstepPlayer.Stop();
         }
         if (horizontalInput != 0f)
         {
@@ -66,6 +75,12 @@ public class PlayerController : MonoBehaviour
                     * (horizontalInput < 0f ? 1f : -1f);
 
             characterVisual.localScale = scale;
+
+            //play the footstep
+            if (!footstepPlayer.isPlaying)
+            {
+                footstepPlayer.Play();
+            }
         }
     }
     private void FixedUpdate()

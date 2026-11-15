@@ -1,0 +1,114 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dff2d470d2bdbbd4ea3db1789368bf1a, type: 3}
+  m_Name: Receptionist
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueConversation
+  defaultCharacter: {fileID: 0}
+  startNodeId: start
+  nodes:
+  - id: start
+    speakerNameSource: 0
+    speakerName: Receptionist
+    characterProfile: {fileID: 0}
+    dialogueLines:
+    - text: "\u2026Hey new kid. You know you don\u2019t have access, right? "
+      voice: 0
+      selectedVoice: 
+      wav: {fileID: 0}
+      generatedFingerprint: 
+      generatedWavPath: 
+    options:
+    - text: "What? But I\u2019m a rightful employee-"
+      objectsToGive: []
+      nextNodeId: 1
+      endsConversation: 0
+      jumpToScene: 0
+      sceneIndex: 
+    flagsToSet: 
+  - id: 1
+    speakerNameSource: 0
+    speakerName: Receptionist
+    characterProfile: {fileID: 0}
+    dialogueLines:
+    - text: " Did you not go to new hire orientation? \r "
+      voice: 0
+      selectedVoice: 
+      wav: {fileID: 0}
+      generatedFingerprint: 
+      generatedWavPath: 
+    - text: "The elevators are restricted access. You\u2019ll have to take the stairs.\r "
+      voice: 0
+      selectedVoice: 
+      wav: {fileID: 0}
+      generatedFingerprint: 
+      generatedWavPath: 
+    options:
+    - text: What?!
+      objectsToGive: []
+      nextNodeId: 2
+      endsConversation: 0
+      jumpToScene: 0
+      sceneIndex: 
+    flagsToSet: 
+  - id: 2
+    speakerNameSource: 1
+    speakerName: MC
+    characterProfile: {fileID: 0}
+    dialogueLines:
+    - text: "(\u2026I\u2019m going to get fired. How do I even get up to the 20th
+        floor in\u202610 MINUTES? WHAT THE ACTUAL-)\r "
+      voice: 0
+      selectedVoice: 
+      wav: {fileID: 0}
+      generatedFingerprint: 
+      generatedWavPath: 
+    - text: "Miss, can I really not use the elevator? It\u2019s an emergency.\r "
+      voice: 0
+      selectedVoice: 
+      wav: {fileID: 0}
+      generatedFingerprint: 
+      generatedWavPath: 
+    options:
+    - text: continue
+      objectsToGive: []
+      nextNodeId: 5
+      endsConversation: 0
+      jumpToScene: 0
+      sceneIndex: 
+    flagsToSet: 
+  - id: 5
+    speakerNameSource: 0
+    speakerName: Receptionist
+    characterProfile: {fileID: 0}
+    dialogueLines:
+    - text: "Kid, I can\u2019t open the damn elevator for you. You can only use it
+        if you have the right clearance.\r"
+      voice: 0
+      selectedVoice: 
+      wav: {fileID: 0}
+      generatedFingerprint: 
+      generatedWavPath: 
+    - text: "*sigh* I really don\u2019t get paid enough to deal with dumbass new
+        hires like you\u2026\r"
+      voice: 0
+      selectedVoice: 
+      wav: {fileID: 0}
+      generatedFingerprint: 
+      generatedWavPath: 
+    options:
+    - text: freak!!!!
+      objectsToGive: []
+      nextNodeId: 
+      endsConversation: 1
+      jumpToScene: 0
+      sceneIndex: 
+    flagsToSet: 

@@ -1,0 +1,72 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dff2d470d2bdbbd4ea3db1789368bf1a, type: 3}
+  m_Name: Bathroom-nasty
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueConversation
+  defaultCharacter: {fileID: 0}
+  startNodeId: start
+  nodes:
+  - id: start
+    speakerName: Rusty bathroom Door
+    characterProfile: {fileID: 0}
+    dialogueLines:
+    - text: The rusty restroom door hangs half-open.
+      voice: 1
+      selectedVoice: af_alloy
+      wav: {fileID: 8300000, guid: 5ba608b28aaec2048a089c4642bd44a2, type: 3}
+      generatedFingerprint: a12ef19fdfa8d7dcf85f98967b1b02fe
+      generatedWavPath: Assets/GeneratedAudio/Dialogues/Bathroom-nasty_df57b6c7/00_start_00_af_alloy.wav
+    - text: You turn the handle and push it open a little farther. Then, you slam
+        it shut.
+      voice: 1
+      selectedVoice: af_alloy
+      wav: {fileID: 8300000, guid: b210ecce44669be4292a2a4ef6695ce7, type: 3}
+      generatedFingerprint: 4354e133ffd39b3d4288056db782dede
+      generatedWavPath: Assets/GeneratedAudio/Dialogues/Bathroom-nasty_df57b6c7/00_start_01_af_alloy.wav
+    - text: "Oh, it\u2019s one of those toilets. The kind that stabs you in the back.
+        IT\u2019S FILTHY. THE LAST PERSON DIDN\u2019T FLUSH. AAAAAAAGH."
+      voice: 1
+      selectedVoice: af_alloy
+      wav: {fileID: 8300000, guid: 10472461913fe144794d65fe23109d56, type: 3}
+      generatedFingerprint: 0b7949757ca917362d94435daa0b80bb
+      generatedWavPath: Assets/GeneratedAudio/Dialogues/Bathroom-nasty_df57b6c7/00_start_02_af_alloy.wav
+    - text: "You\u2019re immediately transported back to sophomore year. Calculus."
+      voice: 1
+      selectedVoice: af_alloy
+      wav: {fileID: 8300000, guid: 78618dd2f036c1343aab47c25028c9c7, type: 3}
+      generatedFingerprint: 79352f112810cf0a376440befd39da93
+      generatedWavPath: Assets/GeneratedAudio/Dialogues/Bathroom-nasty_df57b6c7/00_start_03_af_alloy.wav
+    - text: The bathrooms in that building were exactly like this...
+      voice: 1
+      selectedVoice: af_alloy
+      wav: {fileID: 8300000, guid: 754e3d3eaa7986041a34286001d3851b, type: 3}
+      generatedFingerprint: cfad97da0adb7c1ab587ee2fa7cf90ce
+      generatedWavPath: Assets/GeneratedAudio/Dialogues/Bathroom-nasty_df57b6c7/00_start_04_af_alloy.wav
+    - text: You kind of wanted to jump out a window back then.
+      voice: 1
+      selectedVoice: af_alloy
+      wav: {fileID: 8300000, guid: de8b13eefa7a4534e9c814d8e4c66ce6, type: 3}
+      generatedFingerprint: 6870fe33665c38566d593434314c35b1
+      generatedWavPath: Assets/GeneratedAudio/Dialogues/Bathroom-nasty_df57b6c7/00_start_05_af_alloy.wav
+    - text: "Good thing I didn\u2019t. Otherwise I\u2019d never have gotten to work
+        at this company..."
+      voice: 1
+      selectedVoice: af_alloy
+      wav: {fileID: 8300000, guid: 19de951c5abe8ba44ad6607e35a40573, type: 3}
+      generatedFingerprint: 4038527798604ab63fad4bc036b32453
+      generatedWavPath: Assets/GeneratedAudio/Dialogues/Bathroom-nasty_df57b6c7/00_start_06_af_alloy.wav
+    options:
+    - text: Get the fuck out of here
+      objectsToGive: []
+      nextNodeId: 
+      endsConversation: 1
+    flagsToSet: 
