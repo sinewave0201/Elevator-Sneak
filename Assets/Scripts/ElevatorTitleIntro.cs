@@ -26,8 +26,19 @@ public sealed class ElevatorTitleIntro : MonoBehaviour
     [SerializeField] private RectTransform scanlineLayer;
     [SerializeField] private Image recordingDot;
 
+    private TMPro.TMP_Text viewFeedLabel;
+    private float viewFeedLabelAlpha;
+
     private void LateUpdate()
     {
+        if (viewFeedLabel != null && viewFeedLabel.isActiveAndEnabled)
+        {
+            const float pulseDuration = 1.65f;
+            float pulsePhase = Mathf.Repeat(Time.unscaledTime, pulseDuration) / pulseDuration;
+            float brightness = Mathf.Lerp(0.48f, 1f, 0.5f + 0.5f * Mathf.Cos(pulsePhase * Mathf.PI * 2f));
+            viewFeedLabel.alpha = viewFeedLabelAlpha * brightness;
+        }
+
         if (monitorTint == null || !feed.gameObject.activeInHierarchy || feed.alpha <= 0f)
             return;
 
@@ -51,6 +62,10 @@ public sealed class ElevatorTitleIntro : MonoBehaviour
 
     private void Awake()
     {
+        viewFeedLabel = viewFeed.GetComponentInChildren<TMPro.TMP_Text>(true);
+        if (viewFeedLabel != null)
+            viewFeedLabelAlpha = viewFeedLabel.alpha;
+
         viewFeed.onClick.AddListener(OpenFeed);
         startGame.onClick.AddListener(StartGame);
     }
@@ -62,8 +77,37 @@ public sealed class ElevatorTitleIntro : MonoBehaviour
         StartCoroutine(RevealFeed());
     }
 
+    [Header("Opening elevator door")]
+    [SerializeField] private Transform elevatorDoorLeft;
+    [SerializeField] private Transform elevatorDoorRight;
+    [SerializeField] private Transform elevatorDoorFrame;
+
+    private IEnumerator OpenElevatorDoor()
+    {
+        Vector3 leftClosed = elevatorDoorLeft.localPosition;
+        Vector3 rightClosed = elevatorDoorRight.localPosition;
+        Vector3 travel = elevatorDoorFrame.TransformVector(Vector3.right * 0.34f);
+        Vector3 leftOpen = leftClosed - elevatorDoorLeft.parent.InverseTransformVector(travel);
+        Vector3 rightOpen = rightClosed + elevatorDoorRight.parent.InverseTransformVector(travel);
+
+        const float duration = 1.05f;
+        for (float elapsed = 0f; elapsed < duration; elapsed += Time.unscaledDeltaTime)
+        {
+            float eased = Mathf.SmoothStep(0f, 1f, elapsed / duration);
+            elevatorDoorLeft.localPosition = Vector3.Lerp(leftClosed, leftOpen, eased);
+            elevatorDoorRight.localPosition = Vector3.Lerp(rightClosed, rightOpen, eased);
+            yield return null;
+        }
+
+        elevatorDoorLeft.localPosition = leftOpen;
+        elevatorDoorRight.localPosition = rightOpen;
+    }
+
     private IEnumerator RevealFeed()
     {
+        if (elevatorDoorLeft != null && elevatorDoorRight != null && elevatorDoorFrame != null)
+            yield return OpenElevatorDoor();
+
         if (shotCamera != null)
             yield return PlayCctvShot();
         else
