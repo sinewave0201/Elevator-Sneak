@@ -1,0 +1,564 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dff2d470d2bdbbd4ea3db1789368bf1a, type: 3}
+  m_Name: Alexandra Beacon
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueConversation
+  defaultCharacter: {fileID: 11400000, guid: a19e82cf06ba4e9783d2a8e44b2daf01, type: 2}
+  startNodeId: start
+  nodes:
+  - id: start
+    speakerNameSource: 0
+    speakerName: Alexandra Beacon
+    characterProfile: {fileID: 0}
+    dialogueLines:
+    - text: "New promotion huh? I\u2019ve never seen your face before."
+      voice: 0
+      selectedVoice: 
+      wav: {fileID: 0}
+      generatedFingerprint: 
+      generatedWavPath: 
+    options:
+    - text: "Haha\u2026yeah\u2026been breaking my back for years."
+      objectsToGive: []
+      takeInRequirement: 0
+      requirement: {fileID: 0}
+      trueNextNodeId: 
+      falseNextNodeId: 
+      nextNodeId: department
+      endsConversation: 0
+      jumpToScene: 0
+      sceneIndex: 
+    flagsToSet: 
+  - id: department
+    speakerNameSource: 0
+    speakerName: Alexandra Beacon
+    characterProfile: {fileID: 0}
+    dialogueLines:
+    - text: I feel that.
+      voice: 0
+      selectedVoice: 
+      wav: {fileID: 0}
+      generatedFingerprint: 
+      generatedWavPath: 
+    - text: Which department are you in?
+      voice: 0
+      selectedVoice: 
+      wav: {fileID: 0}
+      generatedFingerprint: 
+      generatedWavPath: 
+    options:
+    - text: "Oh, yeah, I\u2019m in cybersecurity."
+      objectsToGive: []
+      takeInRequirement: 0
+      requirement: {fileID: 0}
+      trueNextNodeId: 
+      falseNextNodeId: 
+      nextNodeId: cyber_promoted
+      endsConversation: 0
+      jumpToScene: 0
+      sceneIndex: 
+    - text: "I\u2019m part of the mistletoe project in R&D."
+      objectsToGive: []
+      takeInRequirement: 1
+      requirement: {fileID: 11400000, guid: b26bc1d13bb84858947d331d536c2202, type: 2}
+      trueNextNodeId: rd_abandoned
+      falseNextNodeId: rd_requirement_failed
+      nextNodeId: 
+      endsConversation: 0
+      jumpToScene: 0
+      sceneIndex: 
+    - text: I was just out on an investigation, and I need to report my findings.
+      objectsToGive: []
+      takeInRequirement: 1
+      requirement: {fileID: 11400000, guid: c37cd2e24cc94969a58e442e647d3313, type: 2}
+      trueNextNodeId: int_urgent
+      falseNextNodeId: int_requirement_failed
+      nextNodeId: 
+      endsConversation: 0
+      jumpToScene: 0
+      sceneIndex: 
+    - text: "Uh. I need to switch uniforms. You know\u2026how it is\u2026"
+      objectsToGive: []
+      takeInRequirement: 1
+      requirement: {fileID: 11400000, guid: d48de3f35dda4a7ab69f553f758e4424, type: 2}
+      trueNextNodeId: over_confirm
+      falseNextNodeId: over_requirement_failed
+      nextNodeId: 
+      endsConversation: 0
+      jumpToScene: 0
+      sceneIndex: 
+    flagsToSet: 
+  - id: cyber_promoted
+    speakerNameSource: 0
+    speakerName: Alexandra Beacon
+    characterProfile: {fileID: 0}
+    dialogueLines:
+    - text: "Oh? And\u2026you got promoted?"
+      voice: 0
+      selectedVoice: 
+      wav: {fileID: 0}
+      generatedFingerprint: 
+      generatedWavPath: 
+    options:
+    - text: "\u2026yeah?"
+      objectsToGive: []
+      takeInRequirement: 0
+      requirement: {fileID: 0}
+      trueNextNodeId: 
+      falseNextNodeId: 
+      nextNodeId: cyber_surprised
+      endsConversation: 0
+      jumpToScene: 0
+      sceneIndex: 
+    flagsToSet: 
+  - id: cyber_surprised
+    speakerNameSource: 0
+    speakerName: Alexandra Beacon
+    characterProfile: {fileID: 0}
+    dialogueLines:
+    - text: "No, I\u2019m just surprised. "
+      voice: 0
+      selectedVoice: 
+      wav: {fileID: 0}
+      generatedFingerprint: 
+      generatedWavPath: 
+    - text: "That department has such a high turnover rate, it\u2019s rare to see
+        anyone stay long enough to qualify for a promotion. "
+      voice: 0
+      selectedVoice: 
+      wav: {fileID: 0}
+      generatedFingerprint: 
+      generatedWavPath: 
+    - text: You must be something special, huh.
+      voice: 0
+      selectedVoice: 
+      wav: {fileID: 0}
+      generatedFingerprint: 
+      generatedWavPath: 
+    options:
+    - text: "Haha, I guess\u2026"
+      objectsToGive: []
+      takeInRequirement: 0
+      requirement: {fileID: 0}
+      trueNextNodeId: 
+      falseNextNodeId: 
+      nextNodeId: cyber_come
+      endsConversation: 0
+      jumpToScene: 0
+      sceneIndex: 
+    flagsToSet: 
+  - id: cyber_come
+    speakerNameSource: 0
+    speakerName: Alexandra Beacon
+    characterProfile: {fileID: 0}
+    dialogueLines:
+    - text: "Haha indeed. I\u2019m afraid you\u2019re going to have to come with
+        me."
+      voice: 0
+      selectedVoice: 
+      wav: {fileID: 0}
+      generatedFingerprint: 
+      generatedWavPath: 
+    options:
+    - text: What?!?
+      objectsToGive: []
+      takeInRequirement: 0
+      requirement: {fileID: 0}
+      trueNextNodeId: 
+      falseNextNodeId: 
+      nextNodeId: cyber_identity
+      endsConversation: 0
+      jumpToScene: 0
+      sceneIndex: 
+    flagsToSet: 
+  - id: cyber_identity
+    speakerNameSource: 0
+    speakerName: Alexandra Beacon
+    characterProfile: {fileID: 0}
+    dialogueLines:
+    - text: "Allow me to introduce myself. I\u2019m Alexandra, an officer in the
+        intelligence department. "
+      voice: 0
+      selectedVoice: 
+      wav: {fileID: 0}
+      generatedFingerprint: 
+      generatedWavPath: 
+    - text: "But as far as I know, there haven\u2019t been any new promotions in
+        the cybersecurity department. "
+      voice: 0
+      selectedVoice: 
+      wav: {fileID: 0}
+      generatedFingerprint: 
+      generatedWavPath: 
+    - text: "So, you\u2019ll need to give a proper answer for why you\u2019re somewhere
+        you shouldn\u2019t be right now."
+      voice: 0
+      selectedVoice: 
+      wav: {fileID: 0}
+      generatedFingerprint: 
+      generatedWavPath: 
+    options:
+    - text: "Wait, wait, I\u2019m sorry! I\u2019ll confess!"
+      objectsToGive: []
+      takeInRequirement: 0
+      requirement: {fileID: 0}
+      trueNextNodeId: 
+      falseNextNodeId: 
+      nextNodeId: 
+      endsConversation: 1
+      jumpToScene: 0
+      sceneIndex: 
+    - text: "You\u2019re accusing me of sneaking into the elevator. But how do I
+        know whether you\u2019re telling the truth about who you are?"
+      objectsToGive: []
+      takeInRequirement: 0
+      requirement: {fileID: 0}
+      trueNextNodeId: 
+      falseNextNodeId: 
+      nextNodeId: 
+      endsConversation: 1
+      jumpToScene: 0
+      sceneIndex: 
+    - text: "\u2026Can I please go to the restroom first? I really need to go. Like
+        right now."
+      objectsToGive: []
+      takeInRequirement: 0
+      requirement: {fileID: 0}
+      trueNextNodeId: 
+      falseNextNodeId: 
+      nextNodeId: 
+      endsConversation: 1
+      jumpToScene: 0
+      sceneIndex: 
+    flagsToSet: 
+  - id: rd_abandoned
+    speakerNameSource: 0
+    speakerName: Alexandra Beacon
+    characterProfile: {fileID: 0}
+    dialogueLines:
+    - text: "The mistletoe project? Wasn\u2019t that abandoned 7 years ago?"
+      voice: 0
+      selectedVoice: 
+      wav: {fileID: 0}
+      generatedFingerprint: 
+      generatedWavPath: 
+    options:
+    - text: Uh, well. I recently came up with a new and improved proposal, and R&D
+        decided to revive the project.
+      objectsToGive: []
+      takeInRequirement: 0
+      requirement: {fileID: 0}
+      trueNextNodeId: 
+      falseNextNodeId: 
+      nextNodeId: rd_result
+      endsConversation: 0
+      jumpToScene: 0
+      sceneIndex: 
+    - text: "Excuse me, what are you talking about? Clearly I\u2019m working on it,
+        so it\u2019s not dead."
+      objectsToGive: []
+      takeInRequirement: 0
+      requirement: {fileID: 0}
+      trueNextNodeId: 
+      falseNextNodeId: 
+      nextNodeId: rd_result
+      endsConversation: 0
+      jumpToScene: 0
+      sceneIndex: 
+    - text: (That ***** researcher!) And how do you know it was abandoned?
+      objectsToGive: []
+      takeInRequirement: 0
+      requirement: {fileID: 0}
+      trueNextNodeId: 
+      falseNextNodeId: 
+      nextNodeId: rd_result
+      endsConversation: 0
+      jumpToScene: 0
+      sceneIndex: 
+    flagsToSet: 
+  - id: rd_result
+    speakerNameSource: 0
+    speakerName: Alexandra Beacon
+    characterProfile: {fileID: 0}
+    dialogueLines:
+    - text: "Oh, you\u2019re funny. You\u2019ve got the same charm as those shut-ins
+        at R&D."
+      voice: 0
+      selectedVoice: 
+      wav: {fileID: 0}
+      generatedFingerprint: 
+      generatedWavPath: 
+    - text: "Unfortunately, you still have a spark of life in your eyes. That\u2019s
+        a dead giveaway, you know."
+      voice: 0
+      selectedVoice: 
+      wav: {fileID: 0}
+      generatedFingerprint: 
+      generatedWavPath: 
+    options: []
+    flagsToSet: 
+  - id: int_urgent
+    speakerNameSource: 0
+    speakerName: Alexandra Beacon
+    characterProfile: {fileID: 0}
+    dialogueLines:
+    - text: Oh? Must be urgent then.
+      voice: 0
+      selectedVoice: 
+      wav: {fileID: 0}
+      generatedFingerprint: 
+      generatedWavPath: 
+    options:
+    - text: "Yes. I\u2019ve just found some crucial evidence of workplace harassment
+        and internal corruption in the cleaners."
+      objectsToGive: []
+      takeInRequirement: 0
+      requirement: {fileID: 0}
+      trueNextNodeId: 
+      falseNextNodeId: 
+      nextNodeId: int_no_investigation
+      endsConversation: 0
+      jumpToScene: 0
+      sceneIndex: 
+    flagsToSet: 
+  - id: int_no_investigation
+    speakerNameSource: 0
+    speakerName: Alexandra Beacon
+    characterProfile: {fileID: 0}
+    dialogueLines:
+    - text: "Oh my, the cleaners? I didn\u2019t realize there was an ongoing investigation
+        into them."
+      voice: 0
+      selectedVoice: 
+      wav: {fileID: 0}
+      generatedFingerprint: 
+      generatedWavPath: 
+    options:
+    - text: "(Uh oh, did I say too much?) Sorry, I\u2019ve already said too much.
+        Just be careful of them."
+      objectsToGive: []
+      takeInRequirement: 0
+      requirement: {fileID: 0}
+      trueNextNodeId: 
+      falseNextNodeId: 
+      nextNodeId: int_result
+      endsConversation: 0
+      jumpToScene: 0
+      sceneIndex: 
+    - text: "(Uh oh, did I say too much?) I witnessed a gang beat down one of the
+        other workers just this morning. It\u2019s completely unacceptable!"
+      objectsToGive: []
+      takeInRequirement: 0
+      requirement: {fileID: 0}
+      trueNextNodeId: 
+      falseNextNodeId: 
+      nextNodeId: int_result
+      endsConversation: 0
+      jumpToScene: 0
+      sceneIndex: 
+    - text: "(Uh oh, did I say too much?) I feel really bad for them. I\u2019m going
+        to advocate for better workplace support and privileges. It\u2019s only now
+        that I\u2019ve realized they\u2019re doing so much for the company."
+      objectsToGive: []
+      takeInRequirement: 0
+      requirement: {fileID: 0}
+      trueNextNodeId: 
+      falseNextNodeId: 
+      nextNodeId: int_result
+      endsConversation: 0
+      jumpToScene: 0
+      sceneIndex: 
+    flagsToSet: 
+  - id: int_result
+    speakerNameSource: 0
+    speakerName: Alexandra Beacon
+    characterProfile: {fileID: 0}
+    dialogueLines:
+    - text: "What a caring soul you are. It\u2019s rare for anyone in intelligence
+        to truly care about anyone besides themselves."
+      voice: 0
+      selectedVoice: 
+      wav: {fileID: 0}
+      generatedFingerprint: 
+      generatedWavPath: 
+    - text: "Of course, if you were actually in intelligence, you\u2019d know this.
+        And you would know me too."
+      voice: 0
+      selectedVoice: 
+      wav: {fileID: 0}
+      generatedFingerprint: 
+      generatedWavPath: 
+    options: []
+    flagsToSet: 
+  - id: over_confirm
+    speakerNameSource: 0
+    speakerName: Alexandra Beacon
+    characterProfile: {fileID: 0}
+    dialogueLines:
+    - text: "You\u2019re\u2026in oversight?"
+      voice: 0
+      selectedVoice: 
+      wav: {fileID: 0}
+      generatedFingerprint: 
+      generatedWavPath: 
+    options:
+    - text: "\u2026yeah."
+      objectsToGive: []
+      takeInRequirement: 0
+      requirement: {fileID: 0}
+      trueNextNodeId: 
+      falseNextNodeId: 
+      nextNodeId: over_floor
+      endsConversation: 0
+      jumpToScene: 0
+      sceneIndex: 
+    flagsToSet: 
+  - id: over_floor
+    speakerNameSource: 0
+    speakerName: Alexandra Beacon
+    characterProfile: {fileID: 0}
+    dialogueLines:
+    - text: "\u2026and you\u2026you\u2019re going to the 20th floor of cybersecurity?
+        To\u2026switch uniforms?"
+      voice: 0
+      selectedVoice: 
+      wav: {fileID: 0}
+      generatedFingerprint: 
+      generatedWavPath: 
+    options:
+    - text: "\u2026yeah, that\u2019s right."
+      objectsToGive: []
+      takeInRequirement: 0
+      requirement: {fileID: 0}
+      trueNextNodeId: 
+      falseNextNodeId: 
+      nextNodeId: over_threat
+      endsConversation: 0
+      jumpToScene: 0
+      sceneIndex: 
+    flagsToSet: 
+  - id: over_threat
+    speakerNameSource: 0
+    speakerName: Alexandra Beacon
+    characterProfile: {fileID: 0}
+    dialogueLines:
+    - text: 'Gosh. I should have met you earlier and learned about this mysterious
+        new uniform supplies closet on the 20th floor. '
+      voice: 0
+      selectedVoice: 
+      wav: {fileID: 0}
+      generatedFingerprint: 
+      generatedWavPath: 
+    - text: "Would have saved me a whole lot of water this month\u2026I could have
+        just mooched off whatever\u2019s in there."
+      voice: 0
+      selectedVoice: 
+      wav: {fileID: 0}
+      generatedFingerprint: 
+      generatedWavPath: 
+    - text: "Hey listen, punk. You\u2019d better take me to that closet, or I\u2019m
+        reporting you."
+      voice: 0
+      selectedVoice: 
+      wav: {fileID: 0}
+      generatedFingerprint: 
+      generatedWavPath: 
+    options:
+    - text: "(Oh. I\u2019m screwed.) \u2026I\u2019m sorry. There is no closet. This
+        isn\u2019t my uniform. I\u2019m not a watcher. I\u2019m not even an employee
+        here. I\u2019m like, not even alive. Please don\u2019t hurt me. ;-;"
+      objectsToGive: []
+      takeInRequirement: 0
+      requirement: {fileID: 0}
+      trueNextNodeId: 
+      falseNextNodeId: 
+      nextNodeId: over_result
+      endsConversation: 0
+      jumpToScene: 0
+      sceneIndex: 
+    - text: "(Oh. I\u2019m screwed.) Who the hell are you to order me around?! I
+        should be the one reporting you for coercion!"
+      objectsToGive: []
+      takeInRequirement: 0
+      requirement: {fileID: 0}
+      trueNextNodeId: 
+      falseNextNodeId: 
+      nextNodeId: over_result
+      endsConversation: 0
+      jumpToScene: 0
+      sceneIndex: 
+    - text: "(Oh. I\u2019m screwed.) Sure. As long as you donate your entire year\u2019s
+        salary to my bank account."
+      objectsToGive: []
+      takeInRequirement: 0
+      requirement: {fileID: 0}
+      trueNextNodeId: 
+      falseNextNodeId: 
+      nextNodeId: over_result
+      endsConversation: 0
+      jumpToScene: 0
+      sceneIndex: 
+    flagsToSet: 
+  - id: over_result
+    speakerNameSource: 0
+    speakerName: Alexandra Beacon
+    characterProfile: {fileID: 0}
+    dialogueLines:
+    - text: "\u2026You didn\u2019t think your stupid excuse actually made any sense,
+        did you?"
+      voice: 0
+      selectedVoice: 
+      wav: {fileID: 0}
+      generatedFingerprint: 
+      generatedWavPath: 
+    options: []
+    flagsToSet: 
+  - id: rd_requirement_failed
+    speakerNameSource: 0
+    speakerName: Alexandra Beacon
+    characterProfile: {fileID: 0}
+    dialogueLines:
+    - text: "R&D? You don\u2019t sound very sure of that."
+      voice: 0
+      selectedVoice: 
+      wav: {fileID: 0}
+      generatedFingerprint: 
+      generatedWavPath: 
+    options: []
+    flagsToSet: 
+  - id: int_requirement_failed
+    speakerNameSource: 0
+    speakerName: Alexandra Beacon
+    characterProfile: {fileID: 0}
+    dialogueLines:
+    - text: "An investigation? Interesting. You don\u2019t have the clearance to
+        sell that story."
+      voice: 0
+      selectedVoice: 
+      wav: {fileID: 0}
+      generatedFingerprint: 
+      generatedWavPath: 
+    options: []
+    flagsToSet: 
+  - id: over_requirement_failed
+    speakerNameSource: 0
+    speakerName: Alexandra Beacon
+    characterProfile: {fileID: 0}
+    dialogueLines:
+    - text: No watcher uniform, no oversight. Try another lie.
+      voice: 0
+      selectedVoice: 
+      wav: {fileID: 0}
+      generatedFingerprint: 
+      generatedWavPath: 
+    options: []
+    flagsToSet: 

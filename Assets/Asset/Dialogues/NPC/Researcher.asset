@@ -1,0 +1,208 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dff2d470d2bdbbd4ea3db1789368bf1a, type: 3}
+  m_Name: Researcher
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueConversation
+  defaultCharacter: {fileID: 0}
+  startNodeId: start
+  nodes:
+  - id: start
+    speakerNameSource: 0
+    speakerName: Researcher
+    characterProfile: {fileID: 0}
+    dialogueLines:
+    - text: '*unconscious*'
+      voice: 0
+      selectedVoice: 
+      wav: {fileID: 0}
+      generatedFingerprint: 
+      generatedWavPath: 
+    options:
+    - text: "Steal the researcher\u2019s items"
+      objectsToGive: []
+      takeInRequirement: 0
+      requirement: {fileID: 0}
+      trueNextNodeId: 
+      falseNextNodeId: 
+      nextNodeId: steal
+      endsConversation: 0
+      jumpToScene: 0
+      sceneIndex: 
+    - text: Give coffee
+      objectsToGive: []
+      takeInRequirement: 0
+      requirement: {fileID: 0}
+      trueNextNodeId: 
+      falseNextNodeId: 
+      nextNodeId: coffee
+      endsConversation: 0
+      jumpToScene: 0
+      sceneIndex: 
+    - text: Leave
+      objectsToGive: []
+      takeInRequirement: 0
+      requirement: {fileID: 0}
+      trueNextNodeId: 
+      falseNextNodeId: 
+      nextNodeId: 
+      endsConversation: 1
+      jumpToScene: 0
+      sceneIndex: 
+    flagsToSet: 
+  - id: coffee
+    speakerNameSource: 0
+    speakerName: Researcher
+    characterProfile: {fileID: 0}
+    dialogueLines:
+    - text: "\u2026need\u2026to get to work\u2026"
+      voice: 0
+      selectedVoice: 
+      wav: {fileID: 0}
+      generatedFingerprint: 
+      generatedWavPath: 
+    options:
+    - text: Want me to deliver it for you?
+      objectsToGive: []
+      takeInRequirement: 0
+      requirement: {fileID: 0}
+      trueNextNodeId: 
+      falseNextNodeId: 
+      nextNodeId: off
+      endsConversation: 1
+      jumpToScene: 0
+      sceneIndex: 
+    - text: "Looks like you\u2019re holding on to something important."
+      objectsToGive: []
+      takeInRequirement: 0
+      requirement: {fileID: 0}
+      trueNextNodeId: 
+      falseNextNodeId: 
+      nextNodeId: off
+      endsConversation: 0
+      jumpToScene: 0
+      sceneIndex: 
+    flagsToSet: 
+  - id: off
+    speakerNameSource: 0
+    speakerName: Researcher
+    characterProfile: {fileID: 0}
+    dialogueLines:
+    - text: "Thanks\u2026I owe you one\u2026"
+      voice: 0
+      selectedVoice: 
+      wav: {fileID: 0}
+      generatedFingerprint: 
+      generatedWavPath: 
+    options:
+    - text: Can I borrow your ID?
+      objectsToGive: []
+      takeInRequirement: 0
+      requirement: {fileID: 0}
+      trueNextNodeId: 
+      falseNextNodeId: 
+      nextNodeId: off1
+      endsConversation: 1
+      jumpToScene: 0
+      sceneIndex: 
+    - text: " \u2026but I can\u2019t use the elevator."
+      objectsToGive: []
+      takeInRequirement: 0
+      requirement: {fileID: 0}
+      trueNextNodeId: 
+      falseNextNodeId: 
+      nextNodeId: off1
+      endsConversation: 0
+      jumpToScene: 0
+      sceneIndex: 
+    flagsToSet: 
+  - id: off1
+    speakerNameSource: 0
+    speakerName: Researcher
+    characterProfile: {fileID: 0}
+    dialogueLines:
+    - text: "Uhhh\u2026lost it\u2026restroom\u2026 *snore*"
+      voice: 0
+      selectedVoice: 
+      wav: {fileID: 0}
+      generatedFingerprint: 
+      generatedWavPath: 
+    options:
+    - text: Leave and obtain research note
+      objectsToGive:
+      - {fileID: 11400000, guid: ccca0939d9964b54ebcf815faa8f32f3, type: 2}
+      takeInRequirement: 0
+      requirement: {fileID: 0}
+      trueNextNodeId: 
+      falseNextNodeId: 
+      nextNodeId: 
+      endsConversation: 1
+      jumpToScene: 0
+      sceneIndex: 
+    - text: "(Are there any competent workers here? Seriously\u2026) "
+      objectsToGive:
+      - {fileID: 11400000, guid: ccca0939d9964b54ebcf815faa8f32f3, type: 2}
+      takeInRequirement: 0
+      requirement: {fileID: 0}
+      trueNextNodeId: 
+      falseNextNodeId: 
+      nextNodeId: 
+      endsConversation: 1
+      jumpToScene: 0
+      sceneIndex: 
+    - text: (He fainted again.)
+      objectsToGive:
+      - {fileID: 11400000, guid: ccca0939d9964b54ebcf815faa8f32f3, type: 2}
+      takeInRequirement: 0
+      requirement: {fileID: 0}
+      trueNextNodeId: 
+      falseNextNodeId: 
+      nextNodeId: 
+      endsConversation: 1
+      jumpToScene: 0
+      sceneIndex: 
+    flagsToSet: 
+  - id: steal
+    speakerNameSource: 1
+    speakerName: 
+    characterProfile: {fileID: 0}
+    dialogueLines:
+    - text: "Ugh. Where is this guy\u2019s ID?"
+      voice: 0
+      selectedVoice: 
+      wav: {fileID: 0}
+      generatedFingerprint: 
+      generatedWavPath: 
+    - text: A Proposal on the Feasibility of mistletoe...could be useful.
+      voice: 0
+      selectedVoice: 
+      wav: {fileID: 0}
+      generatedFingerprint: 
+      generatedWavPath: 
+    - text: "Damn it\u2026not only does he not have his ID"
+      voice: 0
+      selectedVoice: 
+      wav: {fileID: 0}
+      generatedFingerprint: 
+      generatedWavPath: 
+    options:
+    - text: Leave and obtain research note
+      objectsToGive:
+      - {fileID: 11400000, guid: ccca0939d9964b54ebcf815faa8f32f3, type: 2}
+      takeInRequirement: 0
+      requirement: {fileID: 0}
+      trueNextNodeId: 
+      falseNextNodeId: 
+      nextNodeId: 
+      endsConversation: 1
+      jumpToScene: 0
+      sceneIndex: 
+    flagsToSet: 

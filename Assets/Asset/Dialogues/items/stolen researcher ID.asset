@@ -15,6 +15,6 @@ MonoBehaviour:
   itemId: 1
   displayName: Stolen Researcher ID
   description: 
-  icon: {fileID: 0}
+  icon: {fileID: 4907859058162364341, guid: 4b718ba146cf6af4d89f0595709e7af2, type: 3}
   stackable: 0
   maximumStack: 1
