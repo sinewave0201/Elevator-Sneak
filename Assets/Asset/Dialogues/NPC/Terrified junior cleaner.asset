@@ -16,45 +16,81 @@ MonoBehaviour:
   startNodeId: start
   nodes:
   - id: start
-    speakerName: Terrfied junior cleaner
+    speakerNameSource: 0
+    speakerName: Terrified Junior Cleaner
     characterProfile: {fileID: 0}
     dialogueLines:
-    - text: Ughh...
-    - text: I don't want to go to work anymore...
-    - text: It's terrifiying...
+    - text: Stay away from me!
+      voice: 0
+      selectedVoice: 
+      wav: {fileID: 0}
+      generatedFingerprint: 
+      generatedWavPath: 
     options:
-    - text: Who are you?
-      nextNodeId: identity
-      endsConversation: 0
-    - text: What's going on?
-      nextNodeId: event
-      endsConversation: 0
-    - text: Goodbye.
+    - text: Leave
+      objectsToGive: []
+      takeInRequirement: 0
+      requirement: {fileID: 0}
+      trueNextNodeId: 
+      falseNextNodeId: 
       nextNodeId: 
       endsConversation: 1
-  - id: identity
-    speakerName: Terrfied junior cleaner
+      jumpToScene: 0
+      sceneIndex: 
+    - text: Approach
+      objectsToGive: []
+      takeInRequirement: 0
+      requirement: {fileID: 0}
+      trueNextNodeId: 
+      falseNextNodeId: 
+      nextNodeId: app
+      endsConversation: 0
+      jumpToScene: 0
+      sceneIndex: 
+    flagsToSet: 
+  - id: app
+    speakerNameSource: 0
+    speakerName: Terrified Junior Cleaner
     characterProfile: {fileID: 0}
     dialogueLines:
-    - text: 'I am a junior cleaner. I clean this level. '
-    - text: You must be new, I never seen you here...
+    - text: "Please\u2026I have nothing\u2026they already took it all away\u2026"
+      voice: 0
+      selectedVoice: 
+      wav: {fileID: 0}
+      generatedFingerprint: 
+      generatedWavPath: 
     options:
-    - text: what's going on?
-      nextNodeId: event
+    - text: "Who took what? I have no idea what you\u2019re talking about. "
+      objectsToGive: []
+      takeInRequirement: 0
+      requirement: {fileID: 0}
+      trueNextNodeId: 
+      falseNextNodeId: 
+      nextNodeId: fin
       endsConversation: 0
-    - text: Good bye.
-      nextNodeId: 
-      endsConversation: 1
-  - id: event
-    speakerName: Terrfied junior cleaner
+      jumpToScene: 0
+      sceneIndex: 
+    flagsToSet: 
+  - id: fin
+    speakerNameSource: 0
+    speakerName: Terrified Junior Cleaner
     characterProfile: {fileID: 0}
     dialogueLines:
-    - text: Someone just take my... ugh, I can't tell you that.
-    - text: 'Report the cleaner in level 4, ok? They are doing some..bad things there. '
+    - text: "Just leave me alone\u2026 *sob*"
+      voice: 0
+      selectedVoice: 
+      wav: {fileID: 0}
+      generatedFingerprint: 
+      generatedWavPath: 
     options:
-    - text: Who are you?
-      nextNodeId: identity
-      endsConversation: 0
-    - text: Goodbye.
-      nextNodeId: 
+    - text: Leave
+      objectsToGive: []
+      takeInRequirement: 0
+      requirement: {fileID: 0}
+      trueNextNodeId: 
+      falseNextNodeId: 
+      nextNodeId: fin
       endsConversation: 1
+      jumpToScene: 0
+      sceneIndex: 
+    flagsToSet: 

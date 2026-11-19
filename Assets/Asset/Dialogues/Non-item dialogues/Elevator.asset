@@ -93,5 +93,5 @@ MonoBehaviour:
       nextNodeId: 
       endsConversation: 0
       jumpToScene: 1
-      sceneIndex: 0
+      sceneIndex: 1
     flagsToSet: 

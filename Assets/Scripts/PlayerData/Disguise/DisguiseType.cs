@@ -1,5 +1,6 @@
 public enum DisguiseType
 {
     None,
-    Worker
+    Worker,
+    Watcher
 }
