@@ -20,7 +20,14 @@ MonoBehaviour:
     characterProfile: {fileID: 0}
     dialogueLines:
     - text: we are the cleaner bullies aghhhhhh
+      voice: 1
+      selectedVoice: am_echo
+      wav: {fileID: 8300000, guid: 8f25205dcf771ec4e82703c7fcaef7dc, type: 3}
+      generatedFingerprint: 2d40f94d6cdc02dbe96b2ba912072e59
+      generatedWavPath: Assets/GeneratedAudio/Dialogues/Cleaner_bullies_6374c687/00_start_00_am_echo.wav
     options:
     - text: wtf
+      objectsToGive: []
       nextNodeId: 
       endsConversation: 1
+    flagsToSet: 

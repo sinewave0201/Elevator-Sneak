@@ -169,7 +169,7 @@ public class DialogueManager : MonoBehaviour
 
         // float verticalOffset = optionCount * 40f;
         
-        float verticalOffset =  60f;
+        float verticalOffset =  60f + (optionCount - 1) * 10f;
         Vector2 offsetMin = choicesRoot.offsetMin;
         Vector2 offsetMax = choicesRoot.offsetMax;
         offsetMin.y = verticalOffset;
