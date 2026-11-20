@@ -67,4 +67,5 @@ MonoBehaviour:
       endsConversation: 0
       jumpToScene: 1
       sceneIndex: 6
+      sfxFlag: footstep
     flagsToSet: 

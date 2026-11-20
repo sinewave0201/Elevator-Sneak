@@ -6,6 +6,9 @@ public class DialogueInteraction : Interaction
 {
     [SerializeField] private DialogueTrigger dialogueTrigger;
 
+    [Tooltip("Optional. When this conversation ends, audioManager plays the music with this flag (e.g. \"game\"). Leave empty to keep the music as is.")]
+    [SerializeField] private string musicFlagOnComplete;
+
     public override bool CanInteract(PlayerController player)
     {
         return base.CanInteract(player)
@@ -48,5 +51,8 @@ public class DialogueInteraction : Interaction
         foreach (ProgressFlag p in pendingFlags) {
             manager.Progress.SetFlag(p);
         }
+
+        if (!string.IsNullOrWhiteSpace(musicFlagOnComplete) && audioManager.Instance != null)
+            audioManager.Instance.Play(musicFlagOnComplete);
     }
 }

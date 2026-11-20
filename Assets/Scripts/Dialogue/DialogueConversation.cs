@@ -118,8 +118,11 @@ public class DialogueLine
     [SerializeField] private bool endsConversation; 
     [SerializeField] private bool jumpToScene;
     [SerializeField] private string sceneIndex;
+    [Tooltip("Optional. audioManager plays the sound with this flag once when this option is chosen (e.g. \"footstep\").")]
+    [SerializeField] private string sfxFlag;
 
-    public string Text => text; 
+    public string Text => text;
+    public string SfxFlag => sfxFlag;
     public IReadOnlyList<ItemDefinition> ObjectsToGive => objectsToGive;
     public bool TakesInRequirement => takeInRequirement;
     public InteractionRequirement Requirement => requirement;
