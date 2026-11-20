@@ -19,6 +19,9 @@ public class elevatorManager : MonoBehaviour
         public int entryLevel;
         public DialogueTrigger NPC;
         public GameObject NPCportrait;
+        [Tooltip("Optional. As soon as this NPC's conversation starts, audioManager crossfades to the music with this flag (e.g. \"alexandra\").")]
+        [UnityEngine.Serialization.FormerlySerializedAs("musicFlagOnComplete")]
+        public string musicFlagOnStart;
     }
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -118,60 +121,81 @@ public class elevatorManager : MonoBehaviour
         }
     }
 
-    private IEnumerator HandleNpcArrival(elevatorStorage npcEntry)
+private IEnumerator HandleNpcArrival(elevatorStorage npcEntry)
+{
+    diaCanvas.SetActive(true);
+
+    if (elevatorAnim != null)
     {
-        diaCanvas.SetActive(true);
+        elevatorAnim.ResetTrigger(CloseTrigger);
+        elevatorAnim.SetTrigger(OpenTrigger);
 
-        if (elevatorAnim != null)
-        {
-            elevatorAnim.ResetTrigger(CloseTrigger);
-            elevatorAnim.SetTrigger(OpenTrigger);
-
-            yield return WaitForAnimatorState(OpenState);
-            yield return WaitForAnimationToFinish(OpenState);
-        }
-
-        if (npcEntry.NPCportrait != null)
-            npcEntry.NPCportrait.SetActive(true);
-
-        if (elevatorAnim != null)
-        {
-            elevatorAnim.SetTrigger(CloseTrigger);
-
-            yield return WaitForAnimatorState(CloseState);
-            yield return WaitForAnimatorState(IdleState, true);
-        }
-
-        DialogueManager.Instance.StartDialogue(npcEntry.NPC);
+        yield return WaitForAnimatorState(OpenState);
+        yield return WaitForAnimationToFinish(OpenState);
     }
 
-    private IEnumerator WaitForAnimatorState(int stateHash, bool waitForTransition = false)
+    if (npcEntry.NPCportrait != null)
+        npcEntry.NPCportrait.SetActive(true);
+
+    if (elevatorAnim != null)
     {
-        while (true)
-        {
-            AnimatorStateInfo currentState = elevatorAnim.GetCurrentAnimatorStateInfo(0);
-            bool reachedState = currentState.shortNameHash == stateHash;
+        elevatorAnim.SetTrigger(CloseTrigger);
 
-            if (reachedState && (!waitForTransition || !elevatorAnim.IsInTransition(0)))
-                yield break;
-
-            yield return null;
-        }
+        yield return WaitForAnimatorState(CloseState);
+        yield return WaitForAnimatorState(IdleState, true);
     }
 
-    private IEnumerator WaitForAnimationToFinish(int stateHash)
+    DialogueManager.Instance.StartDialogue(npcEntry.NPC);
+    PlayNpcMusic(npcEntry.musicFlagOnStart);
+}
+
+private IEnumerator WaitForAnimatorState(
+    int stateHash,
+    bool waitForTransition = false)
+{
+    while (true)
     {
-        while (true)
+        AnimatorStateInfo currentState =
+            elevatorAnim.GetCurrentAnimatorStateInfo(0);
+
+        bool reachedState =
+            currentState.shortNameHash == stateHash;
+
+        if (reachedState &&
+            (!waitForTransition || !elevatorAnim.IsInTransition(0)))
         {
-            AnimatorStateInfo state = elevatorAnim.GetCurrentAnimatorStateInfo(0);
-
-            if (state.shortNameHash != stateHash ||
-                (state.normalizedTime >= 1f && !elevatorAnim.IsInTransition(0)))
-            {
-                yield break;
-            }
-
-            yield return null;
+            yield break;
         }
+
+        yield return null;
+    }
+}
+
+private IEnumerator WaitForAnimationToFinish(int stateHash)
+{
+    while (true)
+    {
+        AnimatorStateInfo state =
+            elevatorAnim.GetCurrentAnimatorStateInfo(0);
+
+        if (state.shortNameHash != stateHash ||
+            (state.normalizedTime >= 1f &&
+             !elevatorAnim.IsInTransition(0)))
+        {
+            yield break;
+        }
+
+        yield return null;
+    }
+}
+
+private static void PlayNpcMusic(string musicFlag)
+{
+    if (!string.IsNullOrWhiteSpace(musicFlag) &&
+        audioManager.Instance != null)
+    {
+        audioManager.Instance.Play(musicFlag);
+    }
+}
     }
 }

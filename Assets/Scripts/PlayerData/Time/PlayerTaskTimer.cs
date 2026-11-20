@@ -28,6 +28,10 @@ public class PlayerTaskTimer
     [field: NonSerialized]
     public event Action TimeExpired;
 
+    // Fired by CompleteCurrentTask() (e.g. when the player clocks in). audioManager stops the task music on it.
+    [field: NonSerialized]
+    public event Action TaskCompleted;
+
     public void Initialize()
     {
         Reset();
@@ -61,6 +65,7 @@ public class PlayerTaskTimer
         lastLoggedWholeSecond = -1;
         Debug.Log($"[TaskTimer] Completed '{completedTaskName}'.");
         TimeChanged?.Invoke(remainingSeconds);
+        TaskCompleted?.Invoke();
     }
 
     public void SpendTime(float seconds)

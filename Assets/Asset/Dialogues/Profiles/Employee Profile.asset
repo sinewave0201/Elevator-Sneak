@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 060b0d9fdce589a448119e92c356ed2e, type: 3}
   m_Name: Employee Profile
   m_EditorClassIdentifier: Assembly-CSharp::DialogueCharacterProfile
+  displayNameSource: 0
   displayName: UNKNOWN
   caseNumber: CASE # HR-00-0000 / REVIEW PENDING
   employeeId: UNLISTED
