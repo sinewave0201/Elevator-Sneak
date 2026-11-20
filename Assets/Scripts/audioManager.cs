@@ -17,6 +17,17 @@ public class audioManager : MonoBehaviour
         public float loopFadeOutAt;
         [Tooltip("Music: seconds into the track where the next pass starts playing. Usually 0 (the beginning).")]
         public float loopRestartAt;
+        [Tooltip("Music: play the track through once and stop, no loop (e.g. the credits song).")]
+        public bool playOnce;
+    }
+
+    [System.Serializable]
+    public struct SceneMusic
+    {
+        [Tooltip("Scene name, e.g. \"end\".")]
+        public string sceneName;
+        [Tooltip("Audio List flag to play when that scene loads, e.g. \"credits\".")]
+        public string flag;
     }
 
     public static audioManager Instance { get; private set; }
@@ -27,6 +38,10 @@ public class audioManager : MonoBehaviour
     [Header("Scene Music")]
     [Tooltip("Scenes that play the title theme. Every other scene plays the game music (unless StopMusic() is holding it).")]
     [SerializeField] private string[] titleSceneNames = { "Title", "beginning" };
+    [Tooltip("Scenes that always play a specific track when they load, e.g. end -> credits. Checked before the title/game rules.")]
+    [SerializeField] private SceneMusic[] sceneMusic = { new SceneMusic { sceneName = "end", flag = "credits" } };
+    [Tooltip("Scenes with no music at all. Music fades out when one of these loads.")]
+    [SerializeField] private string[] silentSceneNames = { };
     [SerializeField] private string titleFlag = "title";   // Elevator Sneak-Final
     [SerializeField] private string gameFlag = "game";     // task1prerelease2
 
@@ -53,6 +68,9 @@ public class audioManager : MonoBehaviour
     // The Audio List entry that is currently playing as music (for its loop crossfade settings).
     private AudioList currentEntry;
     private bool hasCurrentEntry;
+
+    // The task timer we listen to, so the task music stops when the task is completed (clocking in).
+    private PlayerTaskTimer subscribedTaskTimer;
 
     // The prefab at Assets/Resources/audioManager.prefab. Edit the Audio List and settings there.
     private const string PrefabResourcePath = "audioManager";
@@ -123,6 +141,7 @@ public class audioManager : MonoBehaviour
         sfxSource.playOnAwake = false;
 
         SceneManager.sceneLoaded += HandleSceneLoaded;
+        SubscribeToTaskTimer();
         PlayForScene(SceneManager.GetActiveScene());
     }
 
@@ -132,7 +151,28 @@ public class audioManager : MonoBehaviour
             return;
 
         SceneManager.sceneLoaded -= HandleSceneLoaded;
+        if (subscribedTaskTimer != null)
+            subscribedTaskTimer.TaskCompleted -= HandleTaskCompleted;
         Instance = null;
+    }
+
+    // PlayerDataManager lives in the gameplay scenes, not Title, so try again whenever a scene loads.
+    private void SubscribeToTaskTimer()
+    {
+        PlayerTaskTimer timer = PlayerDataManager.Instance != null ? PlayerDataManager.Instance.TaskTimer : null;
+        if (timer == null || timer == subscribedTaskTimer)
+            return;
+
+        if (subscribedTaskTimer != null)
+            subscribedTaskTimer.TaskCompleted -= HandleTaskCompleted;
+        subscribedTaskTimer = timer;
+        subscribedTaskTimer.TaskCompleted += HandleTaskCompleted;
+    }
+
+    // Task 1 done (the player clocked in): fade the task music out and keep it silent.
+    private void HandleTaskCompleted()
+    {
+        StopMusic();
     }
 
     private void HandleSceneLoaded(Scene scene, LoadSceneMode mode)
@@ -144,11 +184,30 @@ public class audioManager : MonoBehaviour
             StopSFX();
         }
 
+        SubscribeToTaskTimer();
         PlayForScene(scene);
     }
 
     private void PlayForScene(Scene scene)
     {
+        if (System.Array.IndexOf(silentSceneNames, scene.name) >= 0)
+        {
+            StopMusic();
+            return;
+        }
+
+        if (sceneMusic != null)
+        {
+            foreach (SceneMusic entry in sceneMusic)
+            {
+                if (entry.sceneName == scene.name && !string.IsNullOrWhiteSpace(entry.flag))
+                {
+                    Play(entry.flag);
+                    return;
+                }
+            }
+        }
+
         if (System.Array.IndexOf(titleSceneNames, scene.name) >= 0)
         {
             Play(titleFlag);
@@ -217,7 +276,8 @@ public class audioManager : MonoBehaviour
     private void Update()
     {
         // Loop logic for every music track: each pass plays once; at its fade point the next pass starts and they crossfade.
-        if (!hasCurrentEntry || waitingForCue)
+        // Play-once tracks (credits) just end; no next pass.
+        if (!hasCurrentEntry || waitingForCue || currentEntry.playOnce)
             return;
 
         AudioSource current = sources[activeIndex];
