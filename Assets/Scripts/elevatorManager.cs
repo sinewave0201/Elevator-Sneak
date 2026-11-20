@@ -11,6 +11,9 @@ public class elevatorManager : MonoBehaviour
     {
         public int entryLevel;
         public DialogueTrigger NPC;
+        [Tooltip("Optional. As soon as this NPC's conversation starts, audioManager crossfades to the music with this flag (e.g. \"alexandra\").")]
+        [UnityEngine.Serialization.FormerlySerializedAs("musicFlagOnComplete")]
+        public string musicFlagOnStart;
     }
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -107,7 +110,14 @@ public class elevatorManager : MonoBehaviour
             haveNPC = true;
             diaCanvas.SetActive(true);
             DialogueManager.Instance.StartDialogue(npcEntry.NPC);
+            PlayNpcMusic(npcEntry.musicFlagOnStart);
             break;
         }
+    }
+
+    private static void PlayNpcMusic(string musicFlag)
+    {
+        if (!string.IsNullOrWhiteSpace(musicFlag) && audioManager.Instance != null)
+            audioManager.Instance.Play(musicFlag);
     }
 }

@@ -158,9 +158,24 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 814fc44a7bac1724bab97027063d16d0, type: 3}
     loopFadeOutAt: 0
     loopRestartAt: 0
+  - flag: credits
+    clip: {fileID: 8300000, guid: 75a746528bfd48b41af1d90e516b4a0d, type: 3}
+    loopFadeDuration: 0
+    loopFadeOutAt: 0
+    loopRestartAt: 0
+    playOnce: 1
+  - flag: alexandra
+    clip: {fileID: 8300000, guid: 1b18c6a3b0f389d45984b66a61a7321a, type: 3}
+    loopFadeDuration: 3.89
+    loopFadeOutAt: 91.2
+    loopRestartAt: 0
   titleSceneNames:
   - Title
   - beginning
+  sceneMusic:
+  - sceneName: end
+    flag: credits
+  silentSceneNames: []
   titleFlag: title
   gameFlag: game
   crossfadeDuration: 1.5

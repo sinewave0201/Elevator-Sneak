@@ -2072,6 +2072,7 @@ MonoBehaviour:
   NPCList:
   - entryLevel: 7
     NPC: {fileID: 856613241}
+    musicFlagOnStart: alexandra
   elevatorAnim: {fileID: 0}
 --- !u!1 &1325124493
 GameObject:
