@@ -881,7 +881,7 @@ MonoBehaviour:
   requirement: {fileID: 0}
   interactionKey: 19
   interactionSFX: {fileID: 8300000, guid: 0377175798349fd42b5d3ab542b31362, type: 3}
-  sceneIndex: 11
+  sceneIndex: 12
 --- !u!1 &792627501
 GameObject:
   m_ObjectHideFlags: 0
@@ -6197,7 +6197,7 @@ MonoBehaviour:
   requirement: {fileID: 0}
   interactionKey: 19
   interactionSFX: {fileID: 8300000, guid: 0377175798349fd42b5d3ab542b31362, type: 3}
-  sceneIndex: 11
+  sceneIndex: 13
 --- !u!1 &1550994073
 GameObject:
   m_ObjectHideFlags: 0

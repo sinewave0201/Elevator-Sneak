@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dff2d470d2bdbbd4ea3db1789368bf1a, type: 3}
   m_Name: Opening-Late!
   m_EditorClassIdentifier: Assembly-CSharp::DialogueConversation
-  defaultCharacter: {fileID: 0}
+  defaultCharacter: {fileID: 11400000, guid: 316a88af67cb59045b15b587bb0da276, type: 2}
   startNodeId: start
   nodes:
   - id: start
@@ -59,8 +59,12 @@ MonoBehaviour:
     options:
     - text: Run to your company!!!!!
       objectsToGive: []
+      takeInRequirement: 0
+      requirement: {fileID: 0}
+      trueNextNodeId: 
+      falseNextNodeId: 
       nextNodeId: 
       endsConversation: 0
       jumpToScene: 1
-      sceneIndex: 5
+      sceneIndex: 6
     flagsToSet: 

@@ -29,6 +29,10 @@ MonoBehaviour:
     options:
     - text: "What? But I\u2019m a rightful employee-"
       objectsToGive: []
+      takeInRequirement: 0
+      requirement: {fileID: 0}
+      trueNextNodeId: 
+      falseNextNodeId: 
       nextNodeId: 1
       endsConversation: 0
       jumpToScene: 0
@@ -54,6 +58,10 @@ MonoBehaviour:
     options:
     - text: What?!
       objectsToGive: []
+      takeInRequirement: 0
+      requirement: {fileID: 0}
+      trueNextNodeId: 
+      falseNextNodeId: 
       nextNodeId: 2
       endsConversation: 0
       jumpToScene: 0
@@ -62,7 +70,7 @@ MonoBehaviour:
   - id: 2
     speakerNameSource: 1
     speakerName: MC
-    characterProfile: {fileID: 0}
+    characterProfile: {fileID: 11400000, guid: 316a88af67cb59045b15b587bb0da276, type: 2}
     dialogueLines:
     - text: "(\u2026I\u2019m going to get fired. How do I even get up to the 20th
         floor in\u202610 MINUTES? WHAT THE ACTUAL-)\r "
@@ -80,6 +88,10 @@ MonoBehaviour:
     options:
     - text: continue
       objectsToGive: []
+      takeInRequirement: 0
+      requirement: {fileID: 0}
+      trueNextNodeId: 
+      falseNextNodeId: 
       nextNodeId: 5
       endsConversation: 0
       jumpToScene: 0
@@ -107,6 +119,10 @@ MonoBehaviour:
     options:
     - text: freak!!!!
       objectsToGive: []
+      takeInRequirement: 0
+      requirement: {fileID: 0}
+      trueNextNodeId: 
+      falseNextNodeId: 
       nextNodeId: 
       endsConversation: 1
       jumpToScene: 0

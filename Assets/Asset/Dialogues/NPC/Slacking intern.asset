@@ -16,62 +16,95 @@ MonoBehaviour:
   startNodeId: start
   nodes:
   - id: start
+    speakerNameSource: 0
     speakerName: Slacking intern
     characterProfile: {fileID: 0}
     dialogueLines:
     - text: urgh!
-      voice: 1
+      voice: 0
       selectedVoice: am_michael
-      wav: {fileID: 8300000, guid: 578263cbf7986104d84d29722e8e6e6f, type: 3}
-      generatedFingerprint: 3c56a42fcf67987587b27b66529475df
-      generatedWavPath: Assets/GeneratedAudio/Dialogues/Slacking_intern_3167e74f/00_start_00_am_michael.wav
+      wav: {fileID: 0}
+      generatedFingerprint: 
+      generatedWavPath: 
     - text: Oh, I thought you were my team lead...
-      voice: 1
+      voice: 0
       selectedVoice: am_michael
-      wav: {fileID: 8300000, guid: 2e5869921cd90d8438e7702a943c9a5b, type: 3}
-      generatedFingerprint: 865ae5b24be90bafb5838685bdf4c04f
-      generatedWavPath: Assets/GeneratedAudio/Dialogues/Slacking_intern_3167e74f/00_start_01_am_michael.wav
+      wav: {fileID: 0}
+      generatedFingerprint: 
+      generatedWavPath: 
     options:
     - text: Who are you?
       objectsToGive: []
+      takeInRequirement: 0
+      requirement: {fileID: 0}
+      trueNextNodeId: 
+      falseNextNodeId: 
       nextNodeId: identity
       endsConversation: 0
+      jumpToScene: 0
+      sceneIndex: 
     - text: Why are you scared?
       objectsToGive: []
+      takeInRequirement: 0
+      requirement: {fileID: 0}
+      trueNextNodeId: 
+      falseNextNodeId: 
       nextNodeId: Scared
       endsConversation: 0
+      jumpToScene: 0
+      sceneIndex: 
     - text: Bye.
       objectsToGive: []
+      takeInRequirement: 0
+      requirement: {fileID: 0}
+      trueNextNodeId: 
+      falseNextNodeId: 
       nextNodeId: 
       endsConversation: 1
+      jumpToScene: 0
+      sceneIndex: 
     flagsToSet: 
   - id: identity
+    speakerNameSource: 0
     speakerName: Slacking intern
     characterProfile: {fileID: 0}
     dialogueLines:
-    - text: I'm an intern in the ai security department.
+    - text: I'm an intern in the AI security department.
       voice: 1
       selectedVoice: am_michael
       wav: {fileID: 8300000, guid: 43a7156dbbd323a46b941c258b6ccddc, type: 3}
-      generatedFingerprint: 4056c87b5bb506f3b82def6b948bc325
+      generatedFingerprint: caf07f4da2fc7ea8711c933e03b60b9d
       generatedWavPath: Assets/GeneratedAudio/Dialogues/Slacking_intern_3167e74f/01_identity_00_am_michael.wav
-    - text: This is my third month here...
+    - text: (It's only the first month...why does it feel so long?)
       voice: 1
       selectedVoice: am_michael
       wav: {fileID: 8300000, guid: 917ee679aa852f04db1e6722f353dc80, type: 3}
-      generatedFingerprint: b9c904c5dbdf980aa161a4ba02a1f56c
+      generatedFingerprint: aa580f04e54e909d03239de2f3b1dfde
       generatedWavPath: Assets/GeneratedAudio/Dialogues/Slacking_intern_3167e74f/01_identity_01_am_michael.wav
     options:
     - text: Why are you scared?
       objectsToGive: []
+      takeInRequirement: 0
+      requirement: {fileID: 0}
+      trueNextNodeId: 
+      falseNextNodeId: 
       nextNodeId: Scared
       endsConversation: 0
+      jumpToScene: 0
+      sceneIndex: 
     - text: Bye.
       objectsToGive: []
+      takeInRequirement: 0
+      requirement: {fileID: 0}
+      trueNextNodeId: 
+      falseNextNodeId: 
       nextNodeId: 
       endsConversation: 1
+      jumpToScene: 0
+      sceneIndex: 
     flagsToSet: 
   - id: Scared
+    speakerNameSource: 0
     speakerName: Slacking intern
     characterProfile: {fileID: 0}
     dialogueLines:
@@ -81,42 +114,61 @@ MonoBehaviour:
       wav: {fileID: 8300000, guid: 3b5fffe7f7fb94e4bb3aa1f0b2dc364c, type: 3}
       generatedFingerprint: cb54f99874c90e78520bed83edeef347
       generatedWavPath: Assets/GeneratedAudio/Dialogues/Slacking_intern_3167e74f/02_Scared_00_am_michael.wav
-    - text: I am using the company AI to do some work in security...So its basically
+    - text: I am using the company AI to fits its own security bugs...So its like,
         it securing itself.
       voice: 1
       selectedVoice: am_michael
       wav: {fileID: 8300000, guid: 89a12e50af133234f976df981b80e58b, type: 3}
-      generatedFingerprint: 83044fedc3f98a76e02a545f2cc78994
+      generatedFingerprint: 10d79836c716c9ee7b259d818f63310a
       generatedWavPath: Assets/GeneratedAudio/Dialogues/Slacking_intern_3167e74f/02_Scared_01_am_michael.wav
-    - text: I don't want to do that either! But I can not figure it out...
+    - text: Wonder if that would create other bugs...
       voice: 1
       selectedVoice: am_michael
       wav: {fileID: 8300000, guid: 0451c64a01f05f44eaba1ad030d1e456, type: 3}
-      generatedFingerprint: 101e26bb4ac843c0629e8bc09e547ca9
+      generatedFingerprint: 3ef3285bc57b4291b58319283140a231
       generatedWavPath: Assets/GeneratedAudio/Dialogues/Slacking_intern_3167e74f/02_Scared_02_am_michael.wav
     options:
     - text: Bye.
       objectsToGive: []
+      takeInRequirement: 0
+      requirement: {fileID: 0}
+      trueNextNodeId: 
+      falseNextNodeId: 
       nextNodeId: 
       endsConversation: 1
+      jumpToScene: 0
+      sceneIndex: 
     - text: How did you get here???
       objectsToGive: []
+      takeInRequirement: 0
+      requirement: {fileID: 0}
+      trueNextNodeId: 
+      falseNextNodeId: 
       nextNodeId: dad
       endsConversation: 0
+      jumpToScene: 0
+      sceneIndex: 
     flagsToSet: 
   - id: dad
+    speakerNameSource: 1
     speakerName: Slacking intern
-    characterProfile: {fileID: 0}
+    characterProfile: {fileID: 11400000, guid: 316a88af67cb59045b15b587bb0da276, type: 2}
     dialogueLines:
-    - text: Oh, you know, my dad...
-      voice: 1
+    - text: (Let's be honest. His dad probabily get him here.)
+      voice: 0
       selectedVoice: am_michael
-      wav: {fileID: 8300000, guid: 8439c6c8163738a499bc53e7fffeb87d, type: 3}
-      generatedFingerprint: 5602e44e990c54b74ab46b02c7afab04
-      generatedWavPath: Assets/GeneratedAudio/Dialogues/Slacking_intern_3167e74f/03_dad_00_am_michael.wav
+      wav: {fileID: 0}
+      generatedFingerprint: 
+      generatedWavPath: 
     options:
     - text: Bye.
       objectsToGive: []
+      takeInRequirement: 0
+      requirement: {fileID: 0}
+      trueNextNodeId: 
+      falseNextNodeId: 
       nextNodeId: 
       endsConversation: 1
+      jumpToScene: 0
+      sceneIndex: 
     flagsToSet: 
