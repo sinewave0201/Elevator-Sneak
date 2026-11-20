@@ -12710,6 +12710,7 @@ MonoBehaviour:
   interactionKey: 20
   interactionSFX: {fileID: 0}
   dialogueTrigger: {fileID: 8306634275218658875}
+  musicFlagOnComplete: game
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

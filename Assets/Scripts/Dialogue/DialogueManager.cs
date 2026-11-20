@@ -182,6 +182,9 @@ public class DialogueManager : MonoBehaviour
     {
         if (index < 0 || index >= node.Options.Count) return;
         DialogueOption option = node.Options[index];
+        if (!string.IsNullOrWhiteSpace(option.SfxFlag) && audioManager.Instance != null)
+            // If this option changes scene, the sound only covers the loading and stops once the new scene is loaded.
+            audioManager.Instance.PlaySFX(option.SfxFlag, option.JumpsToScene);
         GiveOptionItems(option);
         if (option.TakesInRequirement)
         {
