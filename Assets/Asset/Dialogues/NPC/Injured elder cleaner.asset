@@ -37,4 +37,5 @@ MonoBehaviour:
       - {fileID: 11400000, guid: ee88543d961ee0647ba33898a41a92fd, type: 2}
       nextNodeId: 
       endsConversation: 1
-    flagsToSet: 
+    flagsToSet:
+    - 7
