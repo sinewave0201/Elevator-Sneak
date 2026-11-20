@@ -16,7 +16,7 @@ public class SceneChangeInteractionEditor : Editor
         EditorGUILayout.Space();
 
         int sceneCount = SceneManager.sceneCountInBuildSettings;
-        string[] sceneNames = new string[sceneCount + 2];
+        string[] sceneNames = new string[sceneCount + 3];
 
         for (int i = 0; i < sceneCount; i++)
         {
@@ -24,14 +24,9 @@ public class SceneChangeInteractionEditor : Editor
             sceneNames[i] = System.IO.Path.GetFileNameWithoutExtension(path);
         }
 
-        //add two new options:
-        //previous entered scene option and next scene index option
-        int prevIndex = SceneChangeInteraction.PreviousSceneIndex;
-        string prevPath = SceneUtility.GetScenePathByBuildIndex(prevIndex);
-        string nextPath = SceneUtility.GetScenePathByBuildIndex(prevIndex + 1);
-        
-        sceneNames[sceneCount] = "Previous Scene";
-        sceneNames[sceneCount + 1] = "Next Scene";
+        sceneNames[sceneCount] = "Go Back";
+        sceneNames[sceneCount + 1] = "Next Level";
+        sceneNames[sceneCount + 2] = "Previous Level";
 
         int currentIndex = serializedObject
             .FindProperty("sceneIndex").intValue;

@@ -1186,6 +1186,7 @@ MonoBehaviour:
   interactionKey: 20
   interactionSFX: {fileID: 0}
   dialogueTrigger: {fileID: 389540070}
+  musicFlagOnComplete: 
 --- !u!1 &467612659
 GameObject:
   m_ObjectHideFlags: 0
@@ -10907,7 +10908,7 @@ MonoBehaviour:
   requirement: {fileID: 0}
   interactionKey: 19
   interactionSFX: {fileID: 8300000, guid: 0377175798349fd42b5d3ab542b31362, type: 3}
-  sceneIndex: 3
+  sceneIndex: 4
 --- !u!1 &1980330768
 GameObject:
   m_ObjectHideFlags: 0
