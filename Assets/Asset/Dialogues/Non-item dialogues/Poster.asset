@@ -16,22 +16,23 @@ MonoBehaviour:
   startNodeId: start
   nodes:
   - id: start
+    speakerNameSource: 0
     speakerName: Poster
     characterProfile: {fileID: 0}
     dialogueLines:
-    - text: 'The figure in the middle smiles sneakily. That is the CEO of this company,
+    - text: 'The figure in the middle smiles cunningly. That''s the CEO of this company,
         Sario Altmodei. '
       voice: 1
       selectedVoice: af_alloy
       wav: {fileID: 8300000, guid: 68f2ff4ffd886604eb0d47b212f05c3e, type: 3}
-      generatedFingerprint: 5534fee5f742ccee7a1b2a6b3c22ee40
+      generatedFingerprint: 4e7bb82dd36b3086e11b67f1afcf4721
       generatedWavPath: Assets/GeneratedAudio/Dialogues/Poster_28567d68/00_start_00_af_alloy.wav
-    - text: His company just hit a trillion dollars in market cap, stock chart all
-        green.
+    - text: The company just hit a trillion dollars in market cap; my portfolio's
+        all green.
       voice: 1
       selectedVoice: af_alloy
       wav: {fileID: 8300000, guid: 67f10b1001d14cc4098a26228d616a1a, type: 3}
-      generatedFingerprint: 8582f38b1357e9a18494bb12a496949e
+      generatedFingerprint: 6a7631b630588dc9ea0b716800f9c95a
       generatedWavPath: Assets/GeneratedAudio/Dialogues/Poster_28567d68/00_start_01_af_alloy.wav
     - text: "I still can\u2019t believe I get to work here."
       voice: 1
@@ -40,8 +41,14 @@ MonoBehaviour:
       generatedFingerprint: b54f28f0d9dce874c803eafdd09fae71
       generatedWavPath: Assets/GeneratedAudio/Dialogues/Poster_28567d68/00_start_02_af_alloy.wav
     options:
-    - text: Go away.
+    - text: Leave.
       objectsToGive: []
+      takeInRequirement: 0
+      requirement: {fileID: 0}
+      trueNextNodeId: 
+      falseNextNodeId: 
       nextNodeId: 
       endsConversation: 1
+      jumpToScene: 0
+      sceneIndex: 
     flagsToSet: 
