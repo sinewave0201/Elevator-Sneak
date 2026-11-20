@@ -5,22 +5,31 @@ public class SceneChangeInteraction : Interaction
 {
     [HideInInspector]
     [SerializeField] private int sceneIndex;
-    private static int previousSceneIndex = -1;
-    public static int PreviousSceneIndex => previousSceneIndex;
+    private static int goBackSceneIndex = -1;
+    public static int GoBackSceneIndex => goBackSceneIndex;
+
     public override void Interact(PlayerController player)
     {
         int sceneCount = SceneManager.sceneCountInBuildSettings;
         int currentSceneIdx = SceneManager.GetActiveScene().buildIndex;
 
+        int goBack = sceneCount;
+        int nextLevel = sceneCount + 1;
+        int prevLevel = sceneCount + 2;
+
         int destinationIdx;
 
-        if (sceneIndex == sceneCount)
+        if (sceneIndex == goBack)
         {
-            destinationIdx = previousSceneIndex;
+            destinationIdx = goBackSceneIndex;
         }
-        else if (sceneIndex == sceneCount + 1)
+        else if (sceneIndex == nextLevel)
         {
-            destinationIdx = previousSceneIndex + 1;
+            destinationIdx = goBackSceneIndex + 1;
+        }
+        else if (sceneIndex == prevLevel)
+        {
+            destinationIdx = goBackSceneIndex - 1;
         }
         else
         {
@@ -34,8 +43,8 @@ public class SceneChangeInteraction : Interaction
             return;
         }
 
-        previousSceneIndex = currentSceneIdx;//update prev scene idx
-        Debug.Log("prevIdx: " + previousSceneIndex);
+        goBackSceneIndex = currentSceneIdx;
+        Debug.Log("goBackIdx: " + goBackSceneIndex);
         Debug.Log("destinationIdx: " + destinationIdx);
         SceneManager.LoadScene(destinationIdx);
     }

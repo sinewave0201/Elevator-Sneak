@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -6,11 +7,18 @@ using UnityEngine.InputSystem;
 
 public class elevatorManager : MonoBehaviour
 {
+    private static readonly int OpenTrigger = Animator.StringToHash("open");
+    private static readonly int CloseTrigger = Animator.StringToHash("close");
+    private static readonly int OpenState = Animator.StringToHash("open");
+    private static readonly int CloseState = Animator.StringToHash("close");
+    private static readonly int IdleState = Animator.StringToHash("idl");
+
     [Serializable]
     private struct elevatorStorage
     {
         public int entryLevel;
         public DialogueTrigger NPC;
+        public GameObject NPCportrait;
         [Tooltip("Optional. As soon as this NPC's conversation starts, audioManager crossfades to the music with this flag (e.g. \"alexandra\").")]
         [UnityEngine.Serialization.FormerlySerializedAs("musicFlagOnComplete")]
         public string musicFlagOnStart;
@@ -108,16 +116,86 @@ public class elevatorManager : MonoBehaviour
                 continue;
 
             haveNPC = true;
-            diaCanvas.SetActive(true);
-            DialogueManager.Instance.StartDialogue(npcEntry.NPC);
-            PlayNpcMusic(npcEntry.musicFlagOnStart);
+            StartCoroutine(HandleNpcArrival(npcEntry));
             break;
         }
     }
 
-    private static void PlayNpcMusic(string musicFlag)
+private IEnumerator HandleNpcArrival(elevatorStorage npcEntry)
+{
+    diaCanvas.SetActive(true);
+
+    if (elevatorAnim != null)
     {
-        if (!string.IsNullOrWhiteSpace(musicFlag) && audioManager.Instance != null)
-            audioManager.Instance.Play(musicFlag);
+        elevatorAnim.ResetTrigger(CloseTrigger);
+        elevatorAnim.SetTrigger(OpenTrigger);
+
+        yield return WaitForAnimatorState(OpenState);
+        yield return WaitForAnimationToFinish(OpenState);
+    }
+
+    if (npcEntry.NPCportrait != null)
+        npcEntry.NPCportrait.SetActive(true);
+
+    if (elevatorAnim != null)
+    {
+        elevatorAnim.SetTrigger(CloseTrigger);
+
+        yield return WaitForAnimatorState(CloseState);
+        yield return WaitForAnimatorState(IdleState, true);
+    }
+
+    DialogueManager.Instance.StartDialogue(npcEntry.NPC);
+    PlayNpcMusic(npcEntry.musicFlagOnStart);
+}
+
+private IEnumerator WaitForAnimatorState(
+    int stateHash,
+    bool waitForTransition = false)
+{
+    while (true)
+    {
+        AnimatorStateInfo currentState =
+            elevatorAnim.GetCurrentAnimatorStateInfo(0);
+
+        bool reachedState =
+            currentState.shortNameHash == stateHash;
+
+        if (reachedState &&
+            (!waitForTransition || !elevatorAnim.IsInTransition(0)))
+        {
+            yield break;
+        }
+
+        yield return null;
+    }
+}
+
+private IEnumerator WaitForAnimationToFinish(int stateHash)
+{
+    while (true)
+    {
+        AnimatorStateInfo state =
+            elevatorAnim.GetCurrentAnimatorStateInfo(0);
+
+        if (state.shortNameHash != stateHash ||
+            (state.normalizedTime >= 1f &&
+             !elevatorAnim.IsInTransition(0)))
+        {
+            yield break;
+        }
+
+        yield return null;
+    }
+}
+
+private static void PlayNpcMusic(string musicFlag)
+{
+    if (!string.IsNullOrWhiteSpace(musicFlag) &&
+        audioManager.Instance != null)
+    {
+        audioManager.Instance.Play(musicFlag);
+    }
+}
     }
 }

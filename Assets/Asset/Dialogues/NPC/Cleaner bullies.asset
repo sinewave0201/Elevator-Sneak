@@ -17,17 +17,17 @@ MonoBehaviour:
   nodes:
   - id: start
     speakerNameSource: 0
-    speakerName: cleaner bullies
+    speakerName: Cleaner Bullies
     characterProfile: {fileID: 0}
     dialogueLines:
     - text: What are you looking at?
-      voice: 1
-      selectedVoice: am_echo
-      wav: {fileID: 8300000, guid: 8f25205dcf771ec4e82703c7fcaef7dc, type: 3}
-      generatedFingerprint: adde51717ea7f4441052b19a35947345
-      generatedWavPath: Assets/GeneratedAudio/Dialogues/Cleaner_bullies_6374c687/00_start_00_am_echo.wav
+      voice: 0
+      selectedVoice: 
+      wav: {fileID: 0}
+      generatedFingerprint: 
+      generatedWavPath: 
     options:
-    - text: "Nothing. I\u2019ll leave you to it."
+    - text: "Nothing. I\u2019ll leave you to it\u2026"
       objectsToGive: []
       takeInRequirement: 0
       requirement: {fileID: 0}
@@ -37,127 +37,174 @@ MonoBehaviour:
       endsConversation: 1
       jumpToScene: 0
       sceneIndex: 
-    - text: "Hey. What do you think you\u2019re doing? "
+    - text: "Hey. What do you think you\u2019re doing?"
       objectsToGive: []
-      takeInRequirement: 0
-      requirement: {fileID: 0}
-      trueNextNodeId: 
-      falseNextNodeId: 
-      nextNodeId: oversight
+      takeInRequirement: 1
+      requirement: {fileID: 11400000, guid: d48de3f35dda4a7ab69f553f758e4424, type: 2}
+      trueNextNodeId: oversight_surrounded
+      falseNextNodeId: oversight_requirement_failed
+      nextNodeId: 
       endsConversation: 0
       jumpToScene: 0
       sceneIndex: 
-    - text: "Hey, what\u2019s over there? "
+    - text: "Hey, what\u2019s over there?"
+      objectsToGive: []
+      takeInRequirement: 1
+      requirement: {fileID: 11400000, guid: c2b9f10ae7244be5a1fd6c947e8c0312, type: 2}
+      trueNextNodeId: violence_hit
+      falseNextNodeId: violence_requirement_failed
+      nextNodeId: 
+      endsConversation: 0
+      jumpToScene: 0
+      sceneIndex: 
+    flagsToSet:
+    - 6
+  - id: oversight_surrounded
+    speakerNameSource: 0
+    speakerName: Cleaner Bullies
+    characterProfile: {fileID: 0}
+    dialogueLines:
+    - text: "Hey listen. We\u2019ve got you surrounded. You really think you can do anything against us?"
+      voice: 0
+      selectedVoice: 
+      wav: {fileID: 0}
+      generatedFingerprint: 
+      generatedWavPath: 
+    options:
+    - text: Continue
       objectsToGive: []
       takeInRequirement: 0
       requirement: {fileID: 0}
       trueNextNodeId: 
       falseNextNodeId: 
-      nextNodeId: violence
+      nextNodeId: oversight_mc_warning
       endsConversation: 0
       jumpToScene: 0
       sceneIndex: 
     flagsToSet: 
-  - id: oversight
-    speakerNameSource: 0
-    speakerName: cleaner bullies
-    characterProfile: {fileID: 0}
+  - id: oversight_mc_warning
+    speakerNameSource: 1
+    speakerName: 
+    characterProfile: {fileID: 11400000, guid: 316a88af67cb59045b15b587bb0da276, type: 2}
     dialogueLines:
-    - text: "Hey listen. We\u2019ve got you surrounded. You really think you can
-        do anything against us?"
-      voice: 1
-      selectedVoice: am_echo
-      wav: {fileID: 8300000, guid: bb7e32637d1caf2429e67df8c9b7d0da, type: 3}
-      generatedFingerprint: 5707e4a90af40337b45fdb2a5949a4f5
-      generatedWavPath: Assets/GeneratedAudio/Dialogues/Cleaner_bullies_6374c687/01_oversight_00_am_echo.wav
+    - text: "No, you listen. We\u2019ve got eyes on you. Try anything funny on me, and you think you\u2019ll get off scot-free? Don\u2019t forget who the watchers are."
+      voice: 0
+      selectedVoice: 
+      wav: {fileID: 0}
+      generatedFingerprint: 
+      generatedWavPath: 
     options:
-    - text: "No, you listen. We\u2019ve got eyes on you. Try anything funny on me,
-        and you think you\u2019ll get off scot-free? Don\u2019t forget who the watchers
-        are. "
+    - text: Continue
       objectsToGive: []
       takeInRequirement: 0
       requirement: {fileID: 0}
       trueNextNodeId: 
       falseNextNodeId: 
-      nextNodeId: oversight2
+      nextNodeId: oversight_grievance
       endsConversation: 0
       jumpToScene: 0
       sceneIndex: 
     flagsToSet: 
-  - id: oversight2
+  - id: oversight_grievance
     speakerNameSource: 0
-    speakerName: cleaner bullies
+    speakerName: Cleaner Bullies
     characterProfile: {fileID: 0}
     dialogueLines:
-    - text: "\u2026We\u2019ve had enough of you creepers! It\u2019s not enough that
-        we\u2019re the scum of the pond in this damn company, and now you\u2019re
-        trying to take away what we\u2019ve carved out for ourselves?\r\n"
-      voice: 1
-      selectedVoice: am_echo
-      wav: {fileID: 8300000, guid: 99c4b948bfacaba4da1e99a06855a906, type: 3}
-      generatedFingerprint: 57a0c20096c92504da0d00d61c6c1dbb
-      generatedWavPath: Assets/GeneratedAudio/Dialogues/Cleaner_bullies_6374c687/02_oversight2_00_am_echo.wav
+    - text: "\u2026We\u2019ve had enough of you creepers! It\u2019s not enough that we\u2019re the scum of the pond in this damn company, and now you\u2019re trying to take away what we\u2019ve carved out for ourselves?"
+      voice: 0
+      selectedVoice: 
+      wav: {fileID: 0}
+      generatedFingerprint: 
+      generatedWavPath: 
     options:
-    - text: "Oh, and you\u2019re completely innocent victims? There comes a point
-        where corporate can\u2019t turn a blind eye anymore. "
+    - text: "Oh, and you\u2019re completely innocent victims? There comes a point where corporate can\u2019t turn a blind eye anymore."
       objectsToGive: []
-      takeInRequirement: 0
-      requirement: {fileID: 0}
-      trueNextNodeId: 
-      falseNextNodeId: 
-      nextNodeId: oversight3
+      takeInRequirement: 1
+      requirement: {fileID: 11400000, guid: 7e1648f2a8d84ab587f3c0d91b6e2457, type: 2}
+      trueNextNodeId: oversight_mc_demand
+      falseNextNodeId: injured_condition_failed
+      nextNodeId: 
       endsConversation: 0
       jumpToScene: 0
       sceneIndex: 
-    - text: "Good that you know what your position in this company is. If you want
-        to at least stay in this pond\u2026 "
+    - text: "Good that you know what your position in this company is. If you want to at least stay in this pond\u2026"
       objectsToGive: []
       takeInRequirement: 0
       requirement: {fileID: 0}
       trueNextNodeId: 
       falseNextNodeId: 
-      nextNodeId: oversight3
+      nextNodeId: oversight_mc_demand
       endsConversation: 0
       jumpToScene: 0
       sceneIndex: 
     flagsToSet: 
-  - id: oversight3
-    speakerNameSource: 0
-    speakerName: cleaner bullies
-    characterProfile: {fileID: 0}
+  - id: injured_condition_failed
+    speakerNameSource: 1
+    speakerName: 
+    characterProfile: {fileID: 11400000, guid: 316a88af67cb59045b15b587bb0da276, type: 2}
     dialogueLines:
-    - text: ...
-      voice: 1
-      selectedVoice: am_echo
-      wav: {fileID: 8300000, guid: 2562b6220ec0acd468327b5619e3596e, type: 3}
-      generatedFingerprint: 6a6aad24d79a548e547e0b77170f6c4c
-      generatedWavPath: Assets/GeneratedAudio/Dialogues/Cleaner_bullies_6374c687/03_oversight3_00_am_echo.wav
+    - text: "I don\u2019t know enough about what happened here to make that accusation."
+      voice: 0
+      selectedVoice: 
+      wav: {fileID: 0}
+      generatedFingerprint: 
+      generatedWavPath: 
     options:
-    - text: "Hand over the stolen IDs. They don\u2019t belong to you. "
+    - text: "Good that you know what your position in this company is. If you want to at least stay in this pond\u2026"
       objectsToGive: []
       takeInRequirement: 0
       requirement: {fileID: 0}
       trueNextNodeId: 
       falseNextNodeId: 
-      nextNodeId: oversight4
+      nextNodeId: oversight_mc_demand
       endsConversation: 0
       jumpToScene: 0
       sceneIndex: 
     flagsToSet: 
-  - id: oversight4
+  - id: oversight_mc_demand
+    speakerNameSource: 1
+    speakerName: 
+    characterProfile: {fileID: 11400000, guid: 316a88af67cb59045b15b587bb0da276, type: 2}
+    dialogueLines:
+    - text: "Hand over the stolen IDs. They don\u2019t belong to you."
+      voice: 0
+      selectedVoice: 
+      wav: {fileID: 0}
+      generatedFingerprint: 
+      generatedWavPath: 
+    - text: "Or else, you\u2019ll be next on the chopping block."
+      voice: 0
+      selectedVoice: 
+      wav: {fileID: 0}
+      generatedFingerprint: 
+      generatedWavPath: 
+    options:
+    - text: Continue
+      objectsToGive: []
+      takeInRequirement: 0
+      requirement: {fileID: 0}
+      trueNextNodeId: 
+      falseNextNodeId: 
+      nextNodeId: oversight_concede
+      endsConversation: 0
+      jumpToScene: 0
+      sceneIndex: 
+    flagsToSet: 
+  - id: oversight_concede
     speakerNameSource: 0
-    speakerName: cleaner bullies
+    speakerName: Cleaner Bullies
     characterProfile: {fileID: 0}
     dialogueLines:
-    - text: "\u2026We\u2019ll concede for now. Don\u2019t think this is over.\r\n"
-      voice: 1
-      selectedVoice: am_echo
-      wav: {fileID: 8300000, guid: 2846a348c4ea6a942bc6955f8f7facf4, type: 3}
-      generatedFingerprint: 0c0703a05ea510a92cf230141fc4c439
-      generatedWavPath: Assets/GeneratedAudio/Dialogues/Cleaner_bullies_6374c687/04_oversight4_00_am_echo.wav
+    - text: "\u2026We\u2019ll concede for now. Don\u2019t think this is over."
+      voice: 0
+      selectedVoice: 
+      wav: {fileID: 0}
+      generatedFingerprint: 
+      generatedWavPath: 
     options:
-    - text: (obtain ID)
-      objectsToGive: []
+    - text: Obtain the stolen ID.
+      objectsToGive:
+      - {fileID: 11400000, guid: 803bde6709256cb4f84cbc090f33658a, type: 2}
       takeInRequirement: 0
       requirement: {fileID: 0}
       trueNextNodeId: 
@@ -167,78 +214,153 @@ MonoBehaviour:
       jumpToScene: 0
       sceneIndex: 
     flagsToSet: 
-  - id: violence
+  - id: violence_hit
     speakerNameSource: 0
-    speakerName: cleaner bullies
+    speakerName: Cleaner Bullies
     characterProfile: {fileID: 0}
     dialogueLines:
     - text: Huh?
-      voice: 1
-      selectedVoice: am_echo
-      wav: {fileID: 8300000, guid: b9edb393b52f60946b650938c2331be4, type: 3}
-      generatedFingerprint: 2089cd4065f28e05b1eedea780bd6021
-      generatedWavPath: Assets/GeneratedAudio/Dialogues/Cleaner_bullies_6374c687/05_violence_00_am_echo.wav
+      voice: 0
+      selectedVoice: 
+      wav: {fileID: 0}
+      generatedFingerprint: 
+      generatedWavPath: 
     - text: Agh!
-      voice: 1
-      selectedVoice: am_echo
-      wav: {fileID: 8300000, guid: 272ca0bcef47020438ed9d562d335488, type: 3}
-      generatedFingerprint: 3e3e549aa756a2b1e76811d6a6579135
-      generatedWavPath: Assets/GeneratedAudio/Dialogues/Cleaner_bullies_6374c687/05_violence_01_am_echo.wav
+      voice: 0
+      selectedVoice: 
+      wav: {fileID: 0}
+      generatedFingerprint: 
+      generatedWavPath: 
     options:
-    - text: "Heh. Who\u2019s next? "
+    - text: Continue
       objectsToGive: []
       takeInRequirement: 0
       requirement: {fileID: 0}
       trueNextNodeId: 
       falseNextNodeId: 
-      nextNodeId: violence2
+      nextNodeId: violence_mc_next
       endsConversation: 0
       jumpToScene: 0
       sceneIndex: 
     flagsToSet: 
-  - id: violence2
-    speakerNameSource: 0
-    speakerName: cleaner bullies
-    characterProfile: {fileID: 0}
+  - id: violence_mc_next
+    speakerNameSource: 1
+    speakerName: 
+    characterProfile: {fileID: 11400000, guid: 316a88af67cb59045b15b587bb0da276, type: 2}
     dialogueLines:
-    - text: "You\u2019ll pay for this! Get him!\r\n"
-      voice: 1
-      selectedVoice: am_echo
-      wav: {fileID: 8300000, guid: 27bda10f69057ed4fa4d3283624ee895, type: 3}
-      generatedFingerprint: a482d902f5e8bee3f0fc8df05cdb33d9
-      generatedWavPath: Assets/GeneratedAudio/Dialogues/Cleaner_bullies_6374c687/06_violence2_00_am_echo.wav
+    - text: "Heh. Who\u2019s next?"
+      voice: 0
+      selectedVoice: 
+      wav: {fileID: 0}
+      generatedFingerprint: 
+      generatedWavPath: 
     options:
-    - text: 'Ugh. This entire morning has been pissing me off. At least I found some
-        punching bags though?  '
+    - text: Continue
       objectsToGive: []
       takeInRequirement: 0
       requirement: {fileID: 0}
       trueNextNodeId: 
       falseNextNodeId: 
-      nextNodeId: violence3
+      nextNodeId: violence_retaliate
       endsConversation: 0
       jumpToScene: 0
       sceneIndex: 
     flagsToSet: 
-  - id: violence3
+  - id: violence_retaliate
     speakerNameSource: 0
-    speakerName: cleaner bullies
+    speakerName: Cleaner Bullies
     characterProfile: {fileID: 0}
     dialogueLines:
-    - text: ...
-      voice: 1
-      selectedVoice: am_echo
-      wav: {fileID: 8300000, guid: b3d65cad035dedf4b938015934bb0b90, type: 3}
-      generatedFingerprint: 6a6aad24d79a548e547e0b77170f6c4c
-      generatedWavPath: Assets/GeneratedAudio/Dialogues/Cleaner_bullies_6374c687/07_violence3_00_am_echo.wav
+    - text: "You\u2019ll pay for this! Get him!"
+      voice: 0
+      selectedVoice: 
+      wav: {fileID: 0}
+      generatedFingerprint: 
+      generatedWavPath: 
     options:
-    - text: (obtain ID and bloody broomstick)
+    - text: Continue
       objectsToGive: []
       takeInRequirement: 0
       requirement: {fileID: 0}
       trueNextNodeId: 
       falseNextNodeId: 
-      nextNodeId: violence3
+      nextNodeId: violence_mc_finish
+      endsConversation: 0
+      jumpToScene: 0
+      sceneIndex: 
+    flagsToSet: 
+  - id: violence_mc_finish
+    speakerNameSource: 1
+    speakerName: 
+    characterProfile: {fileID: 11400000, guid: 316a88af67cb59045b15b587bb0da276, type: 2}
+    dialogueLines:
+    - text: Ugh. This entire morning has been pissing me off. At least I found some punching bags though?
+      voice: 0
+      selectedVoice: 
+      wav: {fileID: 0}
+      generatedFingerprint: 
+      generatedWavPath: 
+    - text: "(\u2026)"
+      voice: 0
+      selectedVoice: 
+      wav: {fileID: 0}
+      generatedFingerprint: 
+      generatedWavPath: 
+    options:
+    - text: Obtain the stolen ID.
+      objectsToGive:
+      - {fileID: 11400000, guid: 803bde6709256cb4f84cbc090f33658a, type: 2}
+      takeInRequirement: 0
+      requirement: {fileID: 0}
+      trueNextNodeId: 
+      falseNextNodeId: 
+      nextNodeId: 
+      endsConversation: 1
+      jumpToScene: 0
+      sceneIndex: 
+    flagsToSet: 
+  - id: oversight_requirement_failed
+    speakerNameSource: 0
+    speakerName: Cleaner Bullies
+    characterProfile: {fileID: 0}
+    dialogueLines:
+    - text: "You\u2019re no watcher. Get lost."
+      voice: 0
+      selectedVoice: 
+      wav: {fileID: 0}
+      generatedFingerprint: 
+      generatedWavPath: 
+    options:
+    - text: Leave.
+      objectsToGive: []
+      takeInRequirement: 0
+      requirement: {fileID: 0}
+      trueNextNodeId: 
+      falseNextNodeId: 
+      nextNodeId: 
+      endsConversation: 1
+      jumpToScene: 0
+      sceneIndex: 
+    flagsToSet: 
+  - id: violence_requirement_failed
+    speakerNameSource: 0
+    speakerName: Cleaner Bullies
+    characterProfile: {fileID: 0}
+    dialogueLines:
+    - text: What are you going to do without a weapon?
+      voice: 0
+      selectedVoice: 
+      wav: {fileID: 0}
+      generatedFingerprint: 
+      generatedWavPath: 
+    options:
+    - text: Leave.
+      objectsToGive: []
+      takeInRequirement: 0
+      requirement: {fileID: 0}
+      trueNextNodeId: 
+      falseNextNodeId: 
+      nextNodeId: 
       endsConversation: 1
       jumpToScene: 0
       sceneIndex: 

@@ -5,5 +5,7 @@ public enum ProgressFlag
     WorkUniformObtained,
     ElevatorAccessGranted,
     SpokeToWorriedResearcherWhileInvestigating,
-    PassedCleanerInterrogationCheck
+    PassedCleanerInterrogationCheck,
+    TalkedToCleanerBullies,
+    TalkedToInjuredCleaner
 }

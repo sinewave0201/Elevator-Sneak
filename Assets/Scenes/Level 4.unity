@@ -1186,6 +1186,7 @@ MonoBehaviour:
   interactionKey: 20
   interactionSFX: {fileID: 0}
   dialogueTrigger: {fileID: 389540070}
+  musicFlagOnComplete: 
 --- !u!1 &467612659
 GameObject:
   m_ObjectHideFlags: 0
@@ -10907,7 +10908,7 @@ MonoBehaviour:
   requirement: {fileID: 0}
   interactionKey: 19
   interactionSFX: {fileID: 8300000, guid: 0377175798349fd42b5d3ab542b31362, type: 3}
-  sceneIndex: 3
+  sceneIndex: 4
 --- !u!1 &1980330768
 GameObject:
   m_ObjectHideFlags: 0
@@ -12392,7 +12393,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 198538158556077393, guid: 222adbc8eb9fa7b42975c0a107acbbba, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -12414,13 +12415,14 @@ GameObject:
   - component: {fileID: 8011902235996731960}
   - component: {fileID: 8306634275218658875}
   - component: {fileID: 4297701322599140644}
+  - component: {fileID: 8306634275218658876}
   m_Layer: 0
-  m_Name: Npc-Receptionist
+  m_Name: locker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &7337771071177653332
 Transform:
   m_ObjectHideFlags: 0
@@ -12430,8 +12432,8 @@ Transform:
   m_GameObject: {fileID: 5652712222569546972}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -18.57, y: -0.5905, z: 0}
-  m_LocalScale: {x: 6.9054, y: 6.9054, z: 6.9054}
+  m_LocalPosition: {x: -10.5857, y: -0.2828, z: 0}
+  m_LocalScale: {x: 0.45524278, y: 0.47125047, z: 0.3427775}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -12470,8 +12472,8 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.004699129, y: -0.023496145}
-  m_Radius: 0.21617293
+  m_Offset: {x: 0.0046993163, y: -1.7453161}
+  m_Radius: 2.8131707
 --- !u!114 &8306634275218658875
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12484,7 +12486,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c55a3423d1267e84bb1ecd3c86b6f3ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DialogueTrigger
-  conversation: {fileID: 11400000, guid: d331543b5b9021b47a3609fd1e129879, type: 2}
+  conversation: {fileID: 11400000, guid: ea4926490bfabd44dba8174a918e109d, type: 2}
   characterProfile: {fileID: 0}
   speakerName: Receptionist
   openingLine: This is test object
@@ -12493,6 +12495,23 @@ MonoBehaviour:
     to the object
   optionTwo: Goodbye.
   responseToOptionTwo: and test if dialogue system is working
+--- !u!114 &8306634275218658876
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5652712222569546972}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c3601aece4244b519beb770fabe3087, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueInteraction
+  interactionPrompt: Interact
+  requirement: {fileID: 0}
+  interactionKey: 20
+  interactionSFX: {fileID: 0}
+  dialogueTrigger: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
