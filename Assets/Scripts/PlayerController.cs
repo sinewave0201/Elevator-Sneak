@@ -8,62 +8,81 @@ public class PlayerController : MonoBehaviour
 
     [Header("Requirement")]
     [SerializeField] private Rigidbody2D body;
-    [SerializeField]private SpriteRenderer spriteRenderer;
-    [SerializeField]private InputActionReference moveAction;
-    [SerializeField]private InputActionReference interactAction;
+    [SerializeField] private Transform characterVisual;
+    [SerializeField] private InputActionReference moveAction;
+    [SerializeField] private Animator mcAnimator;
+    [SerializeField] private InputActionReference dialogueAdvanceAction;
 
-    private Collider2D interactable;
+    [Header("Sound")]
+    [SerializeField] private AudioSource footstepPlayer;
+
+    private Vector3 characterVisualScale;
 
     private float horizontalInput;
-    private void Awake(){}
+
+    private void Awake()
+    {
+        mcAnimator.SetBool("isWalking", false);
+        //in charge of fliping
+        characterVisualScale = characterVisual.localScale;
+    }
+
+    private void OnEnable()
+    {
+        dialogueAdvanceAction?.action.Enable();
+    }
+
+    private void OnDisable()
+    {
+        dialogueAdvanceAction?.action.Disable();
+    }
 
     private void Update()
     {
-        //moving logic
+        bool dialoguePressed = dialogueAdvanceAction != null && dialogueAdvanceAction.action.WasPerformedThisFrame();
+
+
+        // F advances or closes dialogue and blocks movement/other interactions while it is open.
+        if (DialogueManager.Instance != null && DialogueManager.Instance.IsOpen)
+        {
+            horizontalInput = 0f;
+
+            if (dialoguePressed)
+                DialogueManager.Instance.AdvanceOrClose();
+
+            //stop the footstep
+            footstepPlayer.Stop();
+
+            return;
+        }
+
         horizontalInput = moveAction.action.ReadValue<Vector2>().x;
 
+        if (horizontalInput == 0f)
+        {
+            //not moving: update animation
+            mcAnimator.SetBool("isWalking", false);
+
+            //stop the footstep
+            footstepPlayer.Stop();
+        }
         if (horizontalInput != 0f)
         {
-            spriteRenderer.flipX = horizontalInput < 0f;
-        }
+            //moving: update animation
+            mcAnimator.SetBool("isWalking", true);
+            Vector3 scale = characterVisualScale;
+            scale.x = Mathf.Abs(characterVisualScale.x)
+                    * (horizontalInput < 0f ? 1f : -1f);
 
-        if (interactAction.action.WasPerformedThisFrame() && interactable != null)//if e is pressed
-        {
-            Debug.Log("e is pressed");
-            if (interactable.CompareTag("Elevator"))
-            {
-                ElevatorManager em = interactable.GetComponent<ElevatorManager>();
-                em.interact();
-            }
-            
-            else if (interactable.CompareTag("Stair"))
-            {
-                StairManager sm = interactable.GetComponent<StairManager>();
-                sm.interact();
-            }
+            characterVisual.localScale = scale;
 
-            else if (interactable.CompareTag("Interactables"))
+            //play the footstep
+            if (!footstepPlayer.isPlaying)
             {
-                
+                footstepPlayer.Play();
             }
         }
     }
-
-    //interaction logic
-    void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.CompareTag("Elevator") || other.CompareTag("Stair") || 
-            other.CompareTag("interactable"))
-            interactable = other;
-    }
-
-    void OnTriggerExit2D(Collider2D other)
-    {
-        if (interactable == other)
-            interactable = null;
-    }
-
-
     private void FixedUpdate()
     {
         body.linearVelocity = new Vector2(horizontalInput * moveSpeed, body.linearVelocityY);

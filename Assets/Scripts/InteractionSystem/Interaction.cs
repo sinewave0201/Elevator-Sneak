@@ -1,0 +1,26 @@
+using UnityEngine;
+using UnityEngine.InputSystem;
+using System.Collections.Generic;
+
+// base class for all interactions
+// probably should not be passing playerController and instead some
+// sort of player data object
+public abstract class Interaction : MonoBehaviour
+{
+    [SerializeField] private string interactionPrompt = "Interact";
+    [SerializeField] private InteractionRequirement requirement;
+    [SerializeField] private Key interactionKey = Key.E;
+    public AudioClip interactionSFX;
+    
+    public Key InteractionKey => interactionKey;
+    public string InteractionPrompt => interactionPrompt;
+
+    public virtual bool CanInteract(PlayerController player)
+    {
+        return requirement == null || requirement.IsMet(player);
+    }
+
+    public abstract void Interact(PlayerController player);
+
+    public virtual void OnCompletion(List<ProgressFlag> flags = null) {}
+}

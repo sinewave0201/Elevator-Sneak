@@ -1,0 +1,1378 @@
+fileFormatVersion: 2
+guid: feac9f0e1e05ae14290c6df53da55470
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -6235075435646763702
+    second: bathroom stalls_0
+  - first:
+      213: -4561805447781628035
+    second: bathroom stalls_1
+  - first:
+      213: 6789095936837937100
+    second: bathroom stalls_2
+  - first:
+      213: 1699585802205709561
+    second: bathroom stalls_3
+  - first:
+      213: -2996329658180423043
+    second: bathroom stalls_4
+  - first:
+      213: 4529935364670600967
+    second: bathroom stalls_5
+  - first:
+      213: 7120190316646400623
+    second: bathroom stalls_6
+  - first:
+      213: -2563845926042004700
+    second: bathroom stalls_7
+  - first:
+      213: 7758681760724631786
+    second: bathroom stalls_8
+  - first:
+      213: 7892097576185302610
+    second: bathroom stalls_9
+  - first:
+      213: -1114504926295179973
+    second: bathroom stalls_10
+  - first:
+      213: -2972887927908147517
+    second: bathroom stalls_11
+  - first:
+      213: -7694009829613039535
+    second: bathroom stalls_12
+  - first:
+      213: -7109244809951264474
+    second: bathroom stalls_13
+  - first:
+      213: -3966294289037102444
+    second: bathroom stalls_14
+  - first:
+      213: -2742024378728991933
+    second: bathroom stalls_15
+  - first:
+      213: -1497116894075098744
+    second: bathroom stalls_16
+  - first:
+      213: 8939770661147517876
+    second: bathroom stalls_17
+  - first:
+      213: -3363053472971621407
+    second: bathroom stalls_18
+  - first:
+      213: -6223860253350450308
+    second: bathroom stalls_19
+  - first:
+      213: 1481128809338665427
+    second: bathroom stalls_20
+  - first:
+      213: 3027691195807645427
+    second: bathroom stalls_21
+  - first:
+      213: 241016040801740478
+    second: bathroom stalls_22
+  - first:
+      213: 5829362843492952896
+    second: bathroom stalls_23
+  - first:
+      213: -4172008976610421658
+    second: bathroom stalls_24
+  - first:
+      213: 7835856051688639381
+    second: bathroom stalls_25
+  - first:
+      213: 3420566259546984481
+    second: bathroom stalls_26
+  - first:
+      213: 3153574310574727537
+    second: bathroom stalls_27
+  - first:
+      213: 6731189234531053424
+    second: bathroom stalls_28
+  - first:
+      213: -6746287677801711678
+    second: bathroom stalls_29
+  - first:
+      213: 3340898837379854802
+    second: bathroom stalls_30
+  - first:
+      213: -7007503476036874794
+    second: bathroom stalls_31
+  - first:
+      213: -1492097754562379415
+    second: bathroom stalls_32
+  - first:
+      213: -7212740780669991177
+    second: bathroom stalls_33
+  - first:
+      213: 4316092069514844488
+    second: bathroom stalls_34
+  - first:
+      213: 3451390270474668099
+    second: bathroom stalls_35
+  - first:
+      213: -5721901951816999813
+    second: bathroom stalls_36
+  - first:
+      213: -1157338262091166646
+    second: bathroom stalls_37
+  - first:
+      213: 4406192002403373133
+    second: bathroom stalls_38
+  - first:
+      213: -1393270128362779820
+    second: bathroom stalls_39
+  - first:
+      213: 3930536998731732659
+    second: bathroom stalls_40
+  - first:
+      213: -1955990557455237977
+    second: bathroom stalls_41
+  - first:
+      213: -6686887449693294434
+    second: bathroom stalls_42
+  - first:
+      213: -1443940472254348297
+    second: bathroom stalls_43
+  - first:
+      213: -187842531342616493
+    second: bathroom stalls_44
+  - first:
+      213: 6703079091111176747
+    second: bathroom stalls_45
+  - first:
+      213: 7076553665836581536
+    second: bathroom stalls_46
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: bathroom stalls_0
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 48
+        width: 2471
+        height: 954
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a4db2861def8879a0800000000000000
+      internalID: -6235075435646763702
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bathroom stalls_1
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 1039
+        width: 11
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d77c88e5d1631b0c0800000000000000
+      internalID: -4561805447781628035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bathroom stalls_2
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 1042
+        width: 11
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cc7e54dc8c6b73e50800000000000000
+      internalID: 6789095936837937100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bathroom stalls_3
+      rect:
+        serializedVersion: 2
+        x: 239
+        y: 1042
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f4c4c54844269710800000000000000
+      internalID: 1699585802205709561
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bathroom stalls_4
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 1039
+        width: 11
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d7230361d06ea66d0800000000000000
+      internalID: -2996329658180423043
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bathroom stalls_5
+      rect:
+        serializedVersion: 2
+        x: 313
+        y: 1042
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 707bbaaa6309dde30800000000000000
+      internalID: 4529935364670600967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bathroom stalls_6
+      rect:
+        serializedVersion: 2
+        x: 388
+        y: 1039
+        width: 40
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f6282ec5e5fffc260800000000000000
+      internalID: 7120190316646400623
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bathroom stalls_7
+      rect:
+        serializedVersion: 2
+        x: 445
+        y: 1045
+        width: 12
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4231f6fc6b36b6cd0800000000000000
+      internalID: -2563845926042004700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bathroom stalls_8
+      rect:
+        serializedVersion: 2
+        x: 475
+        y: 1039
+        width: 11
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae04b4144ff5cab60800000000000000
+      internalID: 7758681760724631786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bathroom stalls_9
+      rect:
+        serializedVersion: 2
+        x: 523
+        y: 1025
+        width: 31
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 25e0f317eec568d60800000000000000
+      internalID: 7892097576185302610
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bathroom stalls_10
+      rect:
+        serializedVersion: 2
+        x: 589
+        y: 1039
+        width: 29
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b3db0c7acab7880f0800000000000000
+      internalID: -1114504926295179973
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bathroom stalls_11
+      rect:
+        serializedVersion: 2
+        x: 629
+        y: 1045
+        width: 12
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3cedcfb3e2e2eb6d0800000000000000
+      internalID: -2972887927908147517
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bathroom stalls_12
+      rect:
+        serializedVersion: 2
+        x: 647
+        y: 1039
+        width: 20
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1501d8713d2693590800000000000000
+      internalID: -7694009829613039535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bathroom stalls_13
+      rect:
+        serializedVersion: 2
+        x: 682
+        y: 1039
+        width: 19
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 621c0910383e65d90800000000000000
+      internalID: -7109244809951264474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bathroom stalls_14
+      rect:
+        serializedVersion: 2
+        x: 716
+        y: 1036
+        width: 17
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4927843cb54e4f8c0800000000000000
+      internalID: -3966294289037102444
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bathroom stalls_15
+      rect:
+        serializedVersion: 2
+        x: 1479
+        y: 1045
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 343b56cfa5f52f9d0800000000000000
+      internalID: -2742024378728991933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bathroom stalls_16
+      rect:
+        serializedVersion: 2
+        x: 1798
+        y: 1045
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 889ea6ded1c293be0800000000000000
+      internalID: -1497116894075098744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bathroom stalls_17
+      rect:
+        serializedVersion: 2
+        x: 589
+        y: 1031
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b328272d02701c70800000000000000
+      internalID: 8939770661147517876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bathroom stalls_18
+      rect:
+        serializedVersion: 2
+        x: 739
+        y: 1007
+        width: 75
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ebf1ee3fa80451d0800000000000000
+      internalID: -3363053472971621407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bathroom stalls_19
+      rect:
+        serializedVersion: 2
+        x: 1338
+        y: 1034
+        width: 11
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c7baf53331860a9a0800000000000000
+      internalID: -6223860253350450308
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bathroom stalls_20
+      rect:
+        serializedVersion: 2
+        x: 1901
+        y: 1031
+        width: 23
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3d97a330ec60e8410800000000000000
+      internalID: 1481128809338665427
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bathroom stalls_21
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 1016
+        width: 8
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3fe31b7e915840a20800000000000000
+      internalID: 3027691195807645427
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bathroom stalls_22
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 1016
+        width: 74
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eb6a829efc2485300800000000000000
+      internalID: 241016040801740478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bathroom stalls_23
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 1010
+        width: 14
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 04b2241fe9e06e050800000000000000
+      internalID: 5829362843492952896
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bathroom stalls_24
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 1022
+        width: 15
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6641565a0fb0a16c0800000000000000
+      internalID: -4172008976610421658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bathroom stalls_25
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 1013
+        width: 10
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 59b0ff7109d8ebc60800000000000000
+      internalID: 7835856051688639381
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bathroom stalls_26
+      rect:
+        serializedVersion: 2
+        x: 299
+        y: 1010
+        width: 42
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1201cfed3ea487f20800000000000000
+      internalID: 3420566259546984481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bathroom stalls_27
+      rect:
+        serializedVersion: 2
+        x: 365
+        y: 1016
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 171aa9a802fb3cb20800000000000000
+      internalID: 3153574310574727537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bathroom stalls_28
+      rect:
+        serializedVersion: 2
+        x: 394
+        y: 1013
+        width: 11
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 07f282802fcf96d50800000000000000
+      internalID: 6731189234531053424
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bathroom stalls_29
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 1022
+        width: 20
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2c7b804b91f5062a0800000000000000
+      internalID: -6746287677801711678
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bathroom stalls_30
+      rect:
+        serializedVersion: 2
+        x: 434
+        y: 1025
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d1ba80bac14d5e20800000000000000
+      internalID: 3340898837379854802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bathroom stalls_31
+      rect:
+        serializedVersion: 2
+        x: 702
+        y: 1025
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ddc18447b850ce90800000000000000
+      internalID: -7007503476036874794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bathroom stalls_32
+      rect:
+        serializedVersion: 2
+        x: 187
+        y: 1013
+        width: 13
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 961c6296ff00b4be0800000000000000
+      internalID: -1492097754562379415
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bathroom stalls_33
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 1013
+        width: 12
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f60137897237eb90800000000000000
+      internalID: -7212740780669991177
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bathroom stalls_34
+      rect:
+        serializedVersion: 2
+        x: 405
+        y: 1013
+        width: 28
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 849105d9ed6d5eb30800000000000000
+      internalID: 4316092069514844488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bathroom stalls_35
+      rect:
+        serializedVersion: 2
+        x: 521
+        y: 1002
+        width: 28
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 348c1ec2a2dc5ef20800000000000000
+      internalID: 3451390270474668099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bathroom stalls_36
+      rect:
+        serializedVersion: 2
+        x: 673
+        y: 1010
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b7c5552ad78b790b0800000000000000
+      internalID: -5721901951816999813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bathroom stalls_37
+      rect:
+        serializedVersion: 2
+        x: 814
+        y: 1007
+        width: 14
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a4c86138bfe40ffe0800000000000000
+      internalID: -1157338262091166646
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bathroom stalls_38
+      rect:
+        serializedVersion: 2
+        x: 826
+        y: 982
+        width: 86
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d409b6bf740f52d30800000000000000
+      internalID: 4406192002403373133
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bathroom stalls_39
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 51
+        width: 1867
+        height: 951
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 45b06ca333c1aace0800000000000000
+      internalID: -1393270128362779820
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bathroom stalls_40
+      rect:
+        serializedVersion: 2
+        x: 475
+        y: 999
+        width: 28
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3b65fe153921c8630800000000000000
+      internalID: 3930536998731732659
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bathroom stalls_41
+      rect:
+        serializedVersion: 2
+        x: 1160
+        y: 999
+        width: 10
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7acbcd683fcead4e0800000000000000
+      internalID: -1955990557455237977
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bathroom stalls_42
+      rect:
+        serializedVersion: 2
+        x: 1169
+        y: 999
+        width: 22
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e90730c0b476333a0800000000000000
+      internalID: -6686887449693294434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bathroom stalls_43
+      rect:
+        serializedVersion: 2
+        x: 1341
+        y: 999
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f348727ac716fbe0800000000000000
+      internalID: -1443940472254348297
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bathroom stalls_44
+      rect:
+        serializedVersion: 2
+        x: 1349
+        y: 1002
+        width: 26
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 358fc958636a46df0800000000000000
+      internalID: -187842531342616493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bathroom stalls_45
+      rect:
+        serializedVersion: 2
+        x: 1476
+        y: 999
+        width: 11
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b2aa70f3bee160d50800000000000000
+      internalID: 6703079091111176747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bathroom stalls_46
+      rect:
+        serializedVersion: 2
+        x: 1910
+        y: 995
+        width: 26
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a28d2ed018f43260800000000000000
+      internalID: 7076553665836581536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 85bfcb9438dce0146bdc4d4d6055e31f
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      bathroom stalls_0: -6235075435646763702
+      bathroom stalls_1: -4561805447781628035
+      bathroom stalls_10: -1114504926295179973
+      bathroom stalls_11: -2972887927908147517
+      bathroom stalls_12: -7694009829613039535
+      bathroom stalls_13: -7109244809951264474
+      bathroom stalls_14: -3966294289037102444
+      bathroom stalls_15: -2742024378728991933
+      bathroom stalls_16: -1497116894075098744
+      bathroom stalls_17: 8939770661147517876
+      bathroom stalls_18: -3363053472971621407
+      bathroom stalls_19: -6223860253350450308
+      bathroom stalls_2: 6789095936837937100
+      bathroom stalls_20: 1481128809338665427
+      bathroom stalls_21: 3027691195807645427
+      bathroom stalls_22: 241016040801740478
+      bathroom stalls_23: 5829362843492952896
+      bathroom stalls_24: -4172008976610421658
+      bathroom stalls_25: 7835856051688639381
+      bathroom stalls_26: 3420566259546984481
+      bathroom stalls_27: 3153574310574727537
+      bathroom stalls_28: 6731189234531053424
+      bathroom stalls_29: -6746287677801711678
+      bathroom stalls_3: 1699585802205709561
+      bathroom stalls_30: 3340898837379854802
+      bathroom stalls_31: -7007503476036874794
+      bathroom stalls_32: -1492097754562379415
+      bathroom stalls_33: -7212740780669991177
+      bathroom stalls_34: 4316092069514844488
+      bathroom stalls_35: 3451390270474668099
+      bathroom stalls_36: -5721901951816999813
+      bathroom stalls_37: -1157338262091166646
+      bathroom stalls_38: 4406192002403373133
+      bathroom stalls_39: -1393270128362779820
+      bathroom stalls_4: -2996329658180423043
+      bathroom stalls_40: 3930536998731732659
+      bathroom stalls_41: -1955990557455237977
+      bathroom stalls_42: -6686887449693294434
+      bathroom stalls_43: -1443940472254348297
+      bathroom stalls_44: -187842531342616493
+      bathroom stalls_45: 6703079091111176747
+      bathroom stalls_46: 7076553665836581536
+      bathroom stalls_5: 4529935364670600967
+      bathroom stalls_6: 7120190316646400623
+      bathroom stalls_7: -2563845926042004700
+      bathroom stalls_8: 7758681760724631786
+      bathroom stalls_9: 7892097576185302610
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

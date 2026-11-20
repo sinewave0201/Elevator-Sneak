@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dff2d470d2bdbbd4ea3db1789368bf1a, type: 3}
+  m_Name: Bathroom-Occupied
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueConversation
+  defaultCharacter: {fileID: 0}
+  startNodeId: start
+  nodes:
+  - id: start
+    speakerName: Closed bathroom Door
+    characterProfile: {fileID: 0}
+    dialogueLines:
+    - text: This bathroom is occupied.
+      voice: 1
+      selectedVoice: af_alloy
+      wav: {fileID: 8300000, guid: 43f99f333e5423c43808613da8b320f0, type: 3}
+      generatedFingerprint: 2807bd2ab70ea1fa509bb7887b53d2c4
+      generatedWavPath: Assets/GeneratedAudio/Dialogues/Bathroom-Occupied_752fa0a2/00_start_00_af_alloy.wav
+    - text: You can hear someone inside grunting.
+      voice: 1
+      selectedVoice: af_alloy
+      wav: {fileID: 8300000, guid: 73f6c842861f9064dbda6471b5eb7016, type: 3}
+      generatedFingerprint: 56bd7ff6ba83ee4c350c38e45081054a
+      generatedWavPath: Assets/GeneratedAudio/Dialogues/Bathroom-Occupied_752fa0a2/00_start_01_af_alloy.wav
+    - text: A puff of smoke sneak through the gap under the door.
+      voice: 1
+      selectedVoice: af_alloy
+      wav: {fileID: 8300000, guid: 723c4d7a61a5d7b42a75128aee209a45, type: 3}
+      generatedFingerprint: 798411b546310c03a151a359e6251cdb
+      generatedWavPath: Assets/GeneratedAudio/Dialogues/Bathroom-Occupied_752fa0a2/00_start_02_af_alloy.wav
+    options:
+    - text: Go away.
+      objectsToGive: []
+      nextNodeId: 
+      endsConversation: 1
+    flagsToSet: 

@@ -1,0 +1,97 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dff2d470d2bdbbd4ea3db1789368bf1a, type: 3}
+  m_Name: Elevator
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueConversation
+  defaultCharacter: {fileID: 0}
+  startNodeId: start
+  nodes:
+  - id: start
+    speakerNameSource: 0
+    speakerName: Elevator
+    characterProfile: {fileID: 0}
+    dialogueLines:
+    - text: You stare into the reflection of yourself on the elevator door.
+      voice: 1
+      selectedVoice: af_alloy
+      wav: {fileID: 8300000, guid: 5f3b8a9d49ce46b439a3e07a7a94bc59, type: 3}
+      generatedFingerprint: 78064dd7bc536b61a5e652be6b927a83
+      generatedWavPath: Assets/GeneratedAudio/Dialogues/Elevator_66c9d583/00_start_00_af_alloy.wav
+    options:
+    - text: swip ur ID
+      objectsToGive: []
+      takeInRequirement: 1
+      requirement: {fileID: 11400000, guid: 8211e33feeb3cf248b95f1d2936d8638, type: 2}
+      trueNextNodeId: sucess
+      falseNextNodeId: fail
+      nextNodeId: 
+      endsConversation: 0
+      jumpToScene: 0
+      sceneIndex: 
+    - text: Leave
+      objectsToGive: []
+      takeInRequirement: 0
+      requirement: {fileID: 0}
+      trueNextNodeId: 
+      falseNextNodeId: 
+      nextNodeId: 
+      endsConversation: 1
+      jumpToScene: 0
+      sceneIndex: 
+    flagsToSet: 
+  - id: fail
+    speakerNameSource: 0
+    speakerName: Elevator
+    characterProfile: {fileID: 0}
+    dialogueLines:
+    - text: Your reflection mocks you, as if to remind you just how far down the
+        corporate ladder you are.
+      voice: 1
+      selectedVoice: af_alloy
+      wav: {fileID: 8300000, guid: 243a5d84ccc61984880c7b3a352a3317, type: 3}
+      generatedFingerprint: 8091189262ce4298c8a73ba8d28e8495
+      generatedWavPath: Assets/GeneratedAudio/Dialogues/Elevator_66c9d583/01_fail_00_af_alloy.wav
+    options:
+    - text: Leave
+      objectsToGive: []
+      takeInRequirement: 0
+      requirement: {fileID: 0}
+      trueNextNodeId: 
+      falseNextNodeId: 
+      nextNodeId: 
+      endsConversation: 1
+      jumpToScene: 0
+      sceneIndex: 
+    flagsToSet: 
+  - id: sucess
+    speakerNameSource: 0
+    speakerName: Elevator
+    characterProfile: {fileID: 0}
+    dialogueLines:
+    - text: The door snaps open. You cannot hide how happy you are!
+      voice: 1
+      selectedVoice: af_alloy
+      wav: {fileID: 8300000, guid: 82cd7f4d715bf3947b51aad62c9cea67, type: 3}
+      generatedFingerprint: 5aef717e27996f63afcb9b0f3e1b4c4d
+      generatedWavPath: Assets/GeneratedAudio/Dialogues/Elevator_66c9d583/02_sucess_00_af_alloy.wav
+    options:
+    - text: Get in the elevator!
+      objectsToGive: []
+      takeInRequirement: 0
+      requirement: {fileID: 0}
+      trueNextNodeId: 
+      falseNextNodeId: 
+      nextNodeId: 
+      endsConversation: 0
+      jumpToScene: 1
+      sceneIndex: 1
+    flagsToSet: 

@@ -6,14 +6,36 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Main.unity
-    guid: 762dddfde765c8047979fd1d62b74932
+    path: Assets/Scenes/beginning.unity
+    guid: 14ff3761372947f4eb25db1666ff9687
   - enabled: 1
-    path: Assets/Scenes/ElevatorScene.unity
+    path: Assets/Scenes/Elevator.unity
     guid: e49e4a6db4e81af4db33e2451dcf013e
   - enabled: 1
-    path: Assets/Scenes/StaircaseScene.unity
+    path: Assets/Scenes/Level 3 Bathroom.unity
     guid: 6bcbc1e2378f0da4687307c2c3c955c9
+  - enabled: 1
+    path: Assets/Scenes/Level 4 Bathroom.unity
+    guid: 46a08c849f32a624bab62c2c1682724d
+  - enabled: 1
+    path: Assets/Scenes/Staircase.unity
+    guid: f32d4bd9844d79246a3307786e3d6322
+  - enabled: 1
+    path: Assets/Scenes/Level 1.unity
+    guid: 762dddfde765c8047979fd1d62b74932
+  - enabled: 1
+    path: Assets/Scenes/Level 2.unity
+    guid: 64b9122a0158d874f99a229d30e07ad0
+  - enabled: 1
+    path: Assets/Scenes/Level 3.unity
+    guid: 907c4d95c22c2c548a9247cf61218398
+  - enabled: 1
+    path: Assets/Scenes/Level 4.unity
+    guid: 74b74d17e9b4cfb4ca8bd2584383e299
+  - enabled: 1
+    path: Assets/Scenes/Level 5.unity
+    guid: 3f1b86dbdf36fe740b5ed4bd9450a6d4
   m_configObjects:
+    com.unity.dt.app-ui: {fileID: 11400000, guid: 1b1c20d82303e4b5781c3ef50ac1449f, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0
