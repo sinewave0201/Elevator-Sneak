@@ -16,6 +16,7 @@ MonoBehaviour:
   startNodeId: start
   nodes:
   - id: start
+    speakerNameSource: 0
     speakerName: Closed bathroom Door
     characterProfile: {fileID: 0}
     dialogueLines:
@@ -31,15 +32,21 @@ MonoBehaviour:
       wav: {fileID: 8300000, guid: 73f6c842861f9064dbda6471b5eb7016, type: 3}
       generatedFingerprint: 56bd7ff6ba83ee4c350c38e45081054a
       generatedWavPath: Assets/GeneratedAudio/Dialogues/Bathroom-Occupied_752fa0a2/00_start_01_af_alloy.wav
-    - text: A puff of smoke sneak through the gap under the door.
+    - text: A puff of smoke sneaks through the gap under the door.
       voice: 1
       selectedVoice: af_alloy
       wav: {fileID: 8300000, guid: 723c4d7a61a5d7b42a75128aee209a45, type: 3}
-      generatedFingerprint: 798411b546310c03a151a359e6251cdb
+      generatedFingerprint: f3885cba5d512da885c94806a94e2f4d
       generatedWavPath: Assets/GeneratedAudio/Dialogues/Bathroom-Occupied_752fa0a2/00_start_02_af_alloy.wav
     options:
-    - text: Go away.
+    - text: Leave.
       objectsToGive: []
+      takeInRequirement: 0
+      requirement: {fileID: 0}
+      trueNextNodeId: 
+      falseNextNodeId: 
       nextNodeId: 
       endsConversation: 1
+      jumpToScene: 0
+      sceneIndex: 
     flagsToSet: 

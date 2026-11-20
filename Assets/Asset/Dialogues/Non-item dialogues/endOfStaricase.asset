@@ -20,7 +20,7 @@ MonoBehaviour:
     speakerName: 
     characterProfile: {fileID: 0}
     dialogueLines:
-    - text: (I cannot take the stair anymore. I will get late....
+    - text: (I can't take the stairs anymore. I'll totally be late....
       voice: 0
       selectedVoice: 
       wav: {fileID: 0}
