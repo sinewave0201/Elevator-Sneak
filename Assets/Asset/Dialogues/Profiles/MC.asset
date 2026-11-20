@@ -20,4 +20,4 @@ MonoBehaviour:
   clearance: N/A
   status: ACTIVE
   suspicion: 18
-  portrait: {fileID: 0}
+  portrait: {fileID: -8018476036871592060, guid: fc889dd51c75d114fb16da2c5aceac01, type: 3}

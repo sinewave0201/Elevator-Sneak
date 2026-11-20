@@ -214,9 +214,9 @@ MonoBehaviour:
       trueNextNodeId: 
       falseNextNodeId: 
       nextNodeId: 
-      endsConversation: 1
-      jumpToScene: 0
-      sceneIndex: 
+      endsConversation: 0
+      jumpToScene: 1
+      sceneIndex: 11
     - text: "You\u2019re accusing me of sneaking into the elevator. But how do I
         know whether you\u2019re telling the truth about who you are?"
       objectsToGive: []
@@ -225,9 +225,9 @@ MonoBehaviour:
       trueNextNodeId: 
       falseNextNodeId: 
       nextNodeId: 
-      endsConversation: 1
-      jumpToScene: 0
-      sceneIndex: 
+      endsConversation: 0
+      jumpToScene: 1
+      sceneIndex: 11
     - text: "\u2026Can I please go to the restroom first? I really need to go. Like
         right now."
       objectsToGive: []
@@ -236,9 +236,9 @@ MonoBehaviour:
       trueNextNodeId: 
       falseNextNodeId: 
       nextNodeId: 
-      endsConversation: 1
-      jumpToScene: 0
-      sceneIndex: 
+      endsConversation: 0
+      jumpToScene: 1
+      sceneIndex: 11
     flagsToSet: 
   - id: rd_abandoned
     speakerNameSource: 0
