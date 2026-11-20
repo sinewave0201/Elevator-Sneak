@@ -47,6 +47,10 @@ public class startManager : MonoBehaviour
             PlayerDataManager dataManager = PlayerDataManager.Instance;
             dataManager.Stats.SetPlayerName(inputField.text);
 
+            // Fade out the title music; it stays silent until the receptionist conversation ends.
+            if (audioManager.Instance != null)
+                audioManager.Instance.StopMusic();
+
             canvas.SetActive(false);
             introCanvas.SetActive(true);
             //start intro dialogue
