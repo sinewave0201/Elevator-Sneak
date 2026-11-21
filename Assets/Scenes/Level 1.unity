@@ -1214,6 +1214,7 @@ MonoBehaviour:
   interactionKey: 20
   interactionSFX: {fileID: 0}
   dialogueTrigger: {fileID: 389540070}
+  musicFlagOnComplete: 
 --- !u!1 &467084820
 GameObject:
   m_ObjectHideFlags: 0
@@ -1251,6 +1252,7 @@ MonoBehaviour:
   interactionKey: 20
   interactionSFX: {fileID: 0}
   dialogueTrigger: {fileID: 467084823}
+  musicFlagOnComplete: 
 --- !u!212 &467084822
 SpriteRenderer:
   serializedVersion: 2
@@ -10994,6 +10996,7 @@ MonoBehaviour:
   interactionKey: 20
   interactionSFX: {fileID: 8300000, guid: 9e47b140a6c64bd4ab5434aa7ffceffa, type: 3}
   dialogueTrigger: {fileID: 1899208059}
+  musicFlagOnComplete: 
 --- !u!1 &1980330768
 GameObject:
   m_ObjectHideFlags: 0
