@@ -12193,6 +12193,7 @@ MonoBehaviour:
   interactionKey: 20
   interactionSFX: {fileID: 8300000, guid: 9e47b140a6c64bd4ab5434aa7ffceffa, type: 3}
   dialogueTrigger: {fileID: 1569903212269307279}
+  musicFlagOnComplete: 
 --- !u!1 &8561228458993738947
 GameObject:
   m_ObjectHideFlags: 0
