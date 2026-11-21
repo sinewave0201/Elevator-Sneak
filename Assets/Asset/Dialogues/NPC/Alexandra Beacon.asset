@@ -304,7 +304,17 @@ MonoBehaviour:
       wav: {fileID: 0}
       generatedFingerprint: 
       generatedWavPath: 
-    options: []
+    options:
+    - text: Continue
+      objectsToGive: []
+      takeInRequirement: 0
+      requirement: {fileID: 0}
+      trueNextNodeId:
+      falseNextNodeId:
+      nextNodeId:
+      endsConversation: 0
+      jumpToScene: 1
+      sceneIndex: 11
     flagsToSet: 
   - id: int_urgent
     speakerNameSource: 0
@@ -397,7 +407,17 @@ MonoBehaviour:
       wav: {fileID: 0}
       generatedFingerprint: 
       generatedWavPath: 
-    options: []
+    options:
+    - text: Continue
+      objectsToGive: []
+      takeInRequirement: 0
+      requirement: {fileID: 0}
+      trueNextNodeId:
+      falseNextNodeId:
+      nextNodeId:
+      endsConversation: 0
+      jumpToScene: 1
+      sceneIndex: 11
     flagsToSet: 
   - id: over_confirm
     speakerNameSource: 0
@@ -520,7 +540,17 @@ MonoBehaviour:
       wav: {fileID: 0}
       generatedFingerprint: 
       generatedWavPath: 
-    options: []
+    options:
+    - text: Continue
+      objectsToGive: []
+      takeInRequirement: 0
+      requirement: {fileID: 0}
+      trueNextNodeId:
+      falseNextNodeId:
+      nextNodeId:
+      endsConversation: 0
+      jumpToScene: 1
+      sceneIndex: 11
     flagsToSet: 
   - id: rd_requirement_failed
     speakerNameSource: 0
@@ -533,7 +563,17 @@ MonoBehaviour:
       wav: {fileID: 0}
       generatedFingerprint: 
       generatedWavPath: 
-    options: []
+    options:
+    - text: Continue
+      objectsToGive: []
+      takeInRequirement: 0
+      requirement: {fileID: 0}
+      trueNextNodeId:
+      falseNextNodeId:
+      nextNodeId:
+      endsConversation: 0
+      jumpToScene: 1
+      sceneIndex: 11
     flagsToSet: 
   - id: int_requirement_failed
     speakerNameSource: 0
@@ -547,7 +587,17 @@ MonoBehaviour:
       wav: {fileID: 0}
       generatedFingerprint: 
       generatedWavPath: 
-    options: []
+    options:
+    - text: Continue
+      objectsToGive: []
+      takeInRequirement: 0
+      requirement: {fileID: 0}
+      trueNextNodeId:
+      falseNextNodeId:
+      nextNodeId:
+      endsConversation: 0
+      jumpToScene: 1
+      sceneIndex: 11
     flagsToSet: 
   - id: over_requirement_failed
     speakerNameSource: 0
@@ -560,5 +610,15 @@ MonoBehaviour:
       wav: {fileID: 0}
       generatedFingerprint: 
       generatedWavPath: 
-    options: []
+    options:
+    - text: Continue
+      objectsToGive: []
+      takeInRequirement: 0
+      requirement: {fileID: 0}
+      trueNextNodeId:
+      falseNextNodeId:
+      nextNodeId:
+      endsConversation: 0
+      jumpToScene: 1
+      sceneIndex: 11
     flagsToSet: 

@@ -197,5 +197,4 @@ private static void PlayNpcMusic(string musicFlag)
         audioManager.Instance.Play(musicFlag);
     }
 }
-    }
 }
