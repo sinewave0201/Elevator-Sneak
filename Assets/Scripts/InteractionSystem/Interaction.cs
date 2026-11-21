@@ -9,7 +9,7 @@ public abstract class Interaction : MonoBehaviour
 {
     [SerializeField] private string interactionPrompt = "Interact";
     [SerializeField] private InteractionRequirement requirement;
-    [SerializeField] private Key interactionKey = Key.E;
+    [SerializeField] private Key interactionKey = Key.F;
     public AudioClip interactionSFX;
     
     public Key InteractionKey => interactionKey;

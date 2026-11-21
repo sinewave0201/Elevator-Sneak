@@ -152,7 +152,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SceneChangeInteraction
   interactionPrompt: Interact
   requirement: {fileID: 0}
-  interactionKey: 19
+  interactionKey: 20
   interactionSFX: {fileID: 8300000, guid: 0377175798349fd42b5d3ab542b31362, type: 3}
   sceneIndex: 14
 --- !u!61 &198680689
@@ -1035,7 +1035,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SceneChangeInteraction
   interactionPrompt: Interact
   requirement: {fileID: 0}
-  interactionKey: 19
+  interactionKey: 20
   interactionSFX: {fileID: 8300000, guid: 0377175798349fd42b5d3ab542b31362, type: 3}
   sceneIndex: 12
 --- !u!1 &792627501
@@ -6351,7 +6351,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SceneChangeInteraction
   interactionPrompt: Interact
   requirement: {fileID: 0}
-  interactionKey: 19
+  interactionKey: 20
   interactionSFX: {fileID: 8300000, guid: 0377175798349fd42b5d3ab542b31362, type: 3}
   sceneIndex: 13
 --- !u!1001 &1330907900

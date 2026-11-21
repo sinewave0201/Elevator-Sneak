@@ -889,7 +889,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SceneChangeInteraction
   interactionPrompt: Interact
   requirement: {fileID: 0}
-  interactionKey: 19
+  interactionKey: 20
   interactionSFX: {fileID: 0}
   sceneIndex: 9
 --- !u!1 &792627501
