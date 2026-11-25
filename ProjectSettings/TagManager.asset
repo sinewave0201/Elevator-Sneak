@@ -52,6 +52,9 @@ TagManager:
   - name: grid+
     uniqueID: 3446530335
     locked: 0
+  - name: block
+    uniqueID: 1745901393
+    locked: 0
   - name: Player
     uniqueID: 572746647
     locked: 0
