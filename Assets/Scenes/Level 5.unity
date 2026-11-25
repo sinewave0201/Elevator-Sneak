@@ -2308,7 +2308,6 @@ GameObject:
   - component: {fileID: 1323997601}
   - component: {fileID: 1323997600}
   - component: {fileID: 1323997599}
-  - component: {fileID: 1323997603}
   - component: {fileID: 1323997602}
   m_Layer: 0
   m_Name: StaircaseDoor
@@ -2436,35 +2435,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1323997598}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c55a3423d1267e84bb1ecd3c86b6f3ce, type: 3}
+  m_Script: {fileID: 11500000, guid: df8667a9baafe43fa8d042b26b18fbb2, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DialogueTrigger
-  conversation: {fileID: 11400000, guid: 2d000bb542aafc1418c26ed42b4f3256, type: 2}
-  characterProfile: {fileID: 0}
-  speakerName: Stranger
-  openingLine: What do you want?
-  optionOne: Who are you?
-  responseToOptionOne: That is not important right now.
-  optionTwo: Goodbye.
-  responseToOptionTwo: Stay out of trouble.
---- !u!114 &1323997603
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1323997598}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5c3601aece4244b519beb770fabe3087, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DialogueInteraction
+  m_EditorClassIdentifier: Assembly-CSharp::SceneChangeInteraction
   interactionPrompt: Interact
   requirement: {fileID: 0}
   interactionKey: 20
   interactionSFX: {fileID: 0}
-  dialogueTrigger: {fileID: 0}
-  musicFlagOnComplete: 
+  sceneIndex: 5
 --- !u!1 &1390092900
 GameObject:
   m_ObjectHideFlags: 0
