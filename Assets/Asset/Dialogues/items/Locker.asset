@@ -45,6 +45,7 @@ MonoBehaviour:
       endsConversation: 0
       jumpToScene: 0
       sceneIndex: 
+      sfxFlag: 
     - text: I should just leave...
       objectsToGive: []
       takeInRequirement: 0
@@ -55,6 +56,7 @@ MonoBehaviour:
       endsConversation: 1
       jumpToScene: 0
       sceneIndex: 
+      sfxFlag: 
     flagsToSet: 
   - id: stole
     speakerNameSource: 0
@@ -75,7 +77,8 @@ MonoBehaviour:
       generatedWavPath: Assets/GeneratedAudio/Dialogues/Locker_ea492649/01_stole_01_af_alloy.wav
     options:
     - text: yay
-      objectsToGive: []
+      objectsToGive:
+      - {fileID: 11400000, guid: 3c25aaa1d54a7fb4cb83614771087736, type: 2}
       takeInRequirement: 0
       requirement: {fileID: 0}
       trueNextNodeId: 
@@ -84,4 +87,5 @@ MonoBehaviour:
       endsConversation: 1
       jumpToScene: 0
       sceneIndex: 
+      sfxFlag: 
     flagsToSet: 
