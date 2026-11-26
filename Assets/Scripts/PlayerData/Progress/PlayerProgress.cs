@@ -8,6 +8,13 @@ public class PlayerProgress
     [SerializeField] private List<ProgressFlag> completedFlags = new List<ProgressFlag>();
 
     [NonSerialized] private HashSet<ProgressFlag> completedFlagSet;
+    [NonSerialized] private int currentSubTaskIndex;
+
+    public int CurrentSubTaskIndex
+    {
+        get => currentSubTaskIndex;
+        set => currentSubTaskIndex = Mathf.Max(0, value);
+    }
 
     [field: NonSerialized]
     public event Action<ProgressFlag, bool> ProgressChanged;
@@ -45,6 +52,7 @@ public class PlayerProgress
 
     public void Reset()
     {
+        CurrentSubTaskIndex = 0;
         EnsureInitialized();
 
         if (completedFlagSet.Count == 0)

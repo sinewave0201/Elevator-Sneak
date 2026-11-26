@@ -37,6 +37,7 @@ MonoBehaviour:
       endsConversation: 1
       jumpToScene: 0
       sceneIndex: 
+      sfxFlag: 
     - text: "Hey. What do you think you\u2019re doing?"
       objectsToGive: []
       takeInRequirement: 1
@@ -47,6 +48,7 @@ MonoBehaviour:
       endsConversation: 0
       jumpToScene: 0
       sceneIndex: 
+      sfxFlag: 
     - text: "Hey, what\u2019s over there?"
       objectsToGive: []
       takeInRequirement: 1
@@ -57,14 +59,15 @@ MonoBehaviour:
       endsConversation: 0
       jumpToScene: 0
       sceneIndex: 
-    flagsToSet:
-    - 6
+      sfxFlag: 
+    flagsToSet: 06000000
   - id: oversight_surrounded
     speakerNameSource: 0
     speakerName: Cleaner Bullies
     characterProfile: {fileID: 0}
     dialogueLines:
-    - text: "Hey listen. We\u2019ve got you surrounded. You really think you can do anything against us?"
+    - text: "Hey listen. We\u2019ve got you surrounded. You really think you can
+        do anything against us?"
       voice: 0
       selectedVoice: 
       wav: {fileID: 0}
@@ -81,13 +84,26 @@ MonoBehaviour:
       endsConversation: 0
       jumpToScene: 0
       sceneIndex: 
+      sfxFlag: 
     flagsToSet: 
   - id: oversight_mc_warning
     speakerNameSource: 1
     speakerName: 
     characterProfile: {fileID: 11400000, guid: 316a88af67cb59045b15b587bb0da276, type: 2}
     dialogueLines:
-    - text: "No, you listen. We\u2019ve got eyes on you. Try anything funny on me, and you think you\u2019ll get off scot-free? Don\u2019t forget who the watchers are."
+    - text: "No, you listen. We\u2019ve got eyes on you. "
+      voice: 0
+      selectedVoice: 
+      wav: {fileID: 0}
+      generatedFingerprint: 
+      generatedWavPath: 
+    - text: "Try anything funny on me, and you think you\u2019ll get off scot-free? "
+      voice: 0
+      selectedVoice: 
+      wav: {fileID: 0}
+      generatedFingerprint: 
+      generatedWavPath: 
+    - text: "Don\u2019t forget who the watchers are."
       voice: 0
       selectedVoice: 
       wav: {fileID: 0}
@@ -104,20 +120,36 @@ MonoBehaviour:
       endsConversation: 0
       jumpToScene: 0
       sceneIndex: 
+      sfxFlag: 
     flagsToSet: 
   - id: oversight_grievance
     speakerNameSource: 0
     speakerName: Cleaner Bullies
     characterProfile: {fileID: 0}
     dialogueLines:
-    - text: "\u2026We\u2019ve had enough of you creepers! It\u2019s not enough that we\u2019re the scum of the pond in this damn company, and now you\u2019re trying to take away what we\u2019ve carved out for ourselves?"
+    - text: "\u2026We\u2019ve had enough of you creepers! "
+      voice: 0
+      selectedVoice: 
+      wav: {fileID: 0}
+      generatedFingerprint: 
+      generatedWavPath: 
+    - text: "It\u2019s not enough that we\u2019re the scum of the pond in this damn
+        company..."
+      voice: 0
+      selectedVoice: 
+      wav: {fileID: 0}
+      generatedFingerprint: 
+      generatedWavPath: 
+    - text: "...and now you\u2019re trying to take away what we\u2019ve carved out
+        for ourselves?"
       voice: 0
       selectedVoice: 
       wav: {fileID: 0}
       generatedFingerprint: 
       generatedWavPath: 
     options:
-    - text: "Oh, and you\u2019re completely innocent victims? There comes a point where corporate can\u2019t turn a blind eye anymore."
+    - text: "Oh, and you\u2019re completely innocent victims? There comes a point
+        where corporate can\u2019t turn a blind eye anymore."
       objectsToGive: []
       takeInRequirement: 1
       requirement: {fileID: 11400000, guid: 7e1648f2a8d84ab587f3c0d91b6e2457, type: 2}
@@ -127,7 +159,9 @@ MonoBehaviour:
       endsConversation: 0
       jumpToScene: 0
       sceneIndex: 
-    - text: "Good that you know what your position in this company is. If you want to at least stay in this pond\u2026"
+      sfxFlag: 
+    - text: "Good that you know what your position in this company is. If you want
+        to at least stay in this pond\u2026"
       objectsToGive: []
       takeInRequirement: 0
       requirement: {fileID: 0}
@@ -137,6 +171,7 @@ MonoBehaviour:
       endsConversation: 0
       jumpToScene: 0
       sceneIndex: 
+      sfxFlag: 
     flagsToSet: 
   - id: injured_condition_failed
     speakerNameSource: 1
@@ -150,7 +185,8 @@ MonoBehaviour:
       generatedFingerprint: 
       generatedWavPath: 
     options:
-    - text: "Good that you know what your position in this company is. If you want to at least stay in this pond\u2026"
+    - text: "Good that you know what your position in this company is. If you want
+        to at least stay in this pond\u2026"
       objectsToGive: []
       takeInRequirement: 0
       requirement: {fileID: 0}
@@ -160,6 +196,7 @@ MonoBehaviour:
       endsConversation: 0
       jumpToScene: 0
       sceneIndex: 
+      sfxFlag: 
     flagsToSet: 
   - id: oversight_mc_demand
     speakerNameSource: 1
@@ -189,6 +226,7 @@ MonoBehaviour:
       endsConversation: 0
       jumpToScene: 0
       sceneIndex: 
+      sfxFlag: 
     flagsToSet: 
   - id: oversight_concede
     speakerNameSource: 0
@@ -213,7 +251,8 @@ MonoBehaviour:
       endsConversation: 1
       jumpToScene: 0
       sceneIndex: 
-    flagsToSet: 
+      sfxFlag: 
+    flagsToSet: 05000000
   - id: violence_hit
     speakerNameSource: 0
     speakerName: Cleaner Bullies
@@ -242,6 +281,7 @@ MonoBehaviour:
       endsConversation: 0
       jumpToScene: 0
       sceneIndex: 
+      sfxFlag: 
     flagsToSet: 
   - id: violence_mc_next
     speakerNameSource: 1
@@ -265,6 +305,7 @@ MonoBehaviour:
       endsConversation: 0
       jumpToScene: 0
       sceneIndex: 
+      sfxFlag: 
     flagsToSet: 
   - id: violence_retaliate
     speakerNameSource: 0
@@ -288,19 +329,20 @@ MonoBehaviour:
       endsConversation: 0
       jumpToScene: 0
       sceneIndex: 
+      sfxFlag: 
     flagsToSet: 
   - id: violence_mc_finish
     speakerNameSource: 1
     speakerName: 
     characterProfile: {fileID: 11400000, guid: 316a88af67cb59045b15b587bb0da276, type: 2}
     dialogueLines:
-    - text: Ugh. This entire morning has been pissing me off. At least I found some punching bags though?
+    - text: 'Ugh. This entire morning has been pissing me off. '
       voice: 0
       selectedVoice: 
       wav: {fileID: 0}
       generatedFingerprint: 
       generatedWavPath: 
-    - text: "(\u2026)"
+    - text: At least I found some punching bags though?
       voice: 0
       selectedVoice: 
       wav: {fileID: 0}
@@ -318,7 +360,8 @@ MonoBehaviour:
       endsConversation: 1
       jumpToScene: 0
       sceneIndex: 
-    flagsToSet: 
+      sfxFlag: 
+    flagsToSet: 05000000
   - id: oversight_requirement_failed
     speakerNameSource: 0
     speakerName: Cleaner Bullies
@@ -341,6 +384,7 @@ MonoBehaviour:
       endsConversation: 1
       jumpToScene: 0
       sceneIndex: 
+      sfxFlag: 
     flagsToSet: 
   - id: violence_requirement_failed
     speakerNameSource: 0
@@ -364,4 +408,5 @@ MonoBehaviour:
       endsConversation: 1
       jumpToScene: 0
       sceneIndex: 
+      sfxFlag: 
     flagsToSet: 
