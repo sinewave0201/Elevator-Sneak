@@ -96,6 +96,7 @@
   <Project Path="Assembly-CSharp-Editor.csproj" />
   <Project Path="Unity.2D.IK.Runtime.csproj" />
   <Project Path="Unity.AI.Assistant.Annotations.Editor.csproj" />
+  <Project Path="Assembly-CSharp.csproj" />
   <Project Path="Unity.AppUI.Editor.csproj" />
   <Project Path="Unity.AI.Generators.UI.AIDropdownIntegrations.csproj" />
   <Project Path="Unity.Settings.Editor.csproj" />
@@ -107,7 +108,6 @@
   <Project Path="Unity.AppUI.Redux.Editor.csproj" />
   <Project Path="Unity.AI.Pbr.Srp.csproj" />
   <Project Path="glTFast.Editor.csproj" />
-  <Project Path="Assembly-CSharp.csproj" />
   <Project Path="Unity.AppUI.Undo.csproj" />
   <Project Path="UnityEditor.UI.Analytics.csproj" />
   <Project Path="Unity.Splines.csproj" />

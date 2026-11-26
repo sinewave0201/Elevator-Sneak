@@ -37,6 +37,7 @@ MonoBehaviour:
       endsConversation: 1
       jumpToScene: 0
       sceneIndex: 
+      sfxFlag: 
     - text: Approach
       objectsToGive: []
       takeInRequirement: 0
@@ -47,6 +48,7 @@ MonoBehaviour:
       endsConversation: 0
       jumpToScene: 0
       sceneIndex: 
+      sfxFlag: 
     flagsToSet: 
   - id: app
     speakerNameSource: 0
@@ -70,6 +72,7 @@ MonoBehaviour:
       endsConversation: 0
       jumpToScene: 0
       sceneIndex: 
+      sfxFlag: 
     flagsToSet: 
   - id: fin
     speakerNameSource: 0
@@ -93,4 +96,5 @@ MonoBehaviour:
       endsConversation: 1
       jumpToScene: 0
       sceneIndex: 
-    flagsToSet: 
+      sfxFlag: 
+    flagsToSet: 07000000

@@ -2,7 +2,7 @@ public enum ProgressFlag
 {
     None,
     SpokeToGuard,
-    WorkUniformObtained,
+    watcherUniformObtained,
     ElevatorAccessGranted,
     SpokeToWorriedResearcherWhileInvestigating,
     PassedCleanerInterrogationCheck,

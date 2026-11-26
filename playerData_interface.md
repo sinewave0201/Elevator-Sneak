@@ -109,10 +109,10 @@ float suspicionBarValue = stats.GetNormalized(PlayerStatType.Suspicion);
 
 ## 2. Inventory
 
-An `ItemDefinition` represents an item type such as a Work Uniform. A gameplay script normally receives the item through the Inspector:
+An `ItemDefinition` represents an item type such as a Watcher uniform. A gameplay script normally receives the item through the Inspector:
 
 ```csharp
-[SerializeField] private ItemDefinition workUniform;
+[SerializeField] private ItemDefinition watcherUniform;
 ```
 
 ### Check for an item
@@ -123,8 +123,8 @@ bool HasItem(ItemDefinition item, int amount = 1)
 
 ```csharp
 PlayerInventory inventory = PlayerDataManager.Instance.Inventory;
-bool hasUniform = inventory.HasItem(workUniform, 1);
-// hasUniform is true if the player owns at least one Work Uniform; otherwise it is false.
+bool hasUniform = inventory.HasItem(watcherUniform, 1);
+// hasUniform is true if the player owns at least one Watcher uniform.
 ```
 
 ### Get item quantity
@@ -135,8 +135,8 @@ int GetItemCount(ItemDefinition item)
 
 ```csharp
 PlayerInventory inventory = PlayerDataManager.Instance.Inventory;
-int uniformCount = inventory.GetItemCount(workUniform);
-// uniformCount is the total number of Work Uniforms currently owned by the player.
+int uniformCount = inventory.GetItemCount(watcherUniform);
+// uniformCount is the total number of Watcher uniforms currently owned by the player.
 ```
 
 ### Add an item
@@ -147,7 +147,7 @@ bool AddItem(ItemDefinition item, int amount = 1)
 
 ```csharp
 PlayerInventory inventory = PlayerDataManager.Instance.Inventory;
-bool uniformWasAdded = inventory.AddItem(workUniform, 1);
+bool uniformWasAdded = inventory.AddItem(watcherUniform, 1);
 // uniformWasAdded is true if the complete amount was added; otherwise it is false.
 ```
 
@@ -159,7 +159,7 @@ bool RemoveItem(ItemDefinition item, int amount = 1)
 
 ```csharp
 PlayerInventory inventory = PlayerDataManager.Instance.Inventory;
-bool uniformWasRemoved = inventory.RemoveItem(workUniform, 1);
+bool uniformWasRemoved = inventory.RemoveItem(watcherUniform, 1);
 // uniformWasRemoved is true if the complete amount was removed; otherwise it is false.
 ```
 
@@ -169,7 +169,7 @@ Progress stores story facts:
 
 ```text
 ProgressFlag.SpokeToGuard
-ProgressFlag.WorkUniformObtained
+ProgressFlag.watcherUniformObtained
 ProgressFlag.ElevatorAccessGranted
 ```
 
@@ -259,7 +259,7 @@ The Task Timer manages one timed task at a time. It stores the active task, coun
 
 | Data | Type | Meaning in the game |
 |---|---|---|
-| `TimedTaskDefinition.DisplayName` | `string` | The task name shown to the player, such as `Get Work Uniform` |
+| `TimedTaskDefinition.DisplayName` | `string` | The task name shown to the player, such as `Get Watcher uniform` |
 | `TimedTaskDefinition.TimeLimitSeconds` | `float` | The total number of seconds allowed for that task |
 | `CurrentTask` | `TimedTaskDefinition` | The task the player is currently trying to finish; `null` means no timed task is active |
 | `RemainingSeconds` | `float` | The number of seconds the player has left |
@@ -278,7 +278,7 @@ Create one task asset for each timed objective with:
 Create > Player Data > Timed Task
 ```
 
-For example, select `GetUniformTask.asset` in Unity and set its `Display Name` to `Get Work Uniform` and its `Time Limit Seconds` to `180` in the asset's Inspector.
+For example, select `GetUniformTask.asset` in Unity and set its `Display Name` to `Get Watcher uniform` and its `Time Limit Seconds` to `180` in the asset's Inspector.
 
 A gameplay `MonoBehaviour` can then contain this field:
 
@@ -397,7 +397,7 @@ This example uses one shared `manager` field and one shared `timer` field. Dialo
 public class TimedUniformTaskIntegration : MonoBehaviour
 {
     [SerializeField] private TimedTaskDefinition getUniformTask;
-    [SerializeField] private ItemDefinition workUniform;
+    [SerializeField] private ItemDefinition watcherUniform;
 
     private PlayerDataManager manager;
     private PlayerTaskTimer timer;
@@ -418,13 +418,13 @@ public class TimedUniformTaskIntegration : MonoBehaviour
     public void OnUniformReceived()
     {
         // The reward or pickup system calls this when the uniform is obtained.
-        bool uniformWasAdded = manager.Inventory.AddItem(workUniform, 1);
+        bool uniformWasAdded = manager.Inventory.AddItem(watcherUniform, 1);
 
         if (!uniformWasAdded)
             return;
 
         bool progressWasRecorded = manager.Progress.SetFlag(
-            ProgressFlag.WorkUniformObtained);
+            ProgressFlag.watcherUniformObtained);
 
         timer.CompleteCurrentTask();
     }
@@ -450,11 +450,11 @@ PlayerDataManager manager = PlayerDataManager.Instance;
 PlayerInventory inventory = manager.Inventory;
 PlayerProgress progress = manager.Progress;
 
-bool uniformWasAdded = inventory.AddItem(workUniform, 1);
+bool uniformWasAdded = inventory.AddItem(watcherUniform, 1);
 
 if (uniformWasAdded)
 {
-    bool progressWasRecorded = progress.SetFlag(ProgressFlag.WorkUniformObtained);
+    bool progressWasRecorded = progress.SetFlag(ProgressFlag.watcherUniformObtained);
 }
 ```
 
@@ -465,7 +465,7 @@ PlayerDataManager manager = PlayerDataManager.Instance;
 PlayerInventory inventory = manager.Inventory;
 PlayerDisguise disguise = manager.Disguise;
 
-bool hasUniform = inventory.HasItem(workUniform, 1);
+bool hasUniform = inventory.HasItem(watcherUniform, 1);
 
 if (hasUniform)
 {

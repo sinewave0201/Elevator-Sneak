@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c93b5132e50c45ce8e0c5683c08d6e8e, type: 3}
-  m_Name: Employee clothes
+  m_Name: Watcher uniform
   m_EditorClassIdentifier: Assembly-CSharp::ItemDefinition
   itemId: watcher-clothes
-  displayName: Watcher's Clothe
+  displayName: Watcher uniform
   description: 'A folded watcher uniform. '
   icon: {fileID: -8796325081822711875, guid: 1ac9daa6a670c71498da75bb7ee096e7, type: 3}
   stackable: 0
