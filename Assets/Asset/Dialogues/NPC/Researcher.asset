@@ -18,7 +18,7 @@ MonoBehaviour:
   - id: start
     speakerNameSource: 0
     speakerName: Researcher
-    characterProfile: {fileID: 0}
+    characterProfile: {fileID: 11400000, guid: 78fd6d8e82c81854e95b2108604f18cb, type: 2}
     dialogueLines:
     - text: '*unconscious*'
       voice: 0
@@ -37,6 +37,7 @@ MonoBehaviour:
       endsConversation: 0
       jumpToScene: 0
       sceneIndex: 
+      sfxFlag: 
     - text: Give coffee
       objectsToGive: []
       takeInRequirement: 0
@@ -47,6 +48,7 @@ MonoBehaviour:
       endsConversation: 0
       jumpToScene: 0
       sceneIndex: 
+      sfxFlag: 
     - text: Leave
       objectsToGive: []
       takeInRequirement: 0
@@ -57,11 +59,12 @@ MonoBehaviour:
       endsConversation: 1
       jumpToScene: 0
       sceneIndex: 
+      sfxFlag: 
     flagsToSet: 
   - id: coffee
     speakerNameSource: 0
     speakerName: Researcher
-    characterProfile: {fileID: 0}
+    characterProfile: {fileID: 11400000, guid: 78fd6d8e82c81854e95b2108604f18cb, type: 2}
     dialogueLines:
     - text: "\u2026need\u2026to get to work\u2026"
       voice: 0
@@ -77,9 +80,10 @@ MonoBehaviour:
       trueNextNodeId: 
       falseNextNodeId: 
       nextNodeId: off
-      endsConversation: 1
+      endsConversation: 0
       jumpToScene: 0
       sceneIndex: 
+      sfxFlag: 
     - text: "Looks like you\u2019re holding on to something important."
       objectsToGive: []
       takeInRequirement: 0
@@ -90,11 +94,12 @@ MonoBehaviour:
       endsConversation: 0
       jumpToScene: 0
       sceneIndex: 
+      sfxFlag: 
     flagsToSet: 
   - id: off
     speakerNameSource: 0
     speakerName: Researcher
-    characterProfile: {fileID: 0}
+    characterProfile: {fileID: 11400000, guid: 78fd6d8e82c81854e95b2108604f18cb, type: 2}
     dialogueLines:
     - text: "Thanks\u2026I owe you one\u2026"
       voice: 0
@@ -113,6 +118,7 @@ MonoBehaviour:
       endsConversation: 1
       jumpToScene: 0
       sceneIndex: 
+      sfxFlag: 
     - text: " \u2026but I can\u2019t use the elevator."
       objectsToGive: []
       takeInRequirement: 0
@@ -123,11 +129,12 @@ MonoBehaviour:
       endsConversation: 0
       jumpToScene: 0
       sceneIndex: 
+      sfxFlag: 
     flagsToSet: 
   - id: off1
     speakerNameSource: 0
     speakerName: Researcher
-    characterProfile: {fileID: 0}
+    characterProfile: {fileID: 11400000, guid: 78fd6d8e82c81854e95b2108604f18cb, type: 2}
     dialogueLines:
     - text: "Uhhh\u2026lost it\u2026restroom\u2026 *snore*"
       voice: 0
@@ -147,6 +154,7 @@ MonoBehaviour:
       endsConversation: 1
       jumpToScene: 0
       sceneIndex: 
+      sfxFlag: 
     - text: "(Are there any competent workers here? Seriously\u2026) "
       objectsToGive:
       - {fileID: 11400000, guid: ccca0939d9964b54ebcf815faa8f32f3, type: 2}
@@ -158,6 +166,7 @@ MonoBehaviour:
       endsConversation: 1
       jumpToScene: 0
       sceneIndex: 
+      sfxFlag: 
     - text: (He fainted again.)
       objectsToGive:
       - {fileID: 11400000, guid: ccca0939d9964b54ebcf815faa8f32f3, type: 2}
@@ -169,11 +178,12 @@ MonoBehaviour:
       endsConversation: 1
       jumpToScene: 0
       sceneIndex: 
+      sfxFlag: 
     flagsToSet: 
   - id: steal
     speakerNameSource: 1
     speakerName: 
-    characterProfile: {fileID: 0}
+    characterProfile: {fileID: 11400000, guid: 316a88af67cb59045b15b587bb0da276, type: 2}
     dialogueLines:
     - text: "Ugh. Where is this guy\u2019s ID?"
       voice: 0
@@ -205,4 +215,5 @@ MonoBehaviour:
       endsConversation: 1
       jumpToScene: 0
       sceneIndex: 
+      sfxFlag: 
     flagsToSet: 

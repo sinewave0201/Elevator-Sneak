@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 060b0d9fdce589a448119e92c356ed2e, type: 3}
+  m_Name: Researcher
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueCharacterProfile
+  displayNameSource: 0
+  displayName: Researcher
+  caseNumber: CASE # HR-V587 / REVIEW PENDING
+  employeeId: 3L33PY
+  department: R & D
+  clearance: LEVEL 1 - 50
+  status: ACTIVE
+  suspicion: 18
+  portrait: {fileID: -7666937729704139224, guid: 732f672ab36d1994c96e1cdfb94dbee9, type: 3}
