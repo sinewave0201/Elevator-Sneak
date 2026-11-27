@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Alexandra Beacon
   m_EditorClassIdentifier: Assembly-CSharp::DialogueCharacterProfile
   displayNameSource: 0
-  displayName: Alexandra Beacon
-  caseNumber: 'CASE # INT-00-0000 / CLASSIFIED'
+  displayName: Alexandra
+  caseNumber: CASE # INT-00-0000 / CLASSIFIED
   employeeId: CLASSIFIED
   department: Intelligence
   clearance: CLASSIFIED

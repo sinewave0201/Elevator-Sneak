@@ -18,7 +18,7 @@ MonoBehaviour:
   - id: start
     speakerNameSource: 1
     speakerName: 
-    characterProfile: {fileID: 0}
+    characterProfile: {fileID: 11400000, guid: 316a88af67cb59045b15b587bb0da276, type: 2}
     dialogueLines:
     - text: (I can't take the stairs anymore. I'll totally be late....
       voice: 0
